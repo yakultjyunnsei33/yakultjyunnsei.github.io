@@ -2,41 +2,28 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title>オーダーシミュレーター</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロスピA攻略（ヤクルト純正）</title>
     <style>
-        body {
+        input {
+            width: 100px;
+            margin: 5px;
             text-align: center;
         }
 
-        h1 {
-            font-size: 24px;
-            color: red;
-        }
-
-        table {
-            margin: auto;
-            border-collapse: collapse;
-            width: 70%;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
-
-        select {
-            width: 100%;
-            padding: 5px;
+        button {
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <h1>プロスピA攻略（ヤクルト純正）</h1>
-
+    <center>
+        <font size="10" color="red">プロスピA攻略（ヤクルト純正）</font>　
+    </center>
+    <br><b>野手</b>
+    </br>
     <table border="1">
         <tr>
             <th>ポジション</th>
@@ -52,36 +39,19 @@
             <td>捕</td>
             <td>
                 <select name="example2">
-                    <option value="">中村悠平</option>
+                    <option value="">中村悠平 </option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
 
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -124,30 +94,12 @@
                     <option>川端慎吾</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
-
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -186,35 +138,18 @@
                 <select name="example4">
                     <option value="">侍山田哲人</option>
                     <option>山田哲人</option>
+                    <option>茂木栄五郎</option>
                     <option>赤羽由紘</option>
                     <option>武岡龍世</option>
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4810" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
-
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -253,33 +188,17 @@
                 <select name="example5">
                     <option value="">池山隆寛</option>
                     <option>長岡秀樹</option>
+                    <option>茂木栄五郎</option>
                     <option>赤羽由紘</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -315,36 +234,19 @@
             <td>三</td>
             <td>
                 <select name="example6">
-                    <option value="">村上宗隆</option>
+                    <option value="">茂木栄五郎</option>
+                    <option>村上宗隆</option>
                     <option>赤羽由紘</option>
                     <option>武岡龍世</option>
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
-
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -387,30 +289,12 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
-
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -447,38 +331,21 @@
             <td>中</td>
             <td>
                 <select name="example8">
-                    <option value="">西川遥輝</option>
+                    <option value="">塩見泰隆</option>
+                    <option>西川遥輝</option>
                     <option>赤羽由紘</option>
                     <option>並木秀隆</option>
-                    <option>塩見泰隆</option>
                     <option>岩田幸宏</option>
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -515,8 +382,8 @@
             <td>右</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
-                    <option>雄平</option>
+                    <option value="">雄平</option>
+                    <option>丸山和郁</option>
                     <option>赤羽由紘</option>
                     <option>サンタナ</option>
                     <option>増田珠</option>
@@ -524,30 +391,13 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -584,7 +434,7 @@
             <td>指</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
+                    <option value="">サンタナ</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -595,7 +445,8 @@
                     <option>村上宗隆</option>
                     <option>長岡秀樹</option>
                     <option>池山隆寛</option>
-                    <option>サンタナ</option>
+                    <option>雄平</option>
+                    <option>丸山和郁</option>
                     <option>西川遥輝</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
@@ -603,32 +454,16 @@
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
 
+
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -665,7 +500,7 @@
             <td>野</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
+                    <option value="">村上宗隆</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -673,7 +508,7 @@
                     <option>侍川端慎吾</option>
                     <option>川端慎吾</option>
                     <option>侍山田哲人</option>
-                    <option>村上宗隆</option>
+                    <option>丸山和郁</option>
                     <option>長岡秀樹</option>
                     <option>池山隆寛</option>
                     <option>サンタナ</option>
@@ -686,30 +521,13 @@
 
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -745,7 +563,7 @@
             <td>野</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
+                    <option value="">丸山和郁</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -766,30 +584,13 @@
 
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -825,7 +626,7 @@
             <td>野</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
+                    <option value="">西川遥輝</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -837,7 +638,7 @@
                     <option>長岡秀樹</option>
                     <option>池山隆寛</option>
                     <option>サンタナ</option>
-                    <option>西川遥輝</option>
+                    <option>丸山和郁</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
                     <option>塩見泰隆</option>
@@ -846,30 +647,12 @@
 
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
-
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -905,9 +688,9 @@
             <td>野</td>
             <td>
                 <select name="example9">
-                    <option value="">丸山和耶</option>
+                    <option value="">松本直樹</option>
                     <option>中村悠平</option>
-                    <option>松本直樹</option>
+                    <option>丸山和郁</option>
                     <option>内山壮真</option>
                     <option>オスナ</option>
                     <option>侍川端慎吾</option>
@@ -926,30 +709,13 @@
 
                 </select>
             </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="ミート能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="パワー能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="" placeholder="走力能力" id="name" name="name" required minlength="4"
-                    maxlength="8" size="10" />
-            </td>
-
-            <td><label for="name"></label>
-
-                <input type="text" value="4910" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4910"></td>
 
             <td>
-                <select name="example0303">
+                <select class="bonusSpirits">
                     <option value="">勝利の使者(スピ+30)
                     </option>
                     <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
@@ -983,14 +749,670 @@
         </tr>
 
     </table>
-    <form action="#" method="post">
-        <input type="checkbox" name="" value="">
-        <form>
-            ジグザクオーダー可能
-            <br>
-            <input class="styled" type="button" value="オーダー詳細を確認" />
 
-            </br>
+
+    <br><b>投手</b>
+    </br>
+    <table border="1">
+        <tr>
+            <th>ポジション</th>
+            <th>名前</th>
+            <th>球威</th>
+            <th>制球</th>
+            <th>スタミナ</th>
+            <th>スピリッツ</th>
+            <th>称号</th>
+            <th>b球種</th>
+        </tr>
+
+        <tr>
+            <td>先</td>
+            <td>
+                <select name="example2">
+                    <option value="">高橋圭二</option>
+                    <option>吉村貢司郎</option>
+                    <option>小川泰弘</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>TS石川雅規</option>
+                    <option>石川雅規</option>
+                    <option>由規</option>
+                    <option>伊藤智仁</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>先</td>
+            <td>
+                <select name="example3">
+                    <option value="">吉村貢司郎</option>
+                    <option>高橋圭二</option>
+                    <option>小川泰弘</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>TS石川雅規</option>
+                    <option>石川雅規</option>
+                    <option>由規</option>
+                    <option>伊藤智仁</option>
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>先</td>
+            <td>
+                <select name="example4">
+                    <option value="">小川泰弘</option>
+                    <option>高橋圭二</option>
+                    <option>吉村貢司郎</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>TS石川雅規</option>
+                    <option>石川雅規</option>
+                    <option>由規</option>
+                    <option>伊藤智仁</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>先</td>
+            <td>
+                <select name="example5">
+                    <option value="">TS石川雅規</option>
+                    <option>高橋圭二</option>
+                    <option>吉村貢司郎</option>
+                    <option>小川泰弘</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>石川雅規</option>
+                    <option>由規</option>
+                    <option>伊藤智仁</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+        <tr>
+            <td>先</td>
+            <td>
+                <select name="example6">
+                    <option value="">伊藤智仁</option>
+                    <option>高橋圭二</option>
+                    <option>吉村貢司郎</option>
+                    <option>小川泰弘</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>TS石川雅規</option>
+                    <option>石川雅規</option>
+                    <option>由規</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+        <tr>
+            <td>中</td>
+            <td>
+                <select name="example7">
+                    <option value="">石山泰稚</option>
+                    <option>田口麗人</option>
+                    <option>木澤尚文</option>
+                    <option>山本大貴</option>
+                    <option>大西広樹</option>
+                    <option>星知弥</option>
+                    <option>丸山翔太</option>
+                    <option>長谷川宙輝</option>
+                    <option>清水昇</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>中</td>
+            <td>
+                <select name="example8">
+                    <option value="">田口麗人</option>
+                    <option>石山泰稚</option>
+                    <option>木澤尚文</option>
+                    <option>山本大貴</option>
+                    <option>大西広樹</option>
+                    <option>星知弥</option>
+                    <option>丸山翔太</option>
+                    <option>長谷川宙輝</option>
+                    <option>清水昇</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>中</td>
+            <td>
+                <select name="example9">
+                    <option value="">大西広樹</option>
+                    <option>石山泰稚</option>
+                    <option>田口麗人</option>
+                    <option>山本大貴</option>
+                    <option>木澤尚文</option>
+                    <option>星知弥</option>
+                    <option>丸山翔太</option>
+                    <option>長谷川宙輝</option>
+                    <option>清水昇</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+        <tr>
+            <td>中</td>
+            <td>
+                <select name="example9">
+                    <option value="">山本大貴</option>
+                    <option>石山泰稚</option>
+                    <option>田口麗人</option>
+                    <option>木澤尚文</option>
+                    <option>大西広樹</option>
+                    <option>星知弥</option>
+                    <option>丸山翔太</option>
+                    <option>長谷川宙輝</option>
+                    <option>清水昇</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+
+        <tr>
+            <td>抑</td>
+            <td>
+                <select name="example9">
+                    <option value="">高津 臣吾</option>
+                    <option>小澤 怜司</option>
+                    <option>バウマン</option>
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+        <tr>
+            <td>べ</td>
+            <td>
+                <select name="example9">
+                    <option value="">由規</option>
+                    <option>高橋圭二</option>
+                    <option>吉村貢司郎</option>
+                    <option>小川泰弘</option>
+                    <option>アビラ</option>
+                    <option>ランバート</option>
+                    <option>TS石川雅規</option>
+                    <option>石川雅規</option>
+                    <option>伊藤智仁</option>
+
+
+                    <option>石山泰稚</option>
+                    <option>田口麗人</option>
+                    <option>木澤尚文</option>
+                    <option>山本大貴</option>
+                    <option>大西広樹</option>
+                    <option>星知弥</option>
+                    <option>丸山翔太</option>
+                    <option>長谷川宙輝</option>
+                    <option>清水昇</option>
+
+
+                    <option>高津臣吾</option>
+                    <option>小澤怜司</option>
+                    <option>バウマン</option>
+
+
+                </select>
+            </td>
+            <td><input type="number" value="70" placeholder="ミート能力"></td>
+            <td><input type="number" value="70" placeholder="パワー能力"></td>
+            <td><input type="number" value="70" placeholder="走力能力"></td>
+            <td><input type="number" class="spirits" value="4900"></td>
+
+            <td>
+                <select class="bonusSpirits">
+                    <option value="">勝利の使者(スピ+30)
+                    </option>
+                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option>超人(ミート+2,パワー+0,走力+1)</option>
+                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
+                    <option>強心臓(スピ+15)</option>
+
+
+
+                </select>
+            </td>
+            <td><input type="number" value="2"></td>
+        </tr>
+
+
+    </table>
+
+    <button onclick="calculateTotalSpirits()">スピリッツ合計を計算</button>
+    <p>合計スピリッツ: <span id="totalSpirits">0</span></p>
+
+    <script>
+        function calculateTotalSpirits() {
+            let sum = 0;
+
+            // 各選手のスピリッツを取得して合計
+            document.querySelectorAll(".spirits").forEach(input => {
+                sum += Number(input.value) || 0;
+            });
+
+            // 称号によるスピリッツボーナスを加算
+            document.querySelectorAll(".bonusSpirits").forEach(select => {
+                sum += Number(select.value) || 0;
+            });
+
+            document.getElementById("totalSpirits").textContent = sum;
+        }
+    </script>
+
 </body>
 
 </html>
