@@ -45,38 +45,41 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="67" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -89,42 +92,48 @@
             <td>
                 <select name="example3">
                     <option value="">オスナ</option>
+                    <option>侍川端慎吾</option>
+                    <option>川端慎吾</option>
                     <option>赤羽由紘</option>
                     <option>宮本丈</option>
-                    <option>川端慎吾</option>
+
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
+            <td><input type="number" class="ability" value="72" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="54" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -144,37 +153,41 @@
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
+            <td><input type="number" class="ability" value="81" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="83" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="82" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4810" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -186,44 +199,48 @@
             <td>遊</td>
             <td>
                 <select name="example5">
-                    <option value="">池山隆寛</option>
+                    <option value="">TS池山隆寛</option>
                     <option>長岡秀樹</option>
                     <option>茂木栄五郎</option>
+                    <option>侍川端慎吾</option>
                     <option>赤羽由紘</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -236,42 +253,47 @@
                 <select name="example6">
                     <option value="">茂木栄五郎</option>
                     <option>村上宗隆</option>
+                    <option>侍川端慎吾</option>
                     <option>赤羽由紘</option>
                     <option>武岡龍世</option>
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
+            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -289,37 +311,41 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
+            <td><input type="number" class="ability" value="82" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -331,7 +357,8 @@
             <td>中</td>
             <td>
                 <select name="example8">
-                    <option value="">塩見泰隆</option>
+                    <option value="">TS塩見泰隆</option>
+                    <option>塩見泰隆</option>
                     <option>西川遥輝</option>
                     <option>赤羽由紘</option>
                     <option>並木秀隆</option>
@@ -339,38 +366,41 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -391,38 +421,41 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="79" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="76" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -434,7 +467,7 @@
             <td>指</td>
             <td>
                 <select name="example9">
-                    <option value="">サンタナ</option>
+                    <option value="">村上宗隆</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -442,14 +475,15 @@
                     <option>侍川端慎吾</option>
                     <option>川端慎吾</option>
                     <option>侍山田哲人</option>
-                    <option>村上宗隆</option>
+                    <option>サンタナ</option>
                     <option>長岡秀樹</option>
-                    <option>池山隆寛</option>
+                    <option>TS池山隆寛</option>
                     <option>雄平</option>
                     <option>丸山和郁</option>
                     <option>西川遥輝</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
+                    <option>TS塩見泰隆</option>
                     <option>塩見泰隆</option>
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
@@ -457,38 +491,41 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="84" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -500,7 +537,7 @@
             <td>野</td>
             <td>
                 <select name="example9">
-                    <option value="">村上宗隆</option>
+                    <option value="">宮本丈</option>
                     <option>中村悠平</option>
                     <option>松本直樹</option>
                     <option>内山壮真</option>
@@ -510,49 +547,53 @@
                     <option>侍山田哲人</option>
                     <option>丸山和郁</option>
                     <option>長岡秀樹</option>
-                    <option>池山隆寛</option>
+                    <option>TS池山隆寛</option>
                     <option>サンタナ</option>
                     <option>西川遥輝</option>
                     <option>岩田幸宏</option>
-                    <option>宮本丈</option>
+                    <option>村上宗隆</option>
+                    <option>TS塩見泰隆</option>
                     <option>塩見泰隆</option>
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="67" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -573,49 +614,53 @@
                     <option>侍山田哲人</option>
                     <option>村上宗隆</option>
                     <option>長岡秀樹</option>
-                    <option>池山隆寛</option>
+                    <option>TS池山隆寛</option>
                     <option>サンタナ</option>
                     <option>西川遥輝</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
+                    <option>TS塩見泰隆</option>
                     <option>塩見泰隆</option>
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="83" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -636,48 +681,53 @@
                     <option>侍山田哲人</option>
                     <option>村上宗隆</option>
                     <option>長岡秀樹</option>
-                    <option>池山隆寛</option>
+                    <option>TS池山隆寛</option>
                     <option>サンタナ</option>
                     <option>丸山和郁</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
+                    <option>TS塩見泰隆</option>
                     <option>塩見泰隆</option>
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
+            <td><input type="number" class="ability" value="70" 70oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="85" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -698,49 +748,53 @@
                     <option>侍山田哲人</option>
                     <option>村上宗隆</option>
                     <option>長岡秀樹</option>
-                    <option>池山隆寛</option>
+                    <option>TS池山隆寛</option>
                     <option>サンタナ</option>
                     <option>西川遥輝</option>
                     <option>岩田幸宏</option>
                     <option>宮本丈</option>
+                    <option>TS塩見泰隆</option>
                     <option>塩見泰隆</option>
                     <option>茂木栄五郎</option>
                     <option>増田珠</option>
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4910"></td>
-
+            <td><input type="number" class="ability" value="66" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="63" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
+                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
+                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
+                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
+                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
+                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
+                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
+                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
+                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
+                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
+                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
+                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
+                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
+                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
+                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
+                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
+                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
+                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
+                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
+                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
+                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
+                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+
+
+
+
 
 
 
@@ -781,38 +835,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -836,37 +890,38 @@
                     <option>伊藤智仁</option>
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -891,38 +946,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -947,38 +1002,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1002,37 +1057,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1056,37 +1112,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1111,38 +1168,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1167,38 +1224,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1225,38 +1282,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1276,39 +1333,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1349,38 +1405,38 @@
 
                 </select>
             </td>
-            <td><input type="number" value="70" placeholder="ミート能力"></td>
-            <td><input type="number" value="70" placeholder="パワー能力"></td>
-            <td><input type="number" value="70" placeholder="走力能力"></td>
-            <td><input type="number" class="spirits" value="4900"></td>
-
+            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
+            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
             <td>
-                <select class="bonusSpirits">
-                    <option value="">勝利の使者(スピ+30)
-                    </option>
-                    <option>安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option>打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option>バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option>電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option>脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option>好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option>超人(ミート+2,パワー+0,走力+1)</option>
-                    <option>稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option>スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option>飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option>怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option>圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option>圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option>コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option>ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option>切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option>ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option>強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option>ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option>パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option>大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option>打撃職人(ミート+2,パワ-1,走力+0)</option>
-                    <option>強心臓(スピ+15)</option>
+                <select class="bonusSpirits" onchange="updateStats(this)">
+                    <option value="0,0,0,0,0">なし</option>
+                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
+                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
+                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
+                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
+                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
+                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
+                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
+                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
+                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
+                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
+                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
+                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
+                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
+                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
+                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
+                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
+                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
+                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
+                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
+                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
+                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
+                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
+                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
+                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
+
 
 
 
@@ -1396,21 +1452,60 @@
     <p>合計スピリッツ: <span id="totalSpirits">0</span></p>
 
     <script>
+        function updateStats(selectElement) {
+            let row = selectElement.closest("tr");
+            let [mBonus, pBonus, rBonus, sBonus, type] = selectElement.value.split(",").map(Number);
+
+            let mInput = row.children[2].querySelector("input");
+            let pInput = row.children[3].querySelector("input");
+            let rInput = row.children[4].querySelector("input");
+            let sInput = row.children[5].querySelector("input");
+
+            let baseM = Number(mInput.getAttribute("data-base")) || Number(mInput.value);
+            let baseP = Number(pInput.getAttribute("data-base")) || Number(pInput.value);
+            let baseR = Number(rInput.getAttribute("data-base")) || Number(rInput.value);
+            let baseS = Number(sInput.getAttribute("data-base")) || Number(sInput.value);
+
+            if (type === 0) { // 能力変化する称号
+                mInput.value = baseM + mBonus;
+                pInput.value = baseP + pBonus;
+                rInput.value = baseR + rBonus;
+                sInput.value = baseS;
+            } else { // スピリッツ変化する称号
+                mInput.value = baseM;
+                pInput.value = baseP;
+                rInput.value = baseR;
+                sInput.value = baseS + sBonus;
+            }
+
+            calculateTotalSpirits();
+        }
+
+        function updateBaseStats(inputElement) {
+            inputElement.setAttribute("data-base", inputElement.value);
+            let row = inputElement.closest("tr");
+            let selectElement = row.querySelector(".bonusSpirits");
+            updateStats(selectElement);
+        }
+
+        function updateBaseSpirits(inputElement) {
+            inputElement.setAttribute("data-base", inputElement.value);
+            let row = inputElement.closest("tr");
+            let selectElement = row.querySelector(".bonusSpirits");
+            updateStats(selectElement);
+        }
+
         function calculateTotalSpirits() {
             let sum = 0;
-
-            // 各選手のスピリッツを取得して合計
             document.querySelectorAll(".spirits").forEach(input => {
                 sum += Number(input.value) || 0;
             });
-
-            // 称号によるスピリッツボーナスを加算
-            document.querySelectorAll(".bonusSpirits").forEach(select => {
-                sum += Number(select.value) || 0;
-            });
-
             document.getElementById("totalSpirits").textContent = sum;
         }
+
+        document.querySelectorAll(".ability, .spirits").forEach(input => {
+            input.setAttribute("data-base", input.value);
+        });
     </script>
 
 </body>
