@@ -15,6 +15,14 @@
         button {
             margin-top: 10px;
         }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .white {
+            background-color: white;
+        }
     </style>
 </head>
 
@@ -22,7 +30,7 @@
     <center>
         <font size="10" color="red">プロスピA攻略（ヤクルト純正）</font>　
     </center>
-    <br><b>野手</b>
+    <br><b>野手</b> (数字は自由に入力可能です)
     </br>
     <table border="1">
         <tr>
@@ -45,12 +53,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="67" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="67" value="67"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="64" value="64"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -99,12 +107,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="72" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="54" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="72" value="72"></td>
+            <td><input type="number" class="stat" data-base="77" value="77"></td>
+            <td><input type="number" class="stat" data-base="54" value="54"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -153,12 +161,12 @@
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="81" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="83" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="82" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4810" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="81" value="82"></td>
+            <td><input type="number" class="stat" data-base="83" value="83"></td>
+            <td><input type="number" class="stat" data-base="82" value="81"></td>
+            <td><input type="number" class="spirits" data-base="4810" value="4810"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -206,12 +214,12 @@
                     <option>赤羽由紘</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="73" value="73"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -259,12 +267,12 @@
                     <option>宮本丈</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="73" value="73"></td>
+            <td><input type="number" class="stat" data-base="73" value="73"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -311,12 +319,12 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="82" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="82" value="82"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="64" value="64"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -366,12 +374,12 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="80" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="76" value="76"></td>
+            <td><input type="number" class="stat" data-base="83" value="83"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -421,12 +429,12 @@
                     <option>内山壮真</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="79" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="76" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="79" value="79"></td>
+            <td><input type="number" class="stat" data-base="76" value="76"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -491,12 +499,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="84" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="73" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="77" value="77"></td>
+            <td><input type="number" class="stat" data-base="84" value="84"></td>
+            <td><input type="number" class="stat" data-base="73" value="73"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -559,12 +567,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="67" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="67" value="67"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="70" value="70"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -626,12 +634,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="83" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="83" value="83"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -693,12 +701,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="70" 70oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="65" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="85" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="70" value="70"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="85" value="85"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -760,12 +768,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="66" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="64" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="63" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4910" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="64" value="64"></td>
+            <td><input type="number" class="stat" data-base="63" value="63"></td>
+            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -835,12 +843,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="77" value="77"></td>
+            <td><input type="number" class="stat" data-base="70" value="70"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -890,12 +898,12 @@
                     <option>伊藤智仁</option>
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="76" value="76"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -946,12 +954,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="72" value="72"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="78" value="78"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1002,12 +1010,13 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="83" value="83"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1057,12 +1066,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="81" value="81"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="81" value="81"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1112,12 +1121,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="73" value="73"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1168,12 +1177,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="77" value="77"></td>
+            <td><input type="number" class="stat" data-base="75" value="75"></td>
+            <td><input type="number" class="stat" data-base="70" value="70"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1224,12 +1233,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="76" value="76"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="69" value="69"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1282,12 +1291,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="77" value="77"></td>
+            <td><input type="number" class="stat" data-base="70" value="70"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1333,12 +1342,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="82" value="82"></td>
+            <td><input type="number" class="stat" data-base="80" value="80"></td>
+            <td><input type="number" class="stat" data-base="63" value="63"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1405,12 +1414,12 @@
 
                 </select>
             </td>
-            <td><input type="number" class="ability" value="77" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="70" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="ability" value="75" oninput="updateBaseStats(this)"></td>
-            <td><input type="number" class="spirits" value="4900" oninput="updateBaseSpirits(this)"></td>
+            <td><input type="number" class="stat" data-base="79" value="79"></td>
+            <td><input type="number" class="stat" data-base="65" value="65"></td>
+            <td><input type="number" class="stat" data-base="82" value="82"></td>
+            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
             <td>
-                <select class="bonusSpirits" onchange="updateStats(this)">
+                <select class="bonusSelect">
                     <option value="0,0,0,0,0">なし</option>
                     <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
                     <option value="0,0,0,15,1">強心臓(スピ+15)</option>
@@ -1449,64 +1458,71 @@
     </table>
 
     <button onclick="calculateTotalSpirits()">スピリッツ合計を計算</button>
-    <p>合計スピリッツ: <span id="totalSpirits">0</span></p>
+    <p>合計スピリッツ: <span id="totalSpirits">0</span></h2>
 
-    <script>
-        function updateStats(selectElement) {
-            let row = selectElement.closest("tr");
-            let [mBonus, pBonus, rBonus, sBonus, type] = selectElement.value.split(",").map(Number);
+        <script>
+            function updateStats(selectElement) {
+                let row = selectElement.closest("tr");
+                let [stat1Bonus, stat2Bonus, stat3Bonus, spBonus] = selectElement.value.split(",").map(Number);
 
-            let mInput = row.children[2].querySelector("input");
-            let pInput = row.children[3].querySelector("input");
-            let rInput = row.children[4].querySelector("input");
-            let sInput = row.children[5].querySelector("input");
+                // 各能力値の入力フィールドを取得
+                let statInputs = row.querySelectorAll(".stat");
+                let spInput = row.querySelector(".spirits");
 
-            let baseM = Number(mInput.getAttribute("data-base")) || Number(mInput.value);
-            let baseP = Number(pInput.getAttribute("data-base")) || Number(pInput.value);
-            let baseR = Number(rInput.getAttribute("data-base")) || Number(rInput.value);
-            let baseS = Number(sInput.getAttribute("data-base")) || Number(sInput.value);
+                // **基準値から計算**
+                let baseStats = Array.from(statInputs).map(input => Number(input.getAttribute("data-base")));
+                let baseSp = Number(spInput.getAttribute("data-base"));
 
-            if (type === 0) { // 能力変化する称号
-                mInput.value = baseM + mBonus;
-                pInput.value = baseP + pBonus;
-                rInput.value = baseR + rBonus;
-                sInput.value = baseS;
-            } else { // スピリッツ変化する称号
-                mInput.value = baseM;
-                pInput.value = baseP;
-                rInput.value = baseR;
-                sInput.value = baseS + sBonus;
+                // 能力値の変更
+                statInputs.forEach((input, index) => {
+                    input.value = baseStats[index] + [stat1Bonus, stat2Bonus, stat3Bonus][index];
+                    applyColor(input);
+                });
+
+                // スピリッツの変更
+                spInput.value = baseSp + spBonus;
+                applyColor(spInput);
+
+                // **スピリッツ合計を更新**
+                calculateTotalSpirits();
             }
 
-            calculateTotalSpirits();
-        }
+            function applyColor(input) {
+                let value = Number(input.value);
+                input.classList.remove("pink", "white");
 
-        function updateBaseStats(inputElement) {
-            inputElement.setAttribute("data-base", inputElement.value);
-            let row = inputElement.closest("tr");
-            let selectElement = row.querySelector(".bonusSpirits");
-            updateStats(selectElement);
-        }
+                if (value >= 90) {
+                    input.classList.add("white");
+                } else if (value >= 80) {
+                    input.classList.add("pink");
+                }
+            }
 
-        function updateBaseSpirits(inputElement) {
-            inputElement.setAttribute("data-base", inputElement.value);
-            let row = inputElement.closest("tr");
-            let selectElement = row.querySelector(".bonusSpirits");
-            updateStats(selectElement);
-        }
+            function calculateTotalSpirits() {
+                let sum = 0;
+                document.querySelectorAll(".spirits").forEach(input => {
+                    sum += Number(input.value) || 0;
+                });
+                document.getElementById("totalSpirits").textContent = sum;
+            }
 
-        function calculateTotalSpirits() {
-            let sum = 0;
-            document.querySelectorAll(".spirits").forEach(input => {
-                sum += Number(input.value) || 0;
+            document.addEventListener("DOMContentLoaded", function () {
+                // **全ての行の称号変更を監視**
+                document.querySelectorAll(".bonusSelect").forEach(select => {
+                    select.addEventListener("change", function () {
+                        updateStats(select);
+                    });
+                });
+
+                // **ページ読み込み時に applyColor を適用**
+                document.querySelectorAll(".stat, .spirits").forEach(input => {
+                    applyColor(input);
+                });
+
+                // **初回スピリッツ合計計算**
+                calculateTotalSpirits();
             });
-            document.getElementById("totalSpirits").textContent = sum;
-        }
-
-        document.querySelectorAll(".ability, .spirits").forEach(input => {
-            input.setAttribute("data-base", input.value);
-        });
-    </script>
+        </script>
 
 </body>
 
