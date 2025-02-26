@@ -1512,6 +1512,44 @@
             const playerSelects = document.querySelectorAll(".player");
             const positionSelects = document.querySelectorAll(".position");
 
+            // 🟢 localStorage からデータを復元する関数
+            function loadSelections() {
+                let savedPlayers = JSON.parse(localStorage.getItem("selectedPlayers")) || {};
+                let savedPositions = JSON.parse(localStorage.getItem("selectedPositions")) || {};
+
+                playerSelects.forEach((select, index) => {
+                    if (savedPlayers[index]) {
+                        select.value = savedPlayers[index];
+                    }
+                });
+
+                positionSelects.forEach((select, index) => {
+                    if (savedPositions[index]) {
+                        select.value = savedPositions[index];
+                    }
+                });
+
+                updateSelectableOptions();
+            }
+
+            // 🟢 現在の選択状態を localStorage に保存する関数
+            function saveSelections() {
+                let selectedPlayers = {};
+                let selectedPositions = {};
+
+                playerSelects.forEach((select, index) => {
+                    selectedPlayers[index] = select.value;
+                });
+
+                positionSelects.forEach((select, index) => {
+                    selectedPositions[index] = select.value;
+                });
+
+                localStorage.setItem("selectedPlayers", JSON.stringify(selectedPlayers));
+                localStorage.setItem("selectedPositions", JSON.stringify(selectedPositions));
+            }
+
+            // 🟢 選択可能なオプションを更新する関数
             function updateSelectableOptions() {
                 let selectedNames = new Set();
                 let selectedPositions = new Set();
@@ -1557,21 +1595,25 @@
                 });
             }
 
-            // 選手・ポジションが選択されたら更新処理を実行
+            // 🟢 選手・ポジションが選択されたら保存 & 更新処理を実行
             playerSelects.forEach(select => {
-                select.addEventListener("change", updateSelectableOptions);
+                select.addEventListener("change", () => {
+                    saveSelections();
+                    updateSelectableOptions();
+                });
             });
 
             positionSelects.forEach(select => {
-                select.addEventListener("change", updateSelectableOptions);
+                select.addEventListener("change", () => {
+                    saveSelections();
+                    updateSelectableOptions();
+                });
             });
 
-            // 初期化時にも実行
-            updateSelectableOptions();
+            // 🟢 初期化時にデータを復元
+            loadSelections();
         });
     </script>
-
-
 </body>
 
 </html>
