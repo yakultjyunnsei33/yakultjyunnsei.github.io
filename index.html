@@ -4,1525 +4,1614 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロスピA攻略（ヤクルト純正）</title>
+    <title>選手データ管理</title>
     <style>
-        input {
-            width: 100px;
-            margin: 5px;
-            text-align: center;
-        }
-
-        button {
-            margin-top: 10px;
-        }
-
-        .pink {
+        .highlight-pink {
             background-color: pink;
         }
 
-        .white {
+        .highlight-white {
             background-color: white;
         }
     </style>
 </head>
 
 <body>
-    <center>
-        <font size="10" color="red">プロスピA攻略（ヤクルト純正）</font>　
-    </center>
-    <br><b>野手</b> (数字は自由に入力可能です)
-    </br>
+
+    <h2>選手データ管理</h2>
     <table border="1">
-        <tr>
-            <th>ポジション</th>
-            <th>名前</th>
-            <th>ミート</th>
-            <th>パワー</th>
-            <th>走力</th>
-            <th>スピリッツ</th>
-            <th>称号</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>ポジション</th>
+                <th>名前</th>
+                <th>ミート/球威</th>
+                <th>パワー/制球</th>
+                <th>走力/スタミナ</th>
+                <th>称号</th>
+                <th>スピリッツ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select class="position">
+                        <option value="">ポジションを選択</option>
+                        <option>捕</option>
+                        <option>一</option>
+                        <option>二</option>
+                        <option>三</option>
+                        <option>遊</option>
+                        <option>左</option>
+                        <option>中</option>
+                        <option>右</option>
+                        <option>指</option>
+                        <option>野</option>
+
+
+
+                    </select>
+                </td>
+                <td>
+                    <select class="player">
+                        <option value="">野手を選択</option>
+                        <option value="中村悠平">中村悠平(野手)</option>
+                        <option value="松本直樹">松本直樹(野手)</option>
+                        <option value="内山壮真">内山壮真(野手)</option>
+                        <option value="オスナ">オスナ(野手)</option>
+                        <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                        <option value="川端慎吾">川端慎吾(野手)</option>
+                        <option value="侍山田哲人">侍山田哲人(野手)</option>
+                        <option value="山田哲人">山田哲人(野手)</option>
+                        <option value="村上宗隆">村上宗隆(野手)</option>
+                        <option value="長岡秀樹">長岡秀樹(野手)</option>
+                        <option value="池山隆寛">池山隆寛(野手)</option>
+                        <option value="サンタナ">サンタナ(野手)</option>
+                        <option value="西川遥輝">西川遥輝(野手)</option>
+                        <option value="雄平">雄平(野手)</option>
+                        <option value="丸山和郁">丸山和郁(野手)</option>
+                        <option value="岩田幸宏">岩田幸宏(野手)</option>
+                        <option value="宮本丈">宮本丈(野手)</option>
+                        <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                        <option value="塩見泰隆">塩見泰隆(野手)</option>
+                        <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                        <option value="増田珠">増田珠(野手)</option>
+
+                    </select>
+                </td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td>
+                    <select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select>
+                </td>
+                <td class="spirits" data-base="0">0</td>
+            </tr>
+        </tbody>
 
         <tr>
-            <td>捕</td>
             <td>
-                <select name="example2">
-                    <option value="">中村悠平 </option>
-                    <option>松本直樹</option>
-                    <option>内山壮真</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="67" value="67"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="64" value="64"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>一</td>
             <td>
-                <select name="example3">
-                    <option value="">オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>赤羽由紘</option>
-                    <option>宮本丈</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="72" value="72"></td>
-            <td><input type="number" class="stat" data-base="77" value="77"></td>
-            <td><input type="number" class="stat" data-base="54" value="54"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>二</td>
             <td>
-                <select name="example4">
-                    <option value="">侍山田哲人</option>
-                    <option>山田哲人</option>
-                    <option>茂木栄五郎</option>
-                    <option>赤羽由紘</option>
-                    <option>武岡龍世</option>
-                    <option>宮本丈</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
+
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="81" value="82"></td>
-            <td><input type="number" class="stat" data-base="83" value="83"></td>
-            <td><input type="number" class="stat" data-base="82" value="81"></td>
-            <td><input type="number" class="spirits" data-base="4810" value="4810"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>遊</td>
             <td>
-                <select name="example5">
-                    <option value="">TS池山隆寛</option>
-                    <option>長岡秀樹</option>
-                    <option>茂木栄五郎</option>
-                    <option>侍川端慎吾</option>
-                    <option>赤羽由紘</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
+
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="73" value="73"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
-        <tr>
-            <td>三</td>
-            <td>
-                <select name="example6">
-                    <option value="">茂木栄五郎</option>
-                    <option>村上宗隆</option>
-                    <option>侍川端慎吾</option>
-                    <option>赤羽由紘</option>
-                    <option>武岡龍世</option>
-                    <option>宮本丈</option>
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="73" value="73"></td>
-            <td><input type="number" class="stat" data-base="73" value="73"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>左</td>
-            <td>
-                <select name="example7">
-                    <option value="">サンタナ</option>
-                    <option>赤羽由紘</option>
-                    <option>並木秀隆</option>
-                    <option>澤井廉</option>
-                    <option>内山壮真</option>
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="82" value="82"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="64" value="64"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
-                </select>
-            </td>
-        </tr>
+        </tbody>
 
         <tr>
-            <td>中</td>
             <td>
-                <select name="example8">
-                    <option value="">TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>西川遥輝</option>
-                    <option>赤羽由紘</option>
-                    <option>並木秀隆</option>
-                    <option>岩田幸宏</option>
-                    <option>内山壮真</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
+
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="76" value="76"></td>
-            <td><input type="number" class="stat" data-base="83" value="83"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>右</td>
             <td>
-                <select name="example9">
-                    <option value="">雄平</option>
-                    <option>丸山和郁</option>
-                    <option>赤羽由紘</option>
-                    <option>サンタナ</option>
-                    <option>増田珠</option>
-                    <option>宮本丈</option>
-                    <option>内山壮真</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
+
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="79" value="79"></td>
-            <td><input type="number" class="stat" data-base="76" value="76"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>指</td>
             <td>
-                <select name="example9">
-                    <option value="">村上宗隆</option>
-                    <option>中村悠平</option>
-                    <option>松本直樹</option>
-                    <option>内山壮真</option>
-                    <option>オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>侍山田哲人</option>
-                    <option>サンタナ</option>
-                    <option>長岡秀樹</option>
-                    <option>TS池山隆寛</option>
-                    <option>雄平</option>
-                    <option>丸山和郁</option>
-                    <option>西川遥輝</option>
-                    <option>岩田幸宏</option>
-                    <option>宮本丈</option>
-                    <option>TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>茂木栄五郎</option>
-                    <option>増田珠</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
 
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="77" value="77"></td>
-            <td><input type="number" class="stat" data-base="84" value="84"></td>
-            <td><input type="number" class="stat" data-base="73" value="73"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
 
         <tr>
-            <td>野</td>
             <td>
-                <select name="example9">
-                    <option value="">宮本丈</option>
-                    <option>中村悠平</option>
-                    <option>松本直樹</option>
-                    <option>内山壮真</option>
-                    <option>オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>侍山田哲人</option>
-                    <option>丸山和郁</option>
-                    <option>長岡秀樹</option>
-                    <option>TS池山隆寛</option>
-                    <option>サンタナ</option>
-                    <option>西川遥輝</option>
-                    <option>岩田幸宏</option>
-                    <option>村上宗隆</option>
-                    <option>TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>茂木栄五郎</option>
-                    <option>増田珠</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="67" value="67"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="70" value="70"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
+
         <tr>
-            <td>野</td>
             <td>
-                <select name="example9">
-                    <option value="">丸山和郁</option>
-                    <option>中村悠平</option>
-                    <option>松本直樹</option>
-                    <option>内山壮真</option>
-                    <option>オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>侍山田哲人</option>
-                    <option>村上宗隆</option>
-                    <option>長岡秀樹</option>
-                    <option>TS池山隆寛</option>
-                    <option>サンタナ</option>
-                    <option>西川遥輝</option>
-                    <option>岩田幸宏</option>
-                    <option>宮本丈</option>
-                    <option>TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>茂木栄五郎</option>
-                    <option>増田珠</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="83" value="83"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
+
         <tr>
-            <td>野</td>
             <td>
-                <select name="example9">
-                    <option value="">西川遥輝</option>
-                    <option>中村悠平</option>
-                    <option>松本直樹</option>
-                    <option>内山壮真</option>
-                    <option>オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>侍山田哲人</option>
-                    <option>村上宗隆</option>
-                    <option>長岡秀樹</option>
-                    <option>TS池山隆寛</option>
-                    <option>サンタナ</option>
-                    <option>丸山和郁</option>
-                    <option>岩田幸宏</option>
-                    <option>宮本丈</option>
-                    <option>TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>茂木栄五郎</option>
-                    <option>増田珠</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="70" value="70"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="85" value="85"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
-
-
-
-
-
-
-
                 </select>
             </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
+
         <tr>
-            <td>野</td>
             <td>
-                <select name="example9">
-                    <option value="">松本直樹</option>
-                    <option>中村悠平</option>
-                    <option>丸山和郁</option>
-                    <option>内山壮真</option>
-                    <option>オスナ</option>
-                    <option>侍川端慎吾</option>
-                    <option>川端慎吾</option>
-                    <option>侍山田哲人</option>
-                    <option>村上宗隆</option>
-                    <option>長岡秀樹</option>
-                    <option>TS池山隆寛</option>
-                    <option>サンタナ</option>
-                    <option>西川遥輝</option>
-                    <option>岩田幸宏</option>
-                    <option>宮本丈</option>
-                    <option>TS塩見泰隆</option>
-                    <option>塩見泰隆</option>
-                    <option>茂木栄五郎</option>
-                    <option>増田珠</option>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
+
 
                 </select>
             </td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="64" value="64"></td>
-            <td><input type="number" class="stat" data-base="63" value="63"></td>
-            <td><input type="number" class="spirits" data-base="4910" value="4910"></td>
             <td>
-                <select class="bonusSelect">
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
                     <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">安打製造機(ミート+3,パワー+1,走力+0)</option>
-                    <option value="2,1,1,0,0">打撃を極めし者(ミート+2,パワー+1,走力+1)</option>
-                    <option value="1,3,0,0,0">バズーカー(ミート+1,パワー+3,走力+0)</option>
-                    <option value="2,0,2,0,0">電光石火(ミート+2,パワー+0,走力+2)</option>
-                    <option value="2,2,0,0,0">脅威のスラッガー(ミート+2,パワー+2,走力+0)</option>
-                    <option value="3,0,0,0,0">好球必打(ミート+3,パワー+0,走力+0)</option>
-                    <option value="2,0,1,0,0">超人(ミート+2,パワー+0,走力+1)</option>
-                    <option value="0,2,1,0,0">稲妻(ミート+0,パワー+2,走力+1)</option>
-                    <option value="2,1,0,0,0">スナイパー(ミート+2,パワー+1,走力+0)</option>
-                    <option value="1,2,0,0,0">飛ばし屋(ミート+1,パワー+2,走力+0)</option>
-                    <option value="0,3,0,0,0">怪力無双(ミート+0,パワー+3,走力+0)</option>
-                    <option value="2,0,0,0,0">圧倒的ミート(ミート+2,パワー+0,走力+0)</option>
-                    <option value="0,2,0,0,0">圧倒的パワー(ミート+0,パワー+2,走力+0)</option>
-                    <option value="3,-1,0,0,0">コンタクトヒッター(ミート+3,パワー-1,走力+0)</option>
-                    <option value="-1,3,0,0,0">ミスターフルスイング(ミート-1,パワー+3,走力+0)</option>
-                    <option value="1,0,1,0,0">切り込み隊長(ミート+1,パワー+0,走力+1)</option>
-                    <option value="0,1,1,0,0">ラン＆ガン(ミート+0,パワー+1,走力+1)</option>
-                    <option value="1,1,0,0,0">強打者(ミート+1,パワー+1,走力+0)</option>
-                    <option value="1,0,0,0,0">ミート自慢(ミート+1,パワー+0,走力+0)</option>
-                    <option value="0,1,0,0,0">パワー自慢(ミート+0,パワー+1,走力+0)</option>
-                    <option value="0,1,0,0,0">大砲(ミート+0,パワー+1,走力+0)</option>
-                    <option value="2,-1,0,0,0">打撃職人(ミート+2,パワー-1,走力+0)</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
 
 
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>捕</option>
+                    <option>一</option>
+                    <option>二</option>
+                    <option>三</option>
+                    <option>遊</option>
+                    <option>左</option>
+                    <option>中</option>
+                    <option>右</option>
+                    <option>指</option>
+                    <option>野</option>
 
 
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">野手を選択</option>
+                    <option value="中村悠平">中村悠平(野手)</option>
+                    <option value="松本直樹">松本直樹(野手)</option>
+                    <option value="内山壮真">内山壮真(野手)</option>
+                    <option value="オスナ">オスナ(野手)</option>
+                    <option value="侍川端慎吾">侍川端慎吾(野手)</option>
+                    <option value="川端慎吾">川端慎吾(野手)</option>
+                    <option value="侍山田哲人">侍山田哲人(野手)</option>
+                    <option value="山田哲人">山田哲人(野手)</option>
+                    <option value="村上宗隆">村上宗隆(野手)</option>
+                    <option value="長岡秀樹">長岡秀樹(野手)</option>
+                    <option value="池山隆寛">池山隆寛(野手)</option>
+                    <option value="サンタナ">サンタナ(野手)</option>
+                    <option value="西川遥輝">西川遥輝(野手)</option>
+                    <option value="雄平">雄平(野手)</option>
+                    <option value="丸山和郁">丸山和郁(野手)</option>
+                    <option value="岩田幸宏">岩田幸宏(野手)</option>
+                    <option value="宮本丈">宮本丈(野手)</option>
+                    <option value="TS塩見泰隆">TS塩見泰隆(野手)</option>
+                    <option value="塩見泰隆">塩見泰隆(野手)</option>
+                    <option value="茂木栄五郎">茂木栄五郎(野手)</option>
+                    <option value="増田珠">増田珠(野手)</option>
+                    >
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
 
 
 
                 </select>
             </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
         </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td>
+                <select class="position">
+                    <option value="">ポジションを選択</option>
+                    <option>先</option>
+                    <option>継</option>
+                    <option>抑</option>
+                    <option>ベ</option>
+
+                </select>
+            </td>
+            <td>
+                <select class="player">
+                    <option value="">投手を選択</option>
+                    <option value="高橋圭二">高橋圭二(投手)</option>
+                    <option value="吉村貢司郎">吉村貢司郎(投手)</option>
+                    <option value="小川泰弘">小川泰弘(投手)</option>
+                    <option value="アビラ">アビラ(投手)</option>
+                    <option value="ランバート">ランバート(投手)</option>
+                    <option value="TS石川雅規">TS石川雅規(投手)</option>
+                    <option value="石川雅規">石川雅規(投手)</option>
+                    <option value="由規">由規(投手)</option>
+                    <option value="伊藤智仁">伊藤智仁(投手)</option>
+
+                    <option value="石山泰稚">石山泰稚(投手)</option>
+                    <option value="田口麗人">田口麗人(投手)</option>
+                    <option value="木澤尚文">木澤尚文(投手)</option>
+                    <option value="山本大貴">山本大貴(投手)</option>
+                    <option value="大西広樹">大西広樹(投手)</option>
+                    <option value="星知弥">星知弥(投手)</option>
+                    <option value="丸山翔太">丸山翔太(投手)</option>
+                    <option value="長谷川宙輝">長谷川宙輝(投手)</option>
+                    <option value="清水昇">清水昇(投手)</option>
+
+                    <option value="高津臣吾">高津臣吾(投手)</option>
+                    <option value="小澤怜司">小澤怜司(投手)</option>
+                    <option value="バウマン">バウマン(投手)</option>
+
+                </select>
+            </td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td class="stat" data-base="0"></td>
+            <td>
+                <select class="title">
+                    <option value="0,0,0,0,0">なし</option>
+                </select>
+            </td>
+            <td class="spirits" data-base="0">0</td>
+        </tr>
+        </tbody>
 
     </table>
-
-
-    <br><b>投手</b>
-    </br>
-    <table border="1">
-        <tr>
-            <th>ポジション</th>
-            <th>名前</th>
-            <th>球威</th>
-            <th>制球</th>
-            <th>スタミナ</th>
-            <th>スピリッツ</th>
-            <th>称号</th>
-            <th>b球種</th>
-        </tr>
-
-        <tr>
-            <td>先</td>
-            <td>
-                <select name="example2">
-                    <option value="">高橋圭二</option>
-                    <option>吉村貢司郎</option>
-                    <option>小川泰弘</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>TS石川雅規</option>
-                    <option>石川雅規</option>
-                    <option>由規</option>
-                    <option>伊藤智仁</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="77" value="77"></td>
-            <td><input type="number" class="stat" data-base="70" value="70"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>先</td>
-            <td>
-                <select name="example3">
-                    <option value="">吉村貢司郎</option>
-                    <option>高橋圭二</option>
-                    <option>小川泰弘</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>TS石川雅規</option>
-                    <option>石川雅規</option>
-                    <option>由規</option>
-                    <option>伊藤智仁</option>
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="76" value="76"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>先</td>
-            <td>
-                <select name="example4">
-                    <option value="">小川泰弘</option>
-                    <option>高橋圭二</option>
-                    <option>吉村貢司郎</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>TS石川雅規</option>
-                    <option>石川雅規</option>
-                    <option>由規</option>
-                    <option>伊藤智仁</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="72" value="72"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="78" value="78"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>先</td>
-            <td>
-                <select name="example5">
-                    <option value="">TS石川雅規</option>
-                    <option>高橋圭二</option>
-                    <option>吉村貢司郎</option>
-                    <option>小川泰弘</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>石川雅規</option>
-                    <option>由規</option>
-                    <option>伊藤智仁</option>
-
-                </select>
-            </td>
-
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="83" value="83"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-        <tr>
-            <td>先</td>
-            <td>
-                <select name="example6">
-                    <option value="">伊藤智仁</option>
-                    <option>高橋圭二</option>
-                    <option>吉村貢司郎</option>
-                    <option>小川泰弘</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>TS石川雅規</option>
-                    <option>石川雅規</option>
-                    <option>由規</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="81" value="81"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="81" value="81"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-        <tr>
-            <td>中</td>
-            <td>
-                <select name="example7">
-                    <option value="">石山泰稚</option>
-                    <option>田口麗人</option>
-                    <option>木澤尚文</option>
-                    <option>山本大貴</option>
-                    <option>大西広樹</option>
-                    <option>星知弥</option>
-                    <option>丸山翔太</option>
-                    <option>長谷川宙輝</option>
-                    <option>清水昇</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="73" value="73"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>中</td>
-            <td>
-                <select name="example8">
-                    <option value="">田口麗人</option>
-                    <option>石山泰稚</option>
-                    <option>木澤尚文</option>
-                    <option>山本大貴</option>
-                    <option>大西広樹</option>
-                    <option>星知弥</option>
-                    <option>丸山翔太</option>
-                    <option>長谷川宙輝</option>
-                    <option>清水昇</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="77" value="77"></td>
-            <td><input type="number" class="stat" data-base="75" value="75"></td>
-            <td><input type="number" class="stat" data-base="70" value="70"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>中</td>
-            <td>
-                <select name="example9">
-                    <option value="">大西広樹</option>
-                    <option>石山泰稚</option>
-                    <option>田口麗人</option>
-                    <option>山本大貴</option>
-                    <option>木澤尚文</option>
-                    <option>星知弥</option>
-                    <option>丸山翔太</option>
-                    <option>長谷川宙輝</option>
-                    <option>清水昇</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="76" value="76"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="69" value="69"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-        <tr>
-            <td>中</td>
-            <td>
-                <select name="example9">
-                    <option value="">山本大貴</option>
-                    <option>石山泰稚</option>
-                    <option>田口麗人</option>
-                    <option>木澤尚文</option>
-                    <option>大西広樹</option>
-                    <option>星知弥</option>
-                    <option>丸山翔太</option>
-                    <option>長谷川宙輝</option>
-                    <option>清水昇</option>
-
-
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="77" value="77"></td>
-            <td><input type="number" class="stat" data-base="70" value="70"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-
-        <tr>
-            <td>抑</td>
-            <td>
-                <select name="example9">
-                    <option value="">高津 臣吾</option>
-                    <option>小澤 怜司</option>
-                    <option>バウマン</option>
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="82" value="82"></td>
-            <td><input type="number" class="stat" data-base="80" value="80"></td>
-            <td><input type="number" class="stat" data-base="63" value="63"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-        <tr>
-            <td>べ</td>
-            <td>
-                <select name="example9">
-                    <option value="">由規</option>
-                    <option>高橋圭二</option>
-                    <option>吉村貢司郎</option>
-                    <option>小川泰弘</option>
-                    <option>アビラ</option>
-                    <option>ランバート</option>
-                    <option>TS石川雅規</option>
-                    <option>石川雅規</option>
-                    <option>伊藤智仁</option>
-
-
-                    <option>石山泰稚</option>
-                    <option>田口麗人</option>
-                    <option>木澤尚文</option>
-                    <option>山本大貴</option>
-                    <option>大西広樹</option>
-                    <option>星知弥</option>
-                    <option>丸山翔太</option>
-                    <option>長谷川宙輝</option>
-                    <option>清水昇</option>
-
-
-                    <option>高津臣吾</option>
-                    <option>小澤怜司</option>
-                    <option>バウマン</option>
-
-
-                </select>
-            </td>
-            <td><input type="number" class="stat" data-base="79" value="79"></td>
-            <td><input type="number" class="stat" data-base="65" value="65"></td>
-            <td><input type="number" class="stat" data-base="82" value="82"></td>
-            <td><input type="number" class="spirits" data-base="4900" value="4900"></td>
-            <td>
-                <select class="bonusSelect">
-                    <option value="0,0,0,0,0">なし</option>
-                    <option value="0,0,0,30,1">勝利の使者(スピ+30)</option>
-                    <option value="0,0,0,15,1">強心臓(スピ+15)</option>
-                    <option value="3,1,0,0,0">火の玉ボール(球威+3,制球+1,スタミナ+0)</option>
-                    <option value="1,3,0,0,0">ミスターコントロール(球威+1,制球+3,スタミナ+0)</option>
-                    <option value="2,0,2,0,0">永久機関(球威+2,制球+0,スタミナ+2)</option>
-                    <option value="3,0,1,0,0">超特急(球威+3,制球+0,スタミナ+1)</option>
-                    <option value="2,2,0,0,0">魂の投球(球威+2,制球+2,スタミナ+0)</option>
-                    <option value="3,0,0,0,0">うなる剛腕(球威+3,制球+0,スタミナ+0)</option>
-                    <option value="1,2,0,0,0">技巧派(球威+1,制球+2,スタミナ+0)</option>
-                    <option value="0,3,0,0,0">精密機械(球威+0,制球+3,スタミナ+0)</option>
-                    <option value="2,1,0,0,0">本格派(球威+2,制球+1,スタミナ+0)</option>
-                    <option value="2,0,1,0,0">不屈の闘志(球威+2,制球+0,スタミナ+1)</option>
-                    <option value="0,0,3,0,0">鉄腕(球威+0,制球+0,スタミナ+3)</option>
-                    <option value="2,0,0,0,0">圧倒的球威(球威+2,制球+0,スタミナ+0)</option>
-                    <option value="3,-1,0,0,0">全力投球(球威+3,制球-1,スタミナ+0)</option>
-                    <option value="0,2,0,0,0">圧倒的な制球(球威+0,制球+2,スタミナ+0)</option>
-                    <option value="-1,3,0,0,0">針の穴を通す制球(球威-1,制球+3,スタミナ+0)</option>
-                    <option value="1,0,1,0,0">攻めの投球術(球威+1,制球+0,スタミナ+1)</option>
-                    <option value="0,1,1,0,0">粘りの投球(球威+0,制球+1,スタミナ+1)</option>
-                    <option value="1,1,0,0,0">好投手(球威+1,制球+1,スタミナ+0)</option>
-                    <option value="1,0,0,0,0">球威自慢(球威+1,制球+0,スタミナ+0)</option>
-                    <option value="2,-1,0,0,0">喧嘩投法(球威+2,制球-1,スタミナ+0)</option>
-                    <option value="0,1,0,0,0">制球自慢(球威+0,制球+1,スタミナ+0)</option>
-                    <option value="-1,2,0,0,0">丁寧な投球(球威-1,制球+2,スタミナ+0)</option>
-
-
-
-
-                </select>
-            </td>
-            <td><input type="number" value="2"></td>
-        </tr>
-
-
-    </table>
+    <h3>型の集計</h3>
+    <p id="hitterStats">ミート型: 0人, パワー型: 0人, 走力型: 0人</p>
+    <p id="pitcherStats">球威型: 0人, 制球型: 0人, スタミナ型: 0人</p>
 
     <button onclick="calculateTotalSpirits()">スピリッツ合計を計算</button>
-    <p>合計スピリッツ: <span id="totalSpirits">0</span></h2>
+    <p>合計スピリッツ: <span id="totalSpirits">0</span></p>
 
-        <script>
-            function updateStats(selectElement) {
-                let row = selectElement.closest("tr");
-                let [stat1Bonus, stat2Bonus, stat3Bonus, spBonus] = selectElement.value.split(",").map(Number);
+    <script>
+        const playerData = {
+            "中村悠平": { "type": "野手", "stat1": 67, "stat2": 65, "stat3": 64, "spirits": 4910 },
+            "松本直樹": { "type": "野手", "stat1": 65, "stat2": 64, "stat3": 64, "spirits": 4910 },
+            "内山壮真": { "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4910 },
+            "オスナ": { "type": "野手", "stat1": 72, "stat2": 77, "stat3": 54, "spirits": 4910 },
+            "侍川端慎吾": { "type": "野手", "stat1": 83, "stat2": 67, "stat3": 73, "spirits": 4910 },
+            "川端慎吾": { "type": "野手", "stat1": 72, "stat2": 65, "stat3": 69, "spirits": 4910 },
+            "侍山田哲人": { "type": "野手", "stat1": 81, "stat2": 83, "stat3": 82, "spirits": 4910 },
+            "山田哲人": { "type": "野手", "stat1": 65, "stat2": 77, "stat3": 78, "spirits": 4910 },
+            "村上宗隆": { "type": "野手", "stat1": 77, "stat2": 84, "stat3": 73, "spirits": 4910 },
+            "池山隆寛": { "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4910 },
+            "長岡秀樹": { "type": "野手", "stat1": 78, "stat2": 73, "stat3": 75, "spirits": 4910 },
+            "サンタナ": { "type": "野手", "stat1": 82, "stat2": 80, "stat3": 64, "spirits": 4910 },
+            "西川遥輝": { "type": "野手", "stat1": 70, "stat2": 65, "stat3": 85, "spirits": 4910 },
+            "雄平": { "type": "野手", "stat1": 79, "stat2": 76, "stat3": 75, "spirits": 4910 },
+            "丸山和郁": { "type": "野手", "stat1": 65, "stat2": 65, "stat3": 83, "spirits": 4910 },
+            "岩田幸宏": { "type": "野手", "stat1": 57, "stat2": 65, "stat3": 80, "spirits": 4910 },
+            "宮本丈": { "type": "野手", "stat1": 67, "stat2": 64, "stat3": 70, "spirits": 4910 },
+            "TS塩見泰隆": { "type": "野手", "stat1": 80, "stat2": 75, "stat3": 83, "spirits": 4910 },
+            "塩見泰隆": { "type": "野手", "stat1": 75, "stat2": 75, "stat3": 80, "spirits": 4910 },
+            "茂木栄五郎": { "type": "野手", "stat1": 73, "stat2": 73, "stat3": 75, "spirits": 4910 },
+            "増田珠": { "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4910 },
 
-                // 各能力値の入力フィールドを取得
-                let statInputs = row.querySelectorAll(".stat");
-                let spInput = row.querySelector(".spirits");
+            "高橋圭二": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "吉村貢司郎": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "小川泰弘": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "アビラ": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "ランバート": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "TS石川雅規": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "石川雅規": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "由規": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "伊藤智仁": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "石山泰稚": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "田口麗人": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "木澤尚文": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "山本大貴": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "大西広樹": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "星知弥": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "丸山翔太": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "長谷川宙輝": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "清水昇": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "高津臣吾": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "小澤怜司": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 },
+            "バウマン": { "type": "投手", "stat1": 77, "stat2": 77, "stat3": 77, "spirits": 4910 }
 
-                // **基準値から計算**
-                let baseStats = Array.from(statInputs).map(input => Number(input.getAttribute("data-base")));
-                let baseSp = Number(spInput.getAttribute("data-base"));
+        }
+            ;
 
-                // 能力値の変更
-                statInputs.forEach((input, index) => {
-                    input.value = baseStats[index] + [stat1Bonus, stat2Bonus, stat3Bonus][index];
-                    applyColor(input);
-                });
+        const titles = {
+            "野手": [
+                { text: "なし", value: "0,0,0,0,0" },
+                { text: "勝利の使者(スピ+30)", value: "0,0,0,30,1" },
+                { text: "強心臓(スピ+15)", value: "0,0,0,15,1" },
+                { text: "安打製造機(ミート+3,パワー+1)", value: "3,1,0,0,0" },
+                { text: "打撃を極めし者(ミート+2,パワー+1,走力+1)", value: "2,1,1,0,0" },
+                { text: "バズーカー(ミート+1,パワー+3)", value: "1,3,0,0,0" },
+                { text: "電光石火(ミート+2,走力+2)", value: "2,0,2,0,0" },
+                { text: "脅威のスラッガー(ミート+2,パワー+2)", value: "2,2,0,0,0" },
+                { text: "好球必打(ミート+3)", value: "3,0,0,0,0" },
+                { text: "超人(ミート+2,走力+1)", value: "2,0,1,0,0" },
+                { text: "稲妻(パワー+2,走力+1)", value: "0,2,1,0,0" },
+                { text: "スナイパー(ミート+2,パワー+1)", value: "2,1,0,0,0" },
+                { text: "飛ばし屋(ミート+1,パワー+2)", value: "1,2,0,0,0" },
+                { text: "怪力無双(パワー+3)", value: "0,3,0,0,0" },
+                { text: "圧倒的ミート(ミート+2)", value: "2,0,0,0,0" },
+                { text: "圧倒的パワー(パワー+2)", value: "0,2,0,0,0" },
+                { text: "コンタクトヒッター(ミート+3,パワー-1)", value: "3,-1,0,0,0" },
+                { text: "ミスターフルスイング(ミート-1,パワー+3)", value: "-1,3,0,0,0" },
+                { text: "切り込み隊長(ミート+1,走力+1)", value: "1,0,1,0,0" },
+                { text: "ラン＆ガン(パワー+1,走力+1)", value: "0,1,1,0,0" },
+                { text: "強打者(ミート+1,パワー+1)", value: "1,1,0,0,0" },
+                { text: "ミート自慢(ミート+1)", value: "1,0,0,0,0" },
+                { text: "パワー自慢(パワー+1)", value: "0,1,0,0,0" },
+                { text: "大砲(パワー+1)", value: "0,1,0,0,0" },
+                { text: "打撃職人(ミート+2,パワー-1)", value: "2,-1,0,0,0" }
+            ],
+            "投手": [
+                { text: "なし", value: "0,0,0,0,0" },
+                { text: "勝利の使者(スピ+30)", value: "0,0,0,30,1" },
+                { text: "強心臓(スピ+15)", value: "0,0,0,15,1" },
+                { text: "火の玉ボール(球威+3,制球+1)", value: "3,1,0,0,0" },
+                { text: "ミスターコントロール(球威+1,制球+3)", value: "1,3,0,0,0" },
+                { text: "永久機関(球威+2,スタミナ+2)", value: "2,0,2,0,0" },
+                { text: "超特急(球威+3,スタミナ+1)", value: "3,0,1,0,0" },
+                { text: "魂の投球(球威+2,制球+2)", value: "2,2,0,0,0" },
+                { text: "うなる剛腕(球威+3)", value: "3,0,0,0,0" },
+                { text: "技巧派(球威+1,制球+2)", value: "1,2,0,0,0" },
+                { text: "精密機械(制球+3)", value: "0,3,0,0,0" },
+                { text: "本格派(球威+2,制球+1)", value: "2,1,0,0,0" },
+                { text: "不屈の闘志(球威+2,スタミナ+1)", value: "2,0,1,0,0" },
+                { text: "鉄腕(スタミナ+3)", value: "0,0,3,0,0" },
+                { text: "圧倒的球威(球威+2)", value: "2,0,0,0,0" },
+                { text: "全力投球(球威+3,制球-1)", value: "3,-1,0,0,0" },
+                { text: "圧倒的な制球(制球+2)", value: "0,2,0,0,0" },
+                { text: "針の穴を通す制球(球威-1,制球+3)", value: "-1,3,0,0,0" },
+                { text: "攻めの投球術(球威+1,スタミナ+1)", value: "1,0,1,0,0" },
+                { text: "粘りの投球(制球+1,スタミナ+1)", value: "0,1,1,0,0" },
+                { text: "好投手(球威+1,制球+1)", value: "1,1,0,0,0" },
+                { text: "球威自慢(球威+1)", value: "1,0,0,0,0" },
+                { text: "喧嘩投法(球威+2,制球-1)", value: "2,-1,0,0,0" },
+                { text: "制球自慢(制球+1)", value: "0,1,0,0,0" },
+                { text: "丁寧な投球(球威-1,制球+2)", value: "-1,2,0,0,0" }
+            ]
+        };
 
-                // スピリッツの変更
-                spInput.value = baseSp + spBonus;
-                applyColor(spInput);
 
-                // **スピリッツ合計を更新**
-                calculateTotalSpirits();
-            }
 
-            function applyColor(input) {
-                let value = Number(input.value);
-                input.classList.remove("pink", "white");
+        document.querySelectorAll(".player").forEach(select => {
+            select.addEventListener("change", () => {
+                let row = select.closest("tr");
+                let selectedPlayer = select.value;
 
-                if (value >= 90) {
-                    input.classList.add("white");
-                } else if (value >= 80) {
-                    input.classList.add("pink");
+                if (playerData[selectedPlayer]) {
+                    let { type, stat1, stat2, stat3, spirits } = playerData[selectedPlayer];
+
+                    let stats = row.querySelectorAll(".stat");
+                    stats[0].setAttribute("data-base", stat1);
+                    stats[1].setAttribute("data-base", stat2);
+                    stats[2].setAttribute("data-base", stat3);
+                    row.querySelector(".spirits").setAttribute("data-base", spirits);
+
+                    stats[0].textContent = stat1;
+                    stats[1].textContent = stat2;
+                    stats[2].textContent = stat3;
+                    row.querySelector(".spirits").textContent = spirits;
+
+                    updateTitleOptions(row, type);
                 }
-            }
 
-            function calculateTotalSpirits() {
-                let sum = 0;
-                document.querySelectorAll(".spirits").forEach(input => {
-                    sum += Number(input.value) || 0;
-                });
-                document.getElementById("totalSpirits").textContent = sum;
-            }
 
-            document.addEventListener("DOMContentLoaded", function () {
-                // **全ての行の称号変更を監視**
-                document.querySelectorAll(".bonusSelect").forEach(select => {
-                    select.addEventListener("change", function () {
-                        updateStats(select);
-                    });
-                });
-
-                // **ページ読み込み時に applyColor を適用**
-                document.querySelectorAll(".stat, .spirits").forEach(input => {
-                    applyColor(input);
-                });
-
-                // **初回スピリッツ合計計算**
                 calculateTotalSpirits();
+                updateTypeCount();
             });
-        </script>
+        });
+
+        document.querySelectorAll(".title").forEach(select => {
+            select.addEventListener("change", () => {
+                let row = select.closest("tr");
+                applyTitleBonus(row);
+                calculateTotalSpirits();
+                updateTypeCount();
+            });
+        });
+
+        function updateTitleOptions(row, type) {
+            let titleSelect = row.querySelector(".title");
+            titleSelect.innerHTML = "";
+
+            titles[type].forEach(title => {
+                let option = document.createElement("option");
+                option.value = title.value;
+                option.textContent = title.text;
+                titleSelect.appendChild(option);
+            });
+
+            titleSelect.value = "0,0,0,0,0";
+        }
+
+        function applyTitleBonus(row) {
+            let stats = row.querySelectorAll(".stat");
+            let spiritsCell = row.querySelector(".spirits");
+
+            let titleValues = row.querySelector(".title").value.split(",").map(Number);
+            let [stat1Bonus, stat2Bonus, stat3Bonus, spiritsBonus, isSpiritsBonus] = titleValues;
+
+            stats[0].textContent = Number(stats[0].getAttribute("data-base")) + stat1Bonus;
+            stats[1].textContent = Number(stats[1].getAttribute("data-base")) + stat2Bonus;
+            stats[2].textContent = Number(stats[2].getAttribute("data-base")) + stat3Bonus;
+
+            let baseSpirits = Number(spiritsCell.getAttribute("data-base"));
+            spiritsCell.textContent = baseSpirits + (isSpiritsBonus ? spiritsBonus : 0);
+
+
+            document.getElementById("hitterStats").textContent =
+                `ミート型: ${hitterTypes["ミート型"]}人, パワー型: ${hitterTypes["パワー型"]}人, 走力型: ${hitterTypes["走力型"]}人`;
+
+            document.getElementById("pitcherStats").textContent =
+                `球威型: ${pitcherTypes["球威型"]}人, 制球型: ${pitcherTypes["制球型"]}人, スタミナ型: ${pitcherTypes["スタミナ型"]}人`;
+        }
+
+
+        function calculateTotalSpirits() {
+            let totalSpirits = 0;
+            document.querySelectorAll(".spirits").forEach(cell => {
+                totalSpirits += Number(cell.textContent);
+            });
+            document.getElementById("totalSpirits").textContent = totalSpirits;
+        }
+        function updateTypeCount() {
+            let hitterTypes = { "ミート型": 0, "パワー型": 0, "走力型": 0 };
+            let pitcherTypes = { "球威型": 0, "制球型": 0, "スタミナ型": 0 };
+
+            document.querySelectorAll("tbody tr").forEach(row => {
+                let selectPlayer = row.querySelector(".player");
+                let selectedPlayer = selectPlayer.value;
+                let selectedTitle = row.querySelector(".title").value.split(",").map(Number);
+
+                if (playerData[selectedPlayer]) {
+                    let type = playerData[selectedPlayer].type;
+                    let baseStat1 = playerData[selectedPlayer].stat1;
+                    let baseStat2 = playerData[selectedPlayer].stat2;
+                    let baseStat3 = playerData[selectedPlayer].stat3;
+                    let baseSpirits = playerData[selectedPlayer].spirits;
+
+                    // 称号の補正を適用
+                    let stat1 = baseStat1 + selectedTitle[0];
+                    let stat2 = baseStat2 + selectedTitle[1];
+                    let stat3 = baseStat3 + selectedTitle[2];
+                    let spirits = baseSpirits + (selectedTitle[4] ? selectedTitle[3] : 0);
+
+                    // スピリッツの更新
+                    row.querySelector(".spirits").textContent = spirits;
+
+                    // 最大値を求め、どの型に分類されるかを決定
+                    let maxStat = Math.max(stat1, stat2, stat3);
+                    let types = [];
+
+                    if (stat1 === maxStat) types.push(type === "野手" ? "ミート型" : "球威型");
+                    if (stat2 === maxStat) types.push(type === "野手" ? "パワー型" : "制球型");
+                    if (stat3 === maxStat) types.push(type === "野手" ? "走力型" : "スタミナ型");
+
+                    // 型ごとのカウントを更新
+                    types.forEach(t => {
+                        if (hitterTypes.hasOwnProperty(t)) hitterTypes[t]++;
+                        if (pitcherTypes.hasOwnProperty(t)) pitcherTypes[t]++;
+                    });
+                }
+            });
+
+            // 集計結果を画面に表示
+            document.getElementById("hitterStats").textContent =
+                `ミート型: ${hitterTypes["ミート型"]}人, パワー型: ${hitterTypes["パワー型"]}人, 走力型: ${hitterTypes["走力型"]}人`;
+
+            document.getElementById("pitcherStats").textContent =
+                `球威型: ${pitcherTypes["球威型"]}人, 制球型: ${pitcherTypes["制球型"]}人, スタミナ型: ${pitcherTypes["スタミナ型"]}人`;
+        }
+
+        // イベントリスナーを設定
+        document.querySelectorAll(".player, .title").forEach(select => {
+            select.addEventListener("change", () => {
+                updateTypeCount();
+            });
+        });
+
+
+    </script>
 
 </body>
 
