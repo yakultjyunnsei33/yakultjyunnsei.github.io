@@ -1223,8 +1223,9 @@
     <p id="hitterStats">ミート型: 0人, パワー型: 0人, 走力型: 0人</p>
     <p id="pitcherStats">球威型: 0人, 制球型: 0人, スタミナ型: 0人</p>
 
-    <button onclick="calculateTotalSpirits()">スピリッツ合計を計算</button>
     <p>合計スピリッツ: <span id="totalSpirits">0</span></p>
+    <p>最大コンボ: <span id="totalCombo">0</span></p>
+
 
     <script>
         const playerData = {
@@ -1416,9 +1417,14 @@
             });
             document.getElementById("totalSpirits").textContent = totalSpirits;
         }
+        // **関数の外でグローバル変数として定義**
+        let hitterTypes = { "ミート型": 0, "パワー型": 0, "走力型": 0 };
+        let pitcherTypes = { "球威型": 0, "制球型": 0, "スタミナ型": 0 };
+
         function updateTypeCount() {
-            let hitterTypes = { "ミート型": 0, "パワー型": 0, "走力型": 0 };
-            let pitcherTypes = { "球威型": 0, "制球型": 0, "スタミナ型": 0 };
+            // **リセット**
+            hitterTypes = { "ミート型": 0, "パワー型": 0, "走力型": 0 };
+            pitcherTypes = { "球威型": 0, "制球型": 0, "スタミナ型": 0 };
 
             document.querySelectorAll("tbody tr").forEach(row => {
                 let selectPlayer = row.querySelector(".player");
@@ -1432,22 +1438,22 @@
                     let baseStat3 = playerData[selectedPlayer].stat3;
                     let baseSpirits = playerData[selectedPlayer].spirits;
 
-                    // 称号の補正を適用
+                    // **称号の補正を適用**
                     let stat1 = baseStat1 + selectedTitle[0];
                     let stat2 = baseStat2 + selectedTitle[1];
                     let stat3 = baseStat3 + selectedTitle[2];
                     let spirits = baseSpirits + (selectedTitle[4] ? selectedTitle[3] : 0);
 
-                    // スピリッツの更新
+                    // **スピリッツの更新**
                     row.querySelector(".spirits").textContent = spirits;
 
-                    // ステータスの表示を更新し、色を適用
+                    // **ステータスの表示を更新し、色を適用**
                     let stats = row.querySelectorAll(".stat");
                     applyStatColor(stats[0], stat1); // ミート or 球威
                     applyStatColor(stats[1], stat2); // パワー or 制球
                     applyStatColor(stats[2], stat3); // 走力 or スタミナ
 
-                    // 最大値を求め、どの型に分類されるかを決定
+                    // **最大値を求め、どの型に分類されるかを決定**
                     let maxStat = Math.max(stat1, stat2, stat3);
                     let types = [];
 
@@ -1455,7 +1461,7 @@
                     if (stat2 === maxStat) types.push(type === "野手" ? "パワー型" : "制球型");
                     if (stat3 === maxStat) types.push(type === "野手" ? "走力型" : "スタミナ型");
 
-                    // 型ごとのカウントを更新
+                    // **型ごとのカウントを更新**
                     types.forEach(t => {
                         if (hitterTypes.hasOwnProperty(t)) hitterTypes[t]++;
                         if (pitcherTypes.hasOwnProperty(t)) pitcherTypes[t]++;
@@ -1463,13 +1469,14 @@
                 }
             });
 
-            // 集計結果を画面に表示
+            // **集計結果を画面に表示**
             document.getElementById("hitterStats").textContent =
                 `ミート型: ${hitterTypes["ミート型"]}人, パワー型: ${hitterTypes["パワー型"]}人, 走力型: ${hitterTypes["走力型"]}人`;
 
             document.getElementById("pitcherStats").textContent =
                 `球威型: ${pitcherTypes["球威型"]}人, 制球型: ${pitcherTypes["制球型"]}人, スタミナ型: ${pitcherTypes["スタミナ型"]}人`;
         }
+
 
         /* ステータスの色を適用する関数 */
         function applyStatColor(statElement, value) {
@@ -1509,68 +1516,141 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const totalComboDisplay = document.getElementById("totalCombo");
             const playerSelects = document.querySelectorAll(".player");
-            const positionSelects = document.querySelectorAll(".position");
+            const titleSelects = document.querySelectorAll(".title");
 
-            function updateSelectableOptions() {
-                let selectedNames = new Set();
-                let selectedPositions = new Set();
+            function calculateCombo() {
+                let comboTotal = 2700 + 1260 + 840 + 720 + 630 + 350; // 無条件で発動するコンボ
+                console.log("初期コンボ:", comboTotal);
 
-                // 選択されている選手の基本名を取得
-                playerSelects.forEach(select => {
-                    let value = select.value;
-                    if (value) {
-                        let baseName = value.replace(/^(侍|TS)/, ""); // 侍やTSのプレフィックスを除去
-                        selectedNames.add(baseName);
-                    }
-                });
+                // ミート型, パワー型, 走力型, 球威型, 制球型, スタミナ型の数を取得
+                let hitterText = document.getElementById("hitterStats").textContent;
+                let pitcherText = document.getElementById("pitcherStats").textContent;
 
-                // 選択されているポジションを取得
-                positionSelects.forEach(select => {
-                    let value = select.value;
-                    if (value) {
-                        selectedPositions.add(value);
-                    }
-                });
+                let hitterMatch = hitterText.match(/ミート型: (\d+)人, パワー型: (\d+)人, 走力型: (\d+)人/);
+                let pitcherMatch = pitcherText.match(/球威型: (\d+)人, 制球型: (\d+)人, スタミナ型: (\d+)人/);
 
-                // 選手の選択肢を更新（同じ基本名を無効化）
-                playerSelects.forEach(select => {
-                    Array.from(select.options).forEach(option => {
-                        let baseName = option.value.replace(/^(侍|TS)/, "");
-                        if (selectedNames.has(baseName) && option.value !== select.value) {
-                            option.disabled = true;
-                        } else {
-                            option.disabled = false;
-                        }
-                    });
-                });
+                if (!hitterMatch || !pitcherMatch) {
+                    console.error("エラー: hitterStats または pitcherStats のフォーマットが不正です。");
+                    return;
+                }
 
-                // ポジションの選択肢を更新（選ばれたポジションを無効化）
-                positionSelects.forEach(select => {
-                    Array.from(select.options).forEach(option => {
-                        if (selectedPositions.has(option.value) && option.value !== select.value && option.value !== "") {
-                            option.disabled = true;
-                        } else {
-                            option.disabled = false;
-                        }
-                    });
-                });
+                let hitterCount = {
+                    ミート: parseInt(hitterMatch[1], 10),
+                    パワー: parseInt(hitterMatch[2], 10),
+                    走力: parseInt(hitterMatch[3], 10)
+                };
+
+                let pitcherCount = {
+                    球威: parseInt(pitcherMatch[1], 10),
+                    制球: parseInt(pitcherMatch[2], 10),
+                    スタミナ: parseInt(pitcherMatch[3], 10)
+                };
+
+                console.log("型の集計:", hitterCount, pitcherCount);
+
+                // 条件付きコンボの発動（修正後）
+                if (hitterCount["ミート"] >= 8) {
+                    comboTotal += 960; // 8人以上なら +960 のみ
+                    console.log("超周到精密発動 +960");
+                } else if (hitterCount["ミート"] >= 6) {
+                    comboTotal += 600; // 6,7人のとき +600
+                    console.log("周到精密発動 +600");
+                }
+
+                if (hitterCount["パワー"] >= 8) {
+                    comboTotal += 960;
+                    console.log("超大胆不敵発動 +960");
+                } else if (hitterCount["パワー"] >= 6) {
+                    comboTotal += 600;
+                    console.log("大胆不敵発動 +600");
+                }
+
+                if (hitterCount["走力"] >= 8) {
+                    comboTotal += 960;
+                    console.log("超疾風迅雷発動 +960");
+                } else if (hitterCount["走力"] >= 6) {
+                    comboTotal += 600;
+                    console.log("疾風迅雷発動 +600");
+                }
+
+                // **ピッチャーのコンボも同様に修正**
+                if (pitcherCount["球威"] >= 8) {
+                    comboTotal += 840;
+                    console.log("超力戦奮投発動 +840");
+                } else if (pitcherCount["球威"] >= 6) {
+                    comboTotal += 480;
+                    console.log("力戦奮投発動 +480");
+                }
+
+                if (pitcherCount["制球"] >= 8) {
+                    comboTotal += 840;
+                    console.log("超正確無比発動 +840");
+                } else if (pitcherCount["制球"] >= 6) {
+                    comboTotal += 480;
+                    console.log("正確無比発動 +480");
+                }
+
+                if (pitcherCount["スタミナ"] >= 8) {
+                    comboTotal += 840;
+                    console.log("超堅忍不抜発動 +840");
+                } else if (pitcherCount["スタミナ"] >= 6) {
+                    comboTotal += 480;
+                    console.log("堅忍不抜発動 +480");
+                }
+
+
+                // 合計コンボを表示
+                console.log("最終コンボ数:", comboTotal);
+                totalComboDisplay.textContent = comboTotal;
             }
 
-            // 選手・ポジションが選択されたら更新処理を実行
+            function applyTitleBonus(playerData, title) {
+                if (!playerData || !playerData.type) return playerData;
+
+                // **hitterTypes と pitcherTypes を明示的に定義**
+                const hitterTypes = ["ミート", "パワー", "走力"];
+                const pitcherTypes = ["球威", "制球", "スタミナ"];
+
+                let newType = playerData.type;
+                let newStat1 = playerData.stat1;
+                let newStat2 = playerData.stat2;
+                let newStat3 = playerData.stat3;
+
+                // **称号による影響を適用**
+                if (title === "好球必打") {
+                    newType = "ミート"; // 例: ミート型に変更
+                    newStat1 += 2; // 例: ミート+2
+                    newStat3 += 1; // 例: 走力+1
+                }
+
+                // **hitterTypes に含まれているかチェック（修正ポイント）**
+                if (hitterTypes.includes(newType) || pitcherTypes.includes(newType)) {
+                    return { ...playerData, type: newType, stat1: newStat1, stat2: newStat2, stat3: newStat3 };
+                } else {
+                    console.error("エラー: 適用後の type が無効です ->", newType);
+                    return playerData; // 無効な場合は変更せずに返す
+                }
+            }
+
+
+
+            // イベントリスナーを設定
             playerSelects.forEach(select => {
-                select.addEventListener("change", updateSelectableOptions);
+                select.addEventListener("change", calculateCombo);
             });
 
-            positionSelects.forEach(select => {
-                select.addEventListener("change", updateSelectableOptions);
+            titleSelects.forEach(select => {
+                select.addEventListener("change", calculateCombo);
             });
 
-            // 初期化時にも実行
-            updateSelectableOptions();
+            // 初期表示
+            calculateCombo();
         });
-    </script>
 
+
+    </script>
 
 
 </body>
