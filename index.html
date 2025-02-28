@@ -1426,6 +1426,9 @@
             hitterTypes = { "ミート型": 0, "パワー型": 0, "走力型": 0 };
             pitcherTypes = { "球威型": 0, "制球型": 0, "スタミナ型": 0 };
 
+
+
+
             document.querySelectorAll("tbody tr").forEach(row => {
                 let selectPlayer = row.querySelector(".player");
                 let selectedPlayer = selectPlayer.value;
@@ -1519,6 +1522,7 @@
             const totalComboDisplay = document.getElementById("totalCombo");
             const playerSelects = document.querySelectorAll(".player");
             const titleSelects = document.querySelectorAll(".title");
+
 
             function calculateCombo() {
                 let comboTotal = 2700 + 1260 + 840 + 720 + 630 + 350; // 無条件で発動するコンボ
@@ -1636,6 +1640,7 @@
 
 
 
+
             // イベントリスナーを設定
             playerSelects.forEach(select => {
                 select.addEventListener("change", calculateCombo);
@@ -1651,7 +1656,67 @@
 
 
     </script>
+    <script>
+        function updateSelectableOptions() {
+            let selectedNames = new Set();
+            let selectedPositions = new Set();
 
+            // **選択されている選手の基本名を取得**
+            document.querySelectorAll(".player").forEach(select => {
+                let value = select.value;
+                if (value) {
+                    let baseName = value.replace(/^(侍|TS)/, ""); // 侍やTSのプレフィックスを除去
+                    selectedNames.add(baseName);
+                }
+            });
+
+            // **選択されているポジションを取得**
+            document.querySelectorAll(".position").forEach(select => {
+                let value = select.value;
+                if (value) {
+                    selectedPositions.add(value);
+                }
+            });
+
+            // **選手の選択肢を更新（同じ基本名を無効化）**
+            document.querySelectorAll(".player").forEach(select => {
+                Array.from(select.options).forEach(option => {
+                    let baseName = option.value.replace(/^(侍|TS)/, "");
+                    if (selectedNames.has(baseName) && option.value !== select.value) {
+                        option.disabled = true;
+                    } else {
+                        option.disabled = false;
+                    }
+                });
+            });
+
+            // **ポジションの選択肢を更新（選ばれたポジションを無効化）**
+            document.querySelectorAll(".position").forEach(select => {
+                Array.from(select.options).forEach(option => {
+                    if (selectedPositions.has(option.value) && option.value !== select.value && option.value !== "") {
+                        option.disabled = true;
+                    } else {
+                        option.disabled = false;
+                    }
+                });
+            });
+        }
+
+        // **イベントリスナーを設定**
+        document.querySelectorAll(".player").forEach(select => {
+            select.addEventListener("change", updateSelectableOptions);
+        });
+
+        document.querySelectorAll(".position").forEach(select => {
+            select.addEventListener("change", updateSelectableOptions);
+        });
+
+        // **ページ読み込み時に初期実行**
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSelectableOptions();
+        });
+
+    </script>
 
 </body>
 
