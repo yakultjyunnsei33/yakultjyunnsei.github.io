@@ -1639,50 +1639,51 @@
 
     <script>
         const playerData = {
-            "S1山田哲人": { "type": "野手", "stat1": 68, "stat2": 78, "stat3": 79, "spirits": 4610, "abilities": ["超パワヒ", "プルヒ", "選球眼"] },
-            "S1塩見泰隆": { "type": "野手", "stat1": 77, "stat2": 76, "stat3": 82, "spirits": 4610, "abilities": ["超広角", "チャンメ", "選球眼"] },
-            "S1濱田太貴": { "type": "野手", "stat1": 59, "stat2": 70, "stat3": 70, "spirits": 4610, "abilities": ["超流し打ち", "粘りうち", "逆境"] },
-            "S1オスナ": { "type": "野手", "stat1": 70, "stat2": 76, "stat3": 57, "spirits": 4610, "abilities": ["超ライドラ", "固め打ち", "フルスイング"] },
-            "S1川端慎吾": { "type": "野手", "stat1": 74, "stat2": 67, "stat3": 70, "spirits": 4610, "abilities": ["超代打の神様", "アベレージヒッター", "いぶし銀"] },
-            "S1中村悠平": { "type": "野手", "stat1": 69, "stat2": 66, "stat3": 66, "spirits": 4610, "abilities": ["超捕手", "流し打ち", "対左投手"] },
-            "S1村上宗隆": { "type": "野手", "stat1": 79, "stat2": 83, "stat3": 71, "spirits": 4610, "abilities": ["超アーチ", "広角", "選球眼"] },
-            "S1内山壮真": { "type": "野手", "stat1": 59, "stat2": 65, "stat3": 71, "spirits": 4610, "abilities": ["超粘りうち", "捕手", "広角"] },
-            "S1長岡秀樹": { "type": "野手", "stat1": 65, "stat2": 67, "stat3": 73, "spirits": 4610, "abilities": ["超粘りうち", "流し打ち", "意外性"] },
-            "S1サンタナ": { "type": "野手", "stat1": 80, "stat2": 79, "stat3": 63, "spirits": 4610, "abilities": ["超広角", "ライドラ", "対左投手"] },
-            "S1丸山和郁": { "type": "野手", "stat1": 64, "stat2": 62, "stat3": 83, "spirits": 4610, "abilities": ["超走塁", "チャンメ", "内野安打"] },
-            "S1西川遥輝": { "type": "野手", "stat1": 62, "stat2": 63, "stat3": 87, "spirits": 4610, "abilities": ["超選球眼", "走塁", "ライドラ"] },
-            "覚醒北村拓己": { "type": "野手", "stat1": 58, "stat2": 60, "stat3": 64, "spirits": 4510, "abilities": ["超粘りうち", "走塁", "ライドラ"] },
-            "TS田中浩康": { "type": "野手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4610, "abilities": ["超流し打ち", "選球眼", "守備職人"] },
-            "EXオスナ": { "type": "野手", "stat1": 71, "stat2": 77, "stat3": 58, "spirits": 4610, "abilities": ["超ライドラ", "固め打ち", "熱気"] },
-            "EXサンタナ": { "type": "野手", "stat1": 81, "stat2": 80, "stat3": 64, "spirits": 4610, "abilities": ["超広角", "ライドラ", "熱気"] },
-            "TS池山隆寛": { "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4610, "abilities": ["超アーチ", "チャンス", "サヨナラ男"] },
-            "セレ村上宗隆": { "type": "野手", "stat1": 80, "stat2": 84, "stat3": 72, "spirits": 4710, "abilities": ["超アーチ", "広角", "選球眼"] },
-            "セレ古田敦也": { "type": "野手", "stat1": 78, "stat2": 77, "stat3": 60, "spirits": 4710, "abilities": ["超捕手", "アベレージヒッター", "逆境"] },
-            "TS青木宣親": { "type": "野手", "stat1": 82, "stat2": 71, "stat3": 82, "spirits": 4710, "abilities": ["超アベレージヒッター", "チャンス", "広角"] },
-            "S2オスナ": { "type": "野手", "stat1": 72, "stat2": 77, "stat3": 57, "spirits": 4710, "abilities": ["超ライドラ", "フルスイング", "チャンス"] },
-            "S2中村悠平": { "type": "野手", "stat1": 69, "stat2": 66, "stat3": 66, "spirits": 4710, "abilities": ["超捕手", "流し打ち", "選球眼"] },
-            "S2西川遥輝": { "type": "野手", "stat1": 63, "stat2": 64, "stat3": 85, "spirits": 4710, "abilities": ["超選球眼", "盗塁", "固め打ち"] },
-            "S2青木宣親": { "type": "野手", "stat1": 69, "stat2": 65, "stat3": 72, "spirits": 4710, "abilities": ["超アベレージヒッター", "粘りうち", "代打"] },
-            "S2山田哲人": { "type": "野手", "stat1": 67, "stat2": 77, "stat3": 79, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "初球"] },
-            "S2丸山和郁": { "type": "野手", "stat1": 66, "stat2": 64, "stat3": 83, "spirits": 4710, "abilities": ["超チャンメ", "走塁", "内野安打"] },
-            "S2村上宗隆": { "type": "野手", "stat1": 78, "stat2": 83, "stat3": 71, "spirits": 4710, "abilities": ["超アーチ", "広角", "選球眼"] },
-            "S2サンタナ": { "type": "野手", "stat1": 81, "stat2": 80, "stat3": 63, "spirits": 4710, "abilities": ["超広角", "ライドラ", "対左投手"] },
-            "S2長岡秀樹": { "type": "野手", "stat1": 76, "stat2": 69, "stat3": 73, "spirits": 4710, "abilities": ["超流し打ち", "固め打ち", "初球"] },
-            "S2松本直樹": { "type": "野手", "stat1": 64, "stat2": 63, "stat3": 63, "spirits": 4710, "abilities": ["超チャンス", "粘りうち", "代打"] },
-            "S2内山壮真": { "type": "野手", "stat1": 59, "stat2": 63, "stat3": 70, "spirits": 4710, "abilities": ["超チャンス", "粘りうち", "広角"] },
-            "S2増田珠": { "type": "野手", "stat1": 57, "stat2": 65, "stat3": 69, "spirits": 4710, "abilities": ["超初球", "粘りうち", "固め打ち"] },
-            "覚醒宮本丈": { "type": "野手", "stat1": 65, "stat2": 64, "stat3": 70, "spirits": 4610, "abilities": ["超チャンメ", "選球眼", "初球"] },
-            "OB杉浦亨": { "type": "野手", "stat1": 80, "stat2": 80, "stat3": 67, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "サヨナラ男"] },
-            "WC岩村明憲": { "type": "野手", "stat1": 80, "stat2": 80, "stat3": 72, "spirits": 4710, "abilities": ["超広角", "ライドラ", "存在感"] },
-            "アニバ山田哲人": { "type": "野手", "stat1": 68, "stat2": 78, "stat3": 80, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "躍動"] },
-            "アニバサンタナ": { "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 4710, "abilities": ["超広角", "ライドラ", "躍動"] },
-            "スピリーグ真中満": { "type": "野手", "stat1": 79, "stat2": 67, "stat3": 69, "spirits": 4710, "abilities": ["超チャンス", "流し打ち", "走塁"] },
-            "JT澤井廉": { "type": "野手", "stat1": 56, "stat2": 61, "stat3": 62, "spirits": 4710, "abilities": ["超初球", "粘りうち", "流し打ち"] },
-            "セレペタジーニ": { "type": "野手", "stat1": 82, "stat2": 84, "stat3": 66, "spirits": 4710, "abilities": ["超パワヒ", "広角", "チャンス"] },
-            "B9村上宗隆": { "type": "野手", "stat1": 79, "stat2": 85, "stat3": 72, "spirits": 4810, "abilities": ["超アーチ", "広角", "選球眼"] },
-            "B9長岡秀樹": { "type": "野手", "stat1": 77, "stat2": 70, "stat3": 74, "spirits": 4810, "abilities": ["超流し打ち", "固め打ち", "初球"] },
-            "B9サンタナ": { "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 4810, "abilities": ["超広角", "ライドラ", "対左投手"] },
-            "OB坂口智隆": { "type": "野手", "stat1": 79, "stat2": 62, "stat3": 73, "spirits": 4710, "abilities": ["超チャンメ", "アベレージヒッター", "選球眼"] },
+            "S1山田哲人": { "type": "野手", "stat1": 68, "stat2": 78, "stat3": 79, "spirits": 4610, "abilities": ["超パワヒ", "プルヒ", "選球眼"], "battingSide": "右" },
+            "S1塩見泰隆": { "type": "野手", "stat1": 77, "stat2": 76, "stat3": 82, "spirits": 4610, "abilities": ["超広角", "チャンメ", "選球眼"], "battingSide": "右" },
+            "S1濱田太貴": { "type": "野手", "stat1": 59, "stat2": 70, "stat3": 70, "spirits": 4610, "abilities": ["超流し打ち", "粘りうち", "逆境"], "battingSide": "右" },
+            "S1オスナ": { "type": "野手", "stat1": 70, "stat2": 76, "stat3": 57, "spirits": 4610, "abilities": ["超ライドラ", "固め打ち", "フルスイング"], "battingSide": "右" },
+            "S1川端慎吾": { "type": "野手", "stat1": 74, "stat2": 67, "stat3": 70, "spirits": 4610, "abilities": ["超代打の神様", "アベレージヒッター", "いぶし銀"], "battingSide": "左" },
+            "S1中村悠平": { "type": "野手", "stat1": 69, "stat2": 66, "stat3": 66, "spirits": 4610, "abilities": ["超捕手", "流し打ち", "対左投手"], "battingSide": "右" },
+            "S1村上宗隆": { "type": "野手", "stat1": 79, "stat2": 83, "stat3": 71, "spirits": 4610, "abilities": ["超アーチ", "広角", "選球眼"], "battingSide": "左" },
+            "S1内山壮真": { "type": "野手", "stat1": 59, "stat2": 65, "stat3": 71, "spirits": 4610, "abilities": ["超粘りうち", "捕手", "広角"], "battingSide": "右" },
+            "S1長岡秀樹": { "type": "野手", "stat1": 65, "stat2": 67, "stat3": 73, "spirits": 4610, "abilities": ["超粘りうち", "流し打ち", "意外性"], "battingSide": "左" },
+            "S1サンタナ": { "type": "野手", "stat1": 80, "stat2": 79, "stat3": 63, "spirits": 4610, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右" },
+            "S1丸山和郁": { "type": "野手", "stat1": 64, "stat2": 62, "stat3": 83, "spirits": 4610, "abilities": ["超走塁", "チャンメ", "内野安打"], "battingSide": "左" },
+            "S1西川遥輝": { "type": "野手", "stat1": 62, "stat2": 63, "stat3": 87, "spirits": 4610, "abilities": ["超選球眼", "走塁", "ライドラ"], "battingSide": "左" },
+            "覚醒北村拓己": { "type": "野手", "stat1": 58, "stat2": 60, "stat3": 64, "spirits": 4510, "abilities": ["超粘りうち", "走塁", "ライドラ"], "battingSide": "右" },
+            "TS田中浩康": { "type": "野手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4610, "abilities": ["超流し打ち", "選球眼", "守備職人"], "battingSide": "右" },
+            "EXオスナ": { "type": "野手", "stat1": 71, "stat2": 77, "stat3": 58, "spirits": 4610, "abilities": ["超ライドラ", "固め打ち", "熱気"], "battingSide": "右" },
+            "EXサンタナ": { "type": "野手", "stat1": 81, "stat2": 80, "stat3": 64, "spirits": 4610, "abilities": ["超広角", "ライドラ", "熱気"], "battingSide": "右" },
+            "TS池山隆寛": { "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4610, "abilities": ["超アーチ", "チャンス", "サヨナラ男"], "battingSide": "右" },
+            "セレ村上宗隆": { "type": "野手", "stat1": 80, "stat2": 84, "stat3": 72, "spirits": 4710, "abilities": ["超アーチ", "広角", "選球眼"], "battingSide": "左" },
+            "セレ古田敦也": { "type": "野手", "stat1": 78, "stat2": 77, "stat3": 60, "spirits": 4710, "abilities": ["超捕手", "アベレージヒッター", "逆境"], "battingSide": "右" },
+            "TS青木宣親": { "type": "野手", "stat1": 82, "stat2": 71, "stat3": 82, "spirits": 4710, "abilities": ["超アベレージヒッター", "チャンス", "広角"], "battingSide": "左" },
+            "S2オスナ": { "type": "野手", "stat1": 72, "stat2": 77, "stat3": 57, "spirits": 4710, "abilities": ["超ライドラ", "フルスイング", "チャンス"], "battingSide": "右" },
+            "S2中村悠平": { "type": "野手", "stat1": 69, "stat2": 66, "stat3": 66, "spirits": 4710, "abilities": ["超捕手", "流し打ち", "選球眼"], "battingSide": "右" },
+            "S2西川遥輝": { "type": "野手", "stat1": 63, "stat2": 64, "stat3": 85, "spirits": 4710, "abilities": ["超選球眼", "盗塁", "固め打ち"], "battingSide": "左" },
+            "S2青木宣親": { "type": "野手", "stat1": 69, "stat2": 65, "stat3": 72, "spirits": 4710, "abilities": ["超アベレージヒッター", "粘りうち", "代打"], "battingSide": "左" },
+            "S2山田哲人": { "type": "野手", "stat1": 67, "stat2": 77, "stat3": 79, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "初球"], "battingSide": "右" },
+            "S2丸山和郁": { "type": "野手", "stat1": 66, "stat2": 64, "stat3": 83, "spirits": 4710, "abilities": ["超チャンメ", "走塁", "内野安打"], "battingSide": "左" },
+            "S2村上宗隆": { "type": "野手", "stat1": 78, "stat2": 83, "stat3": 71, "spirits": 4710, "abilities": ["超アーチ", "広角", "選球眼"], "battingSide": "左" },
+            "S2サンタナ": { "type": "野手", "stat1": 81, "stat2": 80, "stat3": 63, "spirits": 4710, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右" },
+            "S2長岡秀樹": { "type": "野手", "stat1": 76, "stat2": 69, "stat3": 73, "spirits": 4710, "abilities": ["超流し打ち", "固め打ち", "初球"], "battingSide": "左" },
+            "S2松本直樹": { "type": "野手", "stat1": 64, "stat2": 63, "stat3": 63, "spirits": 4710, "abilities": ["超チャンス", "粘りうち", "代打"], "battingSide": "右" },
+            "S2内山壮真": { "type": "野手", "stat1": 59, "stat2": 63, "stat3": 70, "spirits": 4710, "abilities": ["超チャンス", "粘りうち", "広角"], "battingSide": "右" },
+            "S2増田珠": { "type": "野手", "stat1": 57, "stat2": 65, "stat3": 69, "spirits": 4710, "abilities": ["超初球", "粘りうち", "固め打ち"], "battingSide": "右" },
+            "覚醒宮本丈": { "type": "野手", "stat1": 65, "stat2": 64, "stat3": 70, "spirits": 4610, "abilities": ["超チャンメ", "選球眼", "初球"], "battingSide": "右" },
+            "OB杉浦亨": { "type": "野手", "stat1": 80, "stat2": 80, "stat3": 67, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "サヨナラ男"], "battingSide": "左" },
+            "WC岩村明憲": { "type": "野手", "stat1": 80, "stat2": 80, "stat3": 72, "spirits": 4710, "abilities": ["超広角", "ライドラ", "存在感"], "battingSide": "左" },
+            "アニバ山田哲人": { "type": "野手", "stat1": 68, "stat2": 78, "stat3": 80, "spirits": 4710, "abilities": ["超パワヒ", "プルヒ", "躍動"], "battingSide": "右" },
+            "アニバサンタナ": { "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 4710, "abilities": ["超広角", "ライドラ", "躍動"], "battingSide": "右" },
+            "スピリーグ真中満": { "type": "野手", "stat1": 79, "stat2": 67, "stat3": 69, "spirits": 4710, "abilities": ["超チャンス", "流し打ち", "走塁"], "battingSide": "左" },
+            "JT澤井廉": { "type": "野手", "stat1": 56, "stat2": 61, "stat3": 62, "spirits": 4710, "abilities": ["超初球", "粘りうち", "流し打ち"], "battingSide": "左" },
+            "セレペタジーニ": { "type": "野手", "stat1": 82, "stat2": 84, "stat3": 66, "spirits": 4710, "abilities": ["超パワヒ", "広角", "チャンス"], "battingSide": "左" },
+            "B9村上宗隆": { "type": "野手", "stat1": 79, "stat2": 85, "stat3": 72, "spirits": 4810, "abilities": ["超アーチ", "広角", "選球眼"], "battingSide": "左" },
+            "B9長岡秀樹": { "type": "野手", "stat1": 77, "stat2": 70, "stat3": 74, "spirits": 4810, "abilities": ["超流し打ち", "固め打ち", "初球"], "battingSide": "左" },
+            "B9サンタナ": { "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 4810, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右" },
+            "OB坂口智隆": { "type": "野手", "stat1": 79, "stat2": 62, "stat3": 73, "spirits": 4710, "abilities": ["超チャンメ", "アベレージヒッター", "選球眼"], "battingSide": "左" },
+            "スピチャン村上宗隆": { "type": "野手", "stat1": 78, "stat2": 83, "stat3": 71, "spirits": 4810, "abilities": ["超アーチ", "広角", "選球眼"], "battingSide": "左" },
 
             "S1石山泰稚": { "type": "投手", "stat1": 75, "stat2": 76, "stat3": 64, "spirits": 4700, "abilities": ["超キレ", "ノビ", "奪三振"], "bPitchCount": 2 },
             "S1小澤怜司": { "type": "投手", "stat1": 75, "stat2": 72, "stat3": 72, "spirits": 4600, "abilities": ["超ノビ", "緩急", "対ランナー"], "bPitchCount": 1 },
@@ -2096,6 +2097,37 @@
                     console.log("疾風迅雷発動 (+600)");
                 }
 
+                // **ピッチャーのコンボも同様に修正**
+                if (pitcherCount["球威"] >= 8) {
+                    comboTotal += 840;
+                    activatedCombos.push("超力戦奮投発動 (+840)");
+                    console.log("超力戦奮投発動 (+840)");
+                } else if (pitcherCount["球威"] >= 6) {
+                    comboTotal += 480;
+                    activatedCombos.push("力戦奮投発動 (+480)");
+                    console.log("力戦奮投発動 (+480)");
+                }
+
+                if (pitcherCount["制球"] >= 8) {
+                    comboTotal += 840;
+                    activatedCombos.push("超正確無比発動 (+840)");
+                    console.log("超正確無比発動 (+840)");
+                } else if (pitcherCount["制球"] >= 6) {
+                    comboTotal += 480;
+                    activatedCombos.push("正確無比発動 (+480)");
+                    console.log("正確無比発動 (+480)");
+                }
+
+                if (pitcherCount["スタミナ"] >= 8) {
+                    comboTotal += 840;
+                    activatedCombos.push("超堅忍不抜発動 (+840)");
+                    console.log("超堅忍不抜発動 (+840)");
+                } else if (pitcherCount["スタミナ"] >= 6) {
+                    comboTotal += 480;
+                    activatedCombos.push("堅忍不抜発動 (+480)");
+                    console.log("堅忍不抜発動 (+480)");
+                }
+
                 // 選手の称号を取得する関数
                 function getUserSelectedTitleBonus(player) {
                     let playerSelects = document.querySelectorAll(".player");
@@ -2282,6 +2314,60 @@
 
                 console.log(`合計コンボポイント: ${comboTotal}`);
                 console.log(`発動したコンボ: ${activatedCombos.join(', ')}`);
+
+
+
+
+                // スタメンとベンチを分離するための仮定データ構造
+                // 実際にはUIやデータ構造に合わせて調整が必要
+                const startingFielders = selectedPlayers
+                    .map(player => playerData[player])
+                    .filter(playerInfo => playerInfo && playerInfo.type === "野手")
+                    .slice(0, 9); // スタメン野手9人（または8人に変更可能）
+
+                const benchFielders = selectedPlayers
+                    .map(player => playerData[player])
+                    .filter(playerInfo => playerInfo && playerInfo.type === "野手")
+                    .slice(9, 13); // ベンチ野手4人
+
+                // ジグザグ打線の判定（スタメン野手のみ）
+                function checkZigzagLineup(fielders) {
+                    // 野手が9人未満ならジグザグ打線は成立しない（必要に応じて8人に変更）
+                    if (fielders.length < 9) {
+                        console.log(`スタメン野手が${fielders.length}人しかおらず、ジグザグ打線は発動しません`);
+                        return false;
+                    }
+
+                    let isZigzag = true;
+                    for (let i = 0; i < fielders.length - 1; i++) {
+                        const current = fielders[i].battingSide;
+                        const next = fielders[i + 1].battingSide;
+
+                        // 両打ちはスキップ（どちらでもOK）
+                        if (current === "両" || next === "両") continue;
+
+                        // 隣り合った打者が同じ打席ならジグザグではない
+                        if (current === next) {
+                            isZigzag = false;
+                            break;
+                        }
+                    }
+
+                    return isZigzag;
+                }
+
+
+                if (selectedPlayers.length > 0) {
+                    if (checkZigzagLineup(startingFielders)) {
+                        comboTotal += 450;
+                        activatedCombos.push("ジグザグ打線 (+450)");
+                        console.log("ジグザグ打線 (+450) 発動");
+                    } else {
+                        console.log("ジグザグ打線は発動しません");
+                    }
+                }
+
+
 
 
 
