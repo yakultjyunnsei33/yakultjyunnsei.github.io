@@ -2096,174 +2096,195 @@
                     console.log("疾風迅雷発動 (+600)");
                 }
 
+                // 選手の称号を取得する関数
+                function getUserSelectedTitleBonus(player) {
+                    let playerSelects = document.querySelectorAll(".player");
+                    let titleSelect = null;
 
-                // **ミート80以上の野手のみカウント**
-                let highMeetPlayers = selectedPlayers.filter(player =>
-                    playerData[player]?.position === "野手" && // 野手のみ対象
-                    (playerData[player]?.stat1 ?? 0) >= 80 // undefined の場合は 0
-                ).length;
+                    playerSelects.forEach(select => {
+                        if (select.value === player) {
+                            let row = select.closest("tr");
+                            titleSelect = row.querySelector(".title");
+                        }
+                    });
 
-                // **デバッグ用**
+                    if (!titleSelect) {
+                        console.log(`称号セレクトが見つかりません: ${player}`);
+                        return { stat1Bonus: 0, stat2Bonus: 0, stat3Bonus: 0 };
+                    }
+
+                    let selectedTitle = titleSelect.value; // 例: "3,0,1" (仮に3つの値とする)
+                    let titleStats = selectedTitle.split(',').map(Number);
+
+                    console.log(`選手: ${player}, 選択された称号: ${selectedTitle}, stat1加算値: ${titleStats[0] ?? 0}, stat2加算値: ${titleStats[1] ?? 0}, stat3加算値: ${titleStats[2] ?? 0}`);
+
+                    return {
+                        stat1Bonus: titleStats[0] ?? 0, // ミート or 球威
+                        stat2Bonus: titleStats[1] ?? 0, // パワー or 制球
+                        stat3Bonus: titleStats[2] ?? 0  // 走力 or スタミナ
+                    };
+                }
+
+                // カウント用の変数
+                let highMeetPlayers = 0;
+                let highPowerPlayers = 0;
+                let highSpeedPlayers = 0;
+                let highBallPowerPlayers = 0;
+                let highControlPlayers = 0;
+                let highStaminaPlayers = 0;
+
+
+
+                selectedPlayers.forEach(player => {
+                    let playerInfo = playerData[player];
+
+                    if (!playerInfo) {
+                        console.log(`選手: ${player} のデータが見つかりません`);
+                        return;
+                    }
+
+                    // 基本ステータス
+                    let baseStat1 = playerInfo.stat1 ?? 0; // 野手: ミート, 投手: 球威
+                    let baseStat2 = playerInfo.stat2 ?? 0; // 野手: パワー, 投手: 制球
+                    let baseStat3 = playerInfo.stat3 ?? 0; // 野手: 走力, 投手: スタミナ
+
+                    // ユーザーが選択した称号の加算値を取得
+                    let { stat1Bonus, stat2Bonus, stat3Bonus } = getUserSelectedTitleBonus(player);
+
+                    // 称号適用後のステータス
+                    let totalStat1 = baseStat1 + stat1Bonus;
+                    let totalStat2 = baseStat2 + stat2Bonus;
+                    let totalStat3 = baseStat3 + stat3Bonus;
+
+                    console.log(`選手: ${player}, 基本stat1: ${baseStat1}, 称号適用後stat1: ${totalStat1}`);
+                    console.log(`選手: ${player}, 基本stat2: ${baseStat2}, 称号適用後stat2: ${totalStat2}`);
+                    console.log(`選手: ${player}, 基本stat3: ${baseStat3}, 称号適用後stat3: ${totalStat3}`);
+
+                    if (playerInfo.type === "野手") {
+                        // 野手の処理
+                        if (totalStat1 >= 80) {
+                            console.log(`${player} は称号適用後にミート80到達`);
+                            highMeetPlayers++;
+                        }
+                        if (totalStat2 >= 80) {
+                            console.log(`${player} は称号適用後にパワー80到達`);
+                            highPowerPlayers++;
+                        }
+                        if (totalStat3 >= 80) {
+                            console.log(`${player} は称号適用後に走力80到達`);
+                            highSpeedPlayers++;
+                        }
+                    } else if (playerInfo.type === "投手") {
+                        // 投手の処理
+                        if (totalStat1 >= 80) {
+                            console.log(`${player} は称号適用後に球威80到達`);
+                            highBallPowerPlayers++;
+                        }
+                        if (totalStat2 >= 80) {
+                            console.log(`${player} は称号適用後に制球80到達`);
+                            highControlPlayers++;
+                        }
+                        if (totalStat3 >= 80) {
+                            console.log(`${player} は称号適用後にスタミナ80到達`);
+                            highStaminaPlayers++;
+                        }
+                    } else {
+                        console.log(`${player} は野手でも投手でもありません`);
+                    }
+                });
+
                 console.log(`選択された選手数: ${selectedPlayers.length}`);
                 console.log(`ミート80以上の野手数: ${highMeetPlayers}`);
-
-                // **コンボ発動**
-                if (highMeetPlayers >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("超安打製造機 (+720)");
-                    console.log("超安打製造機 (+720)");
-                } else if (highMeetPlayers >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("安打製造機 (+240)");
-                    console.log("安打製造機 (+240)");
-                }
-
-                // **パワー80以上の野手のみカウント**
-                let highPowerPlayers = selectedPlayers.filter(player =>
-                    playerData[player]?.position === "野手" && // 野手のみ対象
-                    (playerData[player]?.stat1 ?? 0) >= 80 // undefined の場合は 0
-                ).length;
-
-                // **デバッグ用**
-                console.log(`選択された選手数: ${selectedPlayers.length}`);
-                console.log(`ミート80以上の野手数: ${highPowerPlayers}`);
-                // **パワー80以上の選手が8人以上なら "超重量打線 +720" を発動**
-
-
-                if (highPowerPlayers >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("超重量打線 (+720)");
-                    console.log("超重量打線 (+720)");
-                } else if (highPowerPlayers >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("重量打線 (+240)");
-                    console.log("重量打線 (+240)");
-
-                }
-
-
-                // *走力80以上の野手のみカウント**
-                let highSpeedPlayers = selectedPlayers.filter(player =>
-                    playerData[player]?.position === "野手" && // 野手のみ対象
-                    (playerData[player]?.stat1 ?? 0) >= 80 // undefined の場合は 0
-                ).length;
-
-                // **デバッグ用**
-                console.log(`選択された選手数: ${selectedPlayers.length}`);
+                console.log(`パワー80以上の野手数: ${highPowerPlayers}`);
                 console.log(`走力80以上の野手数: ${highSpeedPlayers}`);
-                // **パワー80以上の選手が8人以上なら "超重量打線 +720" を発動**
+                console.log(`球威80以上の投手数: ${highBallPowerPlayers}`);
+                console.log(`制球80以上の投手数: ${highControlPlayers}`);
+                console.log(`スタミナ80以上の投手数: ${highStaminaPlayers}`);
 
+                // コンボ発動条件
+                if (selectedPlayers.length === 0) {
+                    console.log("選手が選択されていません。コンボは発動しません");
+                } else {
+                    // 野手のコンボ
+                    if (highMeetPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("超安打製造機 (+720)");
+                        console.log("超安打製造機 (+720) 発動");
+                    } else if (highMeetPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("安打製造機 (+240)");
+                        console.log("安打製造機 (+240) 発動");
+                    } else {
+                        console.log("安打製造機は発動しません");
+                    }
 
-                if (highSpeedPlayers >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("光速ランナーズ(+720)");
-                    console.log("光速ランナーズ (+720)");
-                } else if (highSpeedPlayers >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("音速ランナーズ (+240)");
-                    console.log("音速ランナーズ (+240)");
+                    if (highPowerPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("超重量打線 (+720)");
+                        console.log("超重量打線 (+720) 発動");
+                    } else if (highPowerPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("重量打線 (+240)");
+                        console.log("重量打線 (+240) 発動");
+                    } else {
+                        console.log("重量打線は発動しません");
+                    }
 
+                    if (highSpeedPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("光速ランナーズ (+720)");
+                        console.log("光速ランナーズ (+720) 発動");
+                    } else if (highSpeedPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("音速ランナーズ (+240)");
+                        console.log("音速ランナーズ (+240) 発動");
+                    } else {
+                        console.log("音速ランナーズは発動しません");
+                    }
+
+                    // 投手のコンボ
+                    if (highBallPowerPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("超豪腕投手陣 (+720)");
+                        console.log("超豪腕投手陣 (+720) 発動");
+                    } else if (highBallPowerPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("豪腕投手陣 (+240)");
+                        console.log("豪腕投手陣 (+240) 発動");
+                    } else {
+                        console.log("豪腕投手陣は発動しません");
+                    }
+
+                    if (highControlPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("超精密スナイパーズ (+720)");
+                        console.log("超精密スナイパーズ (+720) 発動");
+                    } else if (highControlPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("精密スナイパーズ (+240)");
+                        console.log("精密スナイパーズ (+240) 発動");
+                    } else {
+                        console.log("精密スナイパーズは発動しません");
+                    }
+
+                    if (highStaminaPlayers >= 8) {
+                        comboTotal += 720;
+                        activatedCombos.push("超鉄腕投手陣 (+720)");
+                        console.log("超鉄腕投手陣 (+720) 発動");
+                    } else if (highStaminaPlayers >= 4) {
+                        comboTotal += 240;
+                        activatedCombos.push("鉄腕投手陣 (+240)");
+                        console.log("鉄腕投手陣 (+240) 発動");
+                    } else {
+                        console.log("鉄腕投手陣は発動しません");
+                    }
                 }
 
+                console.log(`合計コンボポイント: ${comboTotal}`);
+                console.log(`発動したコンボ: ${activatedCombos.join(', ')}`);
 
 
 
-                // **ピッチャーのコンボも同様に修正**
-                if (pitcherCount["球威"] >= 8) {
-                    comboTotal += 840;
-                    activatedCombos.push("超力戦奮投発動 (+840)");
-                    console.log("超力戦奮投発動 (+840)");
-                } else if (pitcherCount["球威"] >= 6) {
-                    comboTotal += 480;
-                    activatedCombos.push("力戦奮投発動 (+480)");
-                    console.log("力戦奮投発動 (+480)");
-                }
-
-                if (pitcherCount["制球"] >= 8) {
-                    comboTotal += 840;
-                    activatedCombos.push("超正確無比発動 (+840)");
-                    console.log("超正確無比発動 (+840)");
-                } else if (pitcherCount["制球"] >= 6) {
-                    comboTotal += 480;
-                    activatedCombos.push("正確無比発動 (+480)");
-                    console.log("正確無比発動 (+480)");
-                }
-
-                if (pitcherCount["スタミナ"] >= 8) {
-                    comboTotal += 840;
-                    activatedCombos.push("超堅忍不抜発動 (+840)");
-                    console.log("超堅忍不抜発動 (+840)");
-                } else if (pitcherCount["スタミナ"] >= 6) {
-                    comboTotal += 480;
-                    activatedCombos.push("堅忍不抜発動 (+480)");
-                    console.log("堅忍不抜発動 (+480)");
-                }
-
-
-
-                // **球威80以上の選手が何人いるかをカウント**
-                let highBallPowerPlayers = selectedPlayers.filter(player => {
-                    let ballPower = playerData[player]?.stat1 ?? 0; // undefined の場合は 0
-                    console.log(`選手: ${player}, 球威: ${ballPower}`); // デバッグ用
-                    return ballPower >= 80;
-                }).length;
-
-                // **デバッグ出力**
-                console.log(`選択された選手数: ${selectedPlayers.length}`);
-                console.log(`球威80以上の選手数: ${highBallPowerPlayers}`);
-
-                // **コンボ発動処理**
-                if (highBallPowerPlayers >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("超豪腕投手陣 (+720)");
-                    console.log("超豪腕投手陣 (+720)");
-                } else if (highBallPowerPlayers >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("豪腕投手陣 (+240)");
-                    console.log("豪腕投手陣 (+240)");
-                }
-
-
-
-                // **制球80以上の選手が何人いるかをカウント**
-                let highBallControlPlayer = selectedPlayers.filter(player => {
-                    let control = playerData[player]?.stat2 ?? 0; // undefined の場合は 0
-                    console.log(`選手: ${player}, 制球: ${control}`); // デバッグ用
-                    return control >= 80;
-                }).length;
-
-                console.log(`制球80以上の選手数: ${highBallControlPlayer}`); // デバッグ用
-
-                // **コンボ発動処理**
-                if (highBallControlPlayer >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("超精密スナイパーズ (+720)");
-                    console.log("超精密スナイパーズ (+720)");
-                } else if (highBallControlPlayer >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("精密スナイパーズ (+240)");
-                    console.log("精密スナイパーズ (+240)");
-                }
-
-                // **スタミナ80以上の選手が何人いるかをカウント**
-                let highStaminaPlayers = selectedPlayers.filter(player => {
-                    let stamina = playerData[player]?.stat2 ?? 0; // undefined の場合は 0
-                    console.log(`選手: ${player}, スタミナ: ${stamina}`); // デバッグ用
-                    return stamina >= 80;
-                }).length;
-
-                console.log(`スタミナ80以上の選手数: ${highStaminaPlayers}`); // デバッグ用
-
-                // **コンボ発動処理**
-                if (highStaminaPlayers >= 8) {
-                    comboTotal += 720;
-                    activatedCombos.push("超鉄腕投手陣 (+720)");
-                    console.log("超鉄腕投手陣 (+720)");
-                } else if (highStaminaPlayers >= 4) {
-                    comboTotal += 240;
-                    activatedCombos.push("鉄腕投手陣 (+240)");
-                    console.log("鉄腕投手陣 (+240)");
-                }
 
 
                 // **一人選択で発動するコンボ**
