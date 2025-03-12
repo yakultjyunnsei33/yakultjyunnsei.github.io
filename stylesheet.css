@@ -1,6 +1,16 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 table {
     color: black;
+    width: 80%;
+    /* 幅を制限して中央揃えを明確に（任意で調整） */
 }
+
 
 /* ステータスごとの色分け */
 .stat.yellow {
@@ -17,4 +27,158 @@ table {
 
 .stat.fuchsia {
     color: fuchsia;
+}
+
+/* コンボ表示用のスタイル */
+#result {
+    white-space: pre-wrap;
+    /* 改行と空白を保持し、必要に応じて折り返し */
+    font-family: monospace;
+    /* 等幅フォントで揃える（任意） */
+    line-height: 1.5;
+    /* 行間を調整（任意） */
+    max-height: 300px;
+    /* 表示領域の高さを制限（任意） */
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    font-size: 2em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.player-card {
+    background: linear-gradient(145deg, #333, #111);
+    border: 2px solid #d4af37;
+    /* ゴールドの枠 */
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.player-card h2 {
+    font-size: 1.2em;
+    color: #d4af37;
+}
+
+.player-card p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+select,
+input {
+    background-color: #222;
+    color: white;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+#fielders-table td:first-child {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#pitchers-table td:first-child {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#fielders-table th {
+    color: white;
+}
+
+#pitchers-table th {
+    color: white;
+}
+
+#fielders-table td:first-child {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* スピリッツの値を白文字で表示 */
+.spirits {
+    color: white;
+}
+
+a {
+    color: #d4af37;
+    /* 例: ゴールド色 */
+}
+
+/* 既存のスタイルに追加 */
+p,
+div {
+    display: block;
+    margin: 5px 0;
+    /* 上下の余白を少し追加（任意） */
+}
+
+/* .containerが影響する場合 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#comboList {
+    white-space: pre-wrap;
+    font-family: monospace;
+    line-height: 1.5;
+    max-height: 300px;
+    text-align: center;
+}
+
+.combo-item {
+    display: block;
+    /* 縦に並べる */
+    border: 2px solid #d4af37;
+    /* ゴールドの四角枠 */
+    border-radius: 0;
+    /* 完全な四角 */
+    padding: 5px 10px;
+    /* 内側の余白 */
+    margin: 5px auto;
+    /* 上下に間隔、中央揃え */
+    color: white;
+    /* 文字色 */
+    background-color: #333;
+    /* 背景色 */
+    width: 300px;
+    /* 固定幅で枠の大きさを統一 */
+    box-sizing: border-box;
+    /* パディングを含む幅計算 */
+    text-align: center;
+    /* テキストを左寄せ（任意） */
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
 }
