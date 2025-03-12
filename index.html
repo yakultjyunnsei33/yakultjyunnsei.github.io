@@ -899,7 +899,7 @@
                 }
             },
             "TS雄平": {
-                "type": "野手", "stat1": 79, "stat2": 76, "stat3": 75, "spirits": 4900, "abilities": ["超広角", "盗塁", "アーチスト"], "battingSide": "左",
+                "type": "野手", "stat1": 79, "stat2": 76, "stat3": 75, "spirits": 4900, "abilities": ["超広角", "盗塁", "アーチ"], "battingSide": "左",
                 "mainPosition": {
                     "name": "右翼手",
                     "適性": 66
@@ -1893,6 +1893,25 @@
                 activatedCombos.push("代表の誇り (+200)");
                 console.log("代表の誇り (+200)");
             }
+
+
+
+
+            //アーチストを持つ選手をフィルタリング**
+            const artist = selectedPlayers.filter(player =>
+                playerData[player]?.abilities.includes("超アーチ") || playerData[player]?.abilities.includes("アーチ")
+            );
+
+            let isartist = false; // 超初球の発動フラグ
+
+            if (artist.length >= 3) { // 3人以上で発動
+                comboTotal += 270;
+                activatedCombos.push("超アーチストの競演 (+270)");
+                console.log("超アーチストの競演 (+270)");
+                isartist = true; // フラグを立てる
+            }
+
+
 
             //超パワヒを持つ選手をフィルタリング**
             const superpowerhitters = selectedPlayers.filter(player =>
