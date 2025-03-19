@@ -429,6 +429,7 @@
                             <th>スタミナ</th>
                             <th>称号</th>
                             <th>スピリッツ</th>
+                            <th>B球種</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -445,6 +446,7 @@
                                     <option value="0,0,0,0,0">なし</option>
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
+                            <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <tr>
@@ -462,6 +464,7 @@
                                     <option value="0,0,0,0,0">なし</option>
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
+                            <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <tr>
@@ -479,6 +482,7 @@
                                     <option value="0,0,0,0,0">なし</option>
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
+                            <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <tr>
@@ -496,6 +500,7 @@
                                     <option value="0,0,0,0,0">なし</option>
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
+                            <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <tr>
@@ -513,6 +518,7 @@
                                     <option value="0,0,0,0,0">なし</option>
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
+                            <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td>1</td>
@@ -528,6 +534,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td>2</td>
@@ -543,6 +550,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td>3</td>
@@ -558,6 +566,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td>4</td>
@@ -573,6 +582,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td> </td>
@@ -588,6 +598,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
 
                         <td> </td>
@@ -603,6 +614,7 @@
                                 <option value="0,0,0,0,0">なし</option>
                             </select></td>
                         <td class="spirits" data-base="0">0</td>
+                        <td class="bPitchCount" data-base="0">0</td>
                         </tr>
     </div>
     </tbody>
@@ -1318,9 +1330,9 @@
             if (!playerSelect) return console.error("playerSelectが見つかりません:", row.outerHTML);
             playerSelect.value = playerName;
 
-            row.cells[3].textContent = player.stat1 || 0;
-            row.cells[4].textContent = player.stat2 || 0;
-            row.cells[5].textContent = player.stat3 || 0;
+            row.cells[3].textContent = player.stat1 || 0; // 球威
+            row.cells[4].textContent = player.stat2 || 0; // 制球
+            row.cells[5].textContent = player.stat3 || 0; // スタミナ
 
             if (player.type === "野手") {
                 const hasSubPosition = player.subPositions && player.subPositions.length > 0;
@@ -1339,10 +1351,14 @@
                     let newSpirits = boostSum <= 7 ? (player.spirits || 0) + boostSum :
                         hasSubPosition ? (player.spirits || 0) + (boostSum === 8 ? 8 : 10) :
                             (player.spirits || 0) + boostSum + 2;
-                    row.cells[7].textContent = newSpirits;
+                    row.cells[7].textContent = newSpirits; // スピリッツ
                 }
-            } else {
-                row.cells[7].textContent = player.spirits || 0; // 投手は特守なし
+            } else if (player.type === "投手") {
+                row.cells[7].textContent = player.spirits || 0; // 投手のスピリッツ
+                const bPitchCell = row.querySelector(".bPitchCount"); // B球種のセルを取得
+                if (bPitchCell) {
+                    bPitchCell.textContent = player.bPitchCount || 0; // B球種を表示
+                }
             }
 
             const titleSelect = row.querySelector(".title");
@@ -1626,17 +1642,6 @@
 
             updateSelectableOptions();
 
-            // localStorageを使ってアクセス数を保存
-            let visitCount = localStorage.getItem('visitCount') || 0;
-
-            // アクセス数を1増やす
-            visitCount = parseInt(visitCount) + 1;
-
-            // 更新した値を保存
-            localStorage.setItem('visitCount', visitCount);
-
-            // コンソールに表示
-            console.log(`このページは${visitCount}回アクセスされました`);
 
         });
 
