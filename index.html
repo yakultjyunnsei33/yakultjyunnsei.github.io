@@ -1626,6 +1626,18 @@
 
             updateSelectableOptions();
 
+            // localStorageを使ってアクセス数を保存
+            let visitCount = localStorage.getItem('visitCount') || 0;
+
+            // アクセス数を1増やす
+            visitCount = parseInt(visitCount) + 1;
+
+            // 更新した値を保存
+            localStorage.setItem('visitCount', visitCount);
+
+            // コンソールに表示
+            console.log(`このページは${visitCount}回アクセスされました`);
+
         });
 
 
