@@ -638,15 +638,7 @@
 
     <script>
         const playerData = {
-            "侍中村悠平": {
-                "type": "野手", "stat1": 70, "stat2": 65, "stat3": 72, "spirits": 4800, "abilities": ["超捕手", "流し打ち", "選球眼"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "捕手",
-                    "適性": 69
-                },
-                "fielding": { "捕球": 40, "スローイング": 58, "肩力": 82 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
+
             "S1中村悠平": {
                 "type": "野手", "stat1": 67, "stat2": 65, "stat3": 64, "spirits": 4900,
                 "abilities": ["超捕手", "流し打ち", "選球眼"], "battingSide": "右",
@@ -695,23 +687,7 @@
                     "適性": 61
                 }, "fielding": { "捕球": 54, "スローイング": 54, "肩力": 78 },
                 "subPositions": [] // 明示的に空配列を追加
-            },
-            "侍川端慎吾": {
-                "type": "野手", "stat1": 83, "stat2": 67, "stat3": 73, "spirits": 4800, "abilities": ["超アベレージヒッター", "流し打ち", "固め打ち"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "三塁手",
-                    "適性": 60
-                },
-                "subPositions": [
-                    { "name": "一塁手", "適性": 51 },
-                    { "name": "二塁手", "適性": 47 },
-                    { "name": "遊撃手", "適性": 57 }
-                ],
-                "fielding": {
-                    "捕球": 50,
-                    "スローイング": 53,
-                    "肩力": 58
-                }
+
             },
             "S1川端慎吾": {
                 "type": "野手", "stat1": 72, "stat2": 65, "stat3": 69, "spirits": 4900, "abilities": ["超代打の神様", "アベレージヒッター", "いぶし銀"], "battingSide": "左",
@@ -783,18 +759,7 @@
 
                 ],
                 "fielding": { "捕球": 45, "スローイング": 48, "肩力": 50 }
-            },
-            "侍山田哲人": {
-                "type": "野手", "stat1": 81, "stat2": 83, "stat3": 82, "spirits": 4800, "abilities": ["超パワヒ", "アベレージヒッター", "盗塁"], "battingSide": "右"
-                , "mainPosition": {
-                    "name": "一塁手",
-                    "適性": 52
-                },
-                "subPositions": [
-                    { "name": "二塁手", "適性": 71 }
 
-                ],
-                "fielding": { "捕球": 72, "スローイング": 50, "肩力": 65 }
             },
             "S1山田哲人": {
                 "type": "野手", "stat1": 65, "stat2": 77, "stat3": 78, "spirits": 4900, "abilities": ["超パワヒ", "プルヒ", "初球"], "battingSide": "右",
@@ -1084,7 +1049,7 @@
                 }
             },
             "TS稲葉篤紀": {
-                "type": "野手", "stat1": 80, "stat2": 78, "stat3": 70, "spirits": 4900, "abilities": ["超ライドラ", "走塁", "チャンス"], "battingSide": "左",
+                "type": "野手", "stat1": 79, "stat2": 77, "stat3": 70, "spirits": 4900, "abilities": ["超ライドラ", "走塁", "チャンス"], "battingSide": "左",
                 "mainPosition": {
                     "name": "右翼手",
                     "適性": 76
@@ -1125,6 +1090,10 @@
             "S1吉村貢司郎": {
                 "type": "投手", "stat1": 75, "stat2": 77, "stat3": 75, "spirits": 4900, "abilities": ["超ノビ", "キレ", "安定感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
             },
+
+            "S1奥川恭伸": {
+                "type": "投手", "stat1": 75, "stat2": 75, "stat3": 73, "spirits": 4900, "abilities": ["超奪三振", "キレ", "援護"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
+            },
             "S1小川泰弘": {
                 "type": "投手", "stat1": 72, "stat2": 80, "stat3": 78, "spirits": 4900, "abilities": ["超コントロール", "援護", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
             },
@@ -1134,12 +1103,7 @@
                     { "name": "中継ぎ" }, { "name": "抑え" }// 副ポジション: 中継ぎ
                 ]
             },
-            "侍小川泰弘": {
-                "type": "投手", "stat1": 80, "stat2": 75, "stat3": 80, "spirits": 4800, "abilities": ["超対ピンチ", "キレ", "打たれ強さ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" }, { "name": "抑え" }// 副ポジション: 中継ぎ
-                ]
-            },
+
             "S1アビラ": {
                 "type": "投手", "stat1": 70, "stat2": 61, "stat3": 71, "spirits": 4900, "abilities": ["超対左打者", "対強打者", "存在感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
             },
