@@ -125,6 +125,9 @@ input {
     color: white;
 }
 
+.bPitchCount {
+    color: white;
+}
 a {
     color: #d4af37;
     /* 例: ゴールド色 */
