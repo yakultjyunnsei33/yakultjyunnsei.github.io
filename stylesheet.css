@@ -187,3 +187,178 @@ body {
     font-family: Arial, sans-serif;
 }
 
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #d4af37;
+    /* 枠線を明確に */
+    box-sizing: border-box;
+}
+
+/* 各列の幅を固定 */
+#fielders-table th:nth-child(1),
+#fielders-table td:nth-child(1) {
+    /* 打順 */
+    width: 40px;
+}
+
+#fielders-table th:nth-child(2),
+#fielders-table td:nth-child(2) {
+    /* ポジション */
+    width: 120px;
+}
+
+#fielders-table th:nth-child(3),
+#fielders-table td:nth-child(3) {
+    /* 名前 */
+    width: 150px;
+}
+
+#fielders-table th:nth-child(4),
+#fielders-table td:nth-child(4),
+#fielders-table th:nth-child(5),
+#fielders-table td:nth-child(5),
+#fielders-table th:nth-child(6),
+#fielders-table td:nth-child(6) {
+    /* ミ、パ、走 */
+    width: 60px;
+}
+
+#fielders-table th:nth-child(7),
+#fielders-table td:nth-child(7) {
+    /* 称号 */
+    width: 100px;
+}
+
+#fielders-table th:nth-child(8),
+#fielders-table td:nth-child(8) {
+    /* スピ */
+    width: 60px;
+}
+
+#fielders-table th:nth-child(9),
+#fielders-table td:nth-child(9),
+#fielders-table th:nth-child(10),
+#fielders-table td:nth-child(10),
+#fielders-table th:nth-child(11),
+#fielders-table td:nth-child(11),
+#fielders-table th:nth-child(12),
+#fielders-table td:nth-child(12),
+#fielders-table th:nth-child(13),
+#fielders-table td:nth-child(13) {
+    /* メイン～サブポジ */
+    width: 70px;
+}
+
+/* 特守欄のスタイル */
+.tokushu-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.minus-btn,
+.plus-btn {
+    background-color: #d4af37;
+    color: #1a1a1a;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 20px;
+}
+
+.tokushu-input {
+    width: 25px;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 12px;
+    height: 20px;
+}
+
+/* スマホ向け調整 */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+        table-layout: auto;
+        /* スマホでは自動調整 */
+    }
+
+    th,
+    td {
+        padding: 4px;
+        min-width: 40px;
+    }
+
+    #fielders-table th:nth-child(2),
+    #fielders-table td:nth-child(2) {
+        width: 80px;
+    }
+
+    #fielders-table th:nth-child(3),
+    #fielders-table td:nth-child(3) {
+        width: 100px;
+    }
+
+    #fielders-table th:nth-child(9),
+    #fielders-table td:nth-child(9),
+    #fielders-table th:nth-child(10),
+    #fielders-table td:nth-child(10),
+    #fielders-table th:nth-child(11),
+    #fielders-table td:nth-child(11),
+    #fielders-table th:nth-child(12),
+    #fielders-table td:nth-child(12),
+    #fielders-table th:nth-child(13),
+    #fielders-table td:nth-child(13) {
+        width: 60px;
+    }
+
+    .tokushu-control {
+        gap: 1px;
+    }
+
+    .minus-btn,
+    .plus-btn {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .tokushu-input {
+        width: 20px;
+        height: 18px;
+        font-size: 10px;
+    }
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #d4af37;
+    box-sizing: border-box;
+    vertical-align: middle;
+    overflow: hidden;
+    display: table-cell !important;
+    /* セルを強制的に分離 */
+}
+
+/* 特守欄のセルを強制的に分離 */
+#fielders-table td.tokushu-control {
+    display: table-cell !important;
+    width: 70px !important;
+    min-width: 70px !important;
+    max-width: 70px !important;
+}
