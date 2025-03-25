@@ -26,11 +26,11 @@
                     <th>打順</th>
                     <th>ポジション</th>
                     <th>名前</th>
-                    <th>ミート</th>
-                    <th>パワー</th>
-                    <th>走力</th>
+                    <th>ミ</th>
+                    <th>パ</th>
+                    <th>走</th>
                     <th>称号</th>
-                    <th>スピリッツ</th>
+                    <th>スピ</th>
                     <th>メイン</th>
                     <th>捕球</th>
                     <th>スロー</th>
@@ -42,6 +42,7 @@
 
                 <tr>
                     <td>1</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジションを選択</option>
@@ -56,21 +57,66 @@
                             <option>指名打者</option>
                         </select>
                     </td>
-                    <td><select class="player">
+                    <!-- 選手選択 -->
+                    <td>
+                        <select class="player">
                             <option value="">野手を選択</option>
-                        </select></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td><select class="title">
+                        </select>
+                    </td>
+                    <!-- 各ステータスの調整ボタン -->
+                    <td class="stat">
+                        <button class="minus-btn">-</button>
+                        <span class="stat-value" data-base="0">0</span>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="stat">
+                        <button class="minus-btn">-</button>
+                        <span class="stat-value" data-base="0">0</span>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="stat">
+                        <button class="minus-btn">-</button>
+                        <span class="stat-value" data-base="0">0</span>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- 称号選択 -->
+                    <td>
+                        <select class="title">
                             <option value="0,0,0,0,0">なし</option>
-                        </select></td>
+                        </select>
+                    </td>
+                    <!-- スピリッツ表示 -->
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <!-- 特守の調整ボタン -->
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -99,13 +145,32 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
-
                 <tr>
                     <td>3</td>
                     <td>
@@ -132,11 +197,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -164,11 +252,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -197,12 +308,36 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
+
 
 
                 <tr>
@@ -231,11 +366,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -264,11 +422,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -297,11 +478,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -330,13 +534,35 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
-                </tr>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
 
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                </tr>
                 <tr>
                     <td> </td>
                     <td bgcolor="blueviolet"> 代打 </td>
@@ -350,13 +576,35 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
-                </tr>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
 
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                </tr>
                 <tr>
                     <td> </td>
                     <td bgcolor="blueviolet">代打 </td>
@@ -370,11 +618,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -390,11 +661,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
                 <tr>
@@ -410,11 +704,34 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="2" value="0"></td>
-                    <td><input type="number" class="tokushu-input" min="0" max="1" value="0"></td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+
+
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
+                    <!-- サブポジの調整ボタン -->
+                    <td class="tokushu-control">
+                        <button class="minus-btn">-</button>
+                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
+                        <button class="plus-btn">+</button>
+                    </td>
                 </tr>
 
 
@@ -1652,8 +1969,47 @@
 
             updateSelectableOptions();
 
+            // 特守欄のボタンイベント
+            document.querySelectorAll(".tokushu-input").forEach(input => {
+                const minusBtn = input.previousElementSibling;
+                const plusBtn = input.nextElementSibling;
+                const maxVal = parseInt(input.max); // 2 または 1
+                const minVal = parseInt(input.min); // 0
 
+                minusBtn.addEventListener("click", function () {
+                    let currentVal = parseInt(input.value) || 0;
+                    if (currentVal > minVal) {
+                        input.value = currentVal - 1;
+                        triggerUpdate(input);
+                    }
+                });
+
+                plusBtn.addEventListener("click", function () {
+                    let currentVal = parseInt(input.value) || 0;
+                    if (currentVal < maxVal) {
+                        input.value = currentVal + 1;
+                        triggerUpdate(input);
+                    }
+                });
+            });
+
+            // 値変更後にスピリッツなどを更新
+            function triggerUpdate(input) {
+                const row = input.closest("tr");
+                const playerSelect = row.querySelector(".player");
+                const rows = document.querySelectorAll("#fielders-table tbody tr");
+                const index = Array.from(rows).indexOf(row);
+                const playerName = playerSelect.value;
+                if (playerName && playerData[playerName]) {
+                    updatePlayerStats(index, playerName, "#fielders-table");
+                }
+            }
+
+            // 既存のコードはそのまま
         });
+
+
+
 
 
         // コンボ計算関数
