@@ -14,8 +14,8 @@
 <body>
 
     <center><b>
-            <font size="15" color="red">プロスピAオーダーシュミレータ</font>
-            <font size="15" color="lime">（ヤクルト純正）</font>
+            <font size="10" color="red">プロスピAオーダーシュミレータ</font>
+            <font size="10" color="lime">（ヤクルト純正）</font>
     </center></b>
 
     <div class="container">
@@ -32,10 +32,10 @@
                     <th>称号</th>
                     <th>スピ</th>
                     <th>メイン</th>
-                    <th>捕球</th>
+                    <th>捕</th>
                     <th>スロー</th>
-                    <th>肩力</th>
-                    <th>サブポジ</th>
+                    <th>肩</th>
+                    <th>サブ</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@
                     <!-- ポジション選択 -->
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -123,7 +123,7 @@
                     <td>2</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -175,7 +175,7 @@
                     <td>3</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -230,7 +230,7 @@
                     <td>4</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -286,7 +286,7 @@
                     <td>5</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -344,7 +344,7 @@
                     <td>6</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -400,7 +400,7 @@
                     <td>7</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -456,7 +456,7 @@
                     <td>8</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -512,7 +512,7 @@
                     <td>9</td>
                     <td>
                         <select class="position">
-                            <option value="">ポジションを選択</option>
+                            <option value="">ポジ選択</option>
                             <option>捕手</option>
                             <option>一塁手</option>
                             <option>二塁手</option>
@@ -968,182 +968,6 @@
     <script>
         const playerData = {
 
-            "S1中村悠平": {
-                "type": "野手", "stat1": 67, "stat2": 64, "stat3": 66, "spirits": 4900,
-                "abilities": ["超捕手", "流し打ち", "選球眼"], "battingSide": "右",
-                "mainPosition": { "name": "捕手", "適性": 69 },
-                "fielding": { "捕球": 60, "スローイング": 77, "肩力": 82 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "TS相川亮二": {
-                "type": "野手", "stat1": 77, "stat2": 72, "stat3": 61, "spirits": 4900, "abilities": ["超捕手", "チャンス", "denaキラー"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "捕手",
-                    "適性": 73
-                }, "fielding": { "捕球": 66, "スローイング": 67, "肩力": 68 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "S1松本直樹": {
-                "type": "野手", "stat1": 67, "stat2": 63, "stat3": 63, "spirits": 4900, "abilities": ["超チャンス", "粘りうち", "代打"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "捕手",
-                    "適性": 60
-                }, "fielding": { "捕球": 48, "スローイング": 54, "肩力": 84 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "S1内山壮真": {
-                "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4900, "abilities": ["超チャンス", "粘りうち", "広角"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "捕手",
-                    "適性": 63
-                },
-                "subPositions": [
-                    { "name": "左翼手", "適性": 58 },
-                    { "name": "中堅手", "適性": 55 },
-                    { "name": "右翼手", "適性": 58 }
-                ],
-                "fielding": {
-                    "捕球": 46,
-                    "スローイング": 61,
-                    "肩力": 64
-                }
-            },
-
-            "S1オスナ": {
-                "type": "野手", "stat1": 73, "stat2": 76, "stat3": 54, "spirits": 4900, "abilities": ["超ライドラ", "フルスイング", "チャンス"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "一塁手",
-                    "適性": 61
-                }, "fielding": { "捕球": 54, "スローイング": 54, "肩力": 78 },
-                "subPositions": [] // 明示的に空配列を追加
-
-            },
-            "S1川端慎吾": {
-                "type": "野手", "stat1": 72, "stat2": 65, "stat3": 69, "spirits": 4900, "abilities": ["超代打の神様", "アベレージヒッター", "いぶし銀"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "一塁手",
-                    "適性": 53
-                }, "fielding": { "捕球": 40, "スローイング": 53, "肩力": 56 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "TS田中浩康": {
-                "type": "野手", "position": "二塁手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4900, "abilities": ["超流し打ち", "選球眼", "守備職人"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 80
-                },
-                "subPositions": [
-                    { "name": "遊撃手", "適性": 54 }
-
-                ],
-                "fielding": {
-                    "捕球": 81,
-                    "スローイング": 68,
-                    "肩力": 55
-                }
-            },
-            "S1武岡龍世": {
-                "type": "野手", "stat1": 56, "stat2": 62, "stat3": 74, "spirits": 4900, "abilities": ["超代打の神様", "粘りうち", "意外性"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 62
-                },
-                "subPositions": [
-                    { "name": "遊撃手", "適性": 62 },
-                    { "name": "三塁手", "適性": 51 }
-
-                ],
-                "fielding": {
-                    "捕球": 42,
-                    "スローイング": 45,
-                    "肩力": 64
-                }
-            },
-            "S1宮本丈": {
-                "type": "野手", "stat1": 66, "stat2": 62, "stat3": 70, "spirits": 4900, "abilities": ["超チャンメ", "選球眼", "初球"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "右翼手",
-                    "適性": 60
-                },
-                "subPositions": [
-                    { "name": "左翼手", "適性": 57 },
-                    { "name": "一塁手", "適性": 56 },
-                    { "name": "二塁手", "適性": 60 },
-                    { "name": "三塁手", "適性": 57 }
-                ],
-                "fielding": {
-                    "捕球": 57,
-                    "スローイング": 54,
-                    "肩力": 45
-                }
-            },
-            "TS土橋勝征": {
-                "type": "野手", "stat1": 79, "stat2": 69, "stat3": 61, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "代打"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 66
-                },
-                "subPositions": [
-                    { "name": "一塁手", "適性": 51 }
-
-                ],
-                "fielding": { "捕球": 45, "スローイング": 48, "肩力": 50 }
-
-            },
-            "S1山田哲人": {
-                "type": "野手", "stat1": 65, "stat2": 76, "stat3": 79, "spirits": 4900, "abilities": ["超パワヒ", "プルヒ", "選球眼"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 73
-                }, "fielding": { "捕球": 78, "スローイング": 79, "肩力": 65 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "TS山田哲人": {
-                "type": "野手", "stat1": 85, "stat2": 85, "stat3": 81, "spirits": 4900, "abilities": ["超パワヒ", "アベレージヒッター", "盗塁"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 69
-                },
-                "subPositions": [
-
-                    { "name": "一塁手", "適性": 52 },
-
-                    { "name": "三塁手", "適性": 54 }
-                ], "fielding": { "捕球": 69, "スローイング": 50, "肩力": 65 }
-            },
-            "S1村上宗隆": {
-                "type": "野手", "stat1": 78, "stat2": 84, "stat3": 71, "spirits": 4900, "abilities": ["超アーチ", "広角", "チャンス"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "三塁手",
-                    "適性": 58
-                },
-                "subPositions": [
-                    { "name": "一塁手", "適性": 58 }
-
-                ],
-                "fielding": {
-                    "捕球": 36,
-                    "スローイング": 42,
-                    "肩力": 61
-                }
-            },
-            "S1茂木栄五郎": {
-                "type": "野手", "stat1": 68, "stat2": 67, "stat3": 75, "spirits": 4900, "abilities": ["超代打", "走塁", "ライドラ"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 57
-                },
-                "subPositions": [
-                    { "name": "三撃手", "適性": 63 },
-                    { "name": "右翼手", "適性": 57 }
-
-                ],
-                "fielding": {
-                    "捕球": 65,
-                    "スローイング": 71,
-                    "肩力": 59
-                }
-            },
             "TS池山隆寛": {
                 "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4900, "abilities": ["超アーチ", "チャンス", "サヨナラ男"], "battingSide": "右",
                 "mainPosition": {
@@ -1152,80 +976,7 @@
                 }, "fielding": { "捕球": 73, "スローイング": 70, "肩力": 75 },
                 "subPositions": [] // 明示的に空配列を追加
             },
-            "S1長岡秀樹": {
-                "type": "野手", "stat1": 76, "stat2": 69, "stat3": 73, "spirits": 4900, "abilities": ["超流し打ち", "固め打ち", "初球"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "遊撃手",
-                    "適性": 70
-                }, "fielding": { "捕球": 65, "スローイング": 71, "肩力": 67 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
-            "S1サンタナ": {
-                "type": "野手", "stat1": 81, "stat2": 80, "stat3": 63, "spirits": 4900, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "左翼手",
-                    "適性": 48
-                },
-                "subPositions": [
-                    { "name": "右翼手", "適性": 54 }
 
-                ],
-                "fielding": {
-                    "捕球": 38,
-                    "スローイング": 45,
-                    "肩力": 75
-                }
-            },
-            "S1西川遥輝": {
-                "type": "野手", "stat1": 67, "stat2": 64, "stat3": 85, "spirits": 4900, "abilities": ["超選球眼", "盗塁", "固め打ち"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "中堅手",
-                    "適性": 62
-                },
-                "subPositions": [
-                    { "name": "左翼手", "適性": 64 },
-                    { "name": "右翼手", "適性": 64 }
-
-                ],
-                "fielding": {
-                    "捕球": 43,
-                    "スローイング": 62,
-                    "肩力": 40
-                }
-            },
-            "TS雄平": {
-                "type": "野手", "stat1": 79, "stat2": 76, "stat3": 75, "spirits": 4900, "abilities": ["超広角", "盗塁", "アーチ"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "右翼手",
-                    "適性": 66
-                },
-                "subPositions": [
-                    { "name": "中堅手", "適性": 66 }
-
-                ],
-                "fielding": {
-                    "捕球": 52,
-                    "スローイング": 40,
-                    "肩力": 74
-                }
-            },
-            "S1丸山和郁": {
-                "type": "野手", "stat1": 66, "stat2": 64, "stat3": 83, "spirits": 4900, "abilities": ["超チャンメ", "選球眼", "内野安打"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "中堅手",
-                    "適性": 60
-                },
-                "subPositions": [
-                    { "name": "左翼手", "適性": 60 },
-                    { "name": "右翼手", "適性": 60 }
-
-                ],
-                "fielding": {
-                    "捕球": 53,
-                    "スローイング": 50,
-                    "肩力": 68
-                }
-            },
             "S1岩田幸宏": {
                 "type": "野手", "stat1": 54, "stat2": 56, "stat3": 80, "spirits": 4900, "abilities": ["超チャンメ", "走塁", "盗塁"], "battingSide": "左",
                 "mainPosition": {
@@ -1243,66 +994,24 @@
                     "肩力": 65
                 }
             },
-            "TS塩見泰隆": {
-                "type": "野手", "stat1": 80, "stat2": 75, "stat3": 83, "spirits": 4900, "abilities": ["超広角", "チャンメ", "盗塁"], "battingSide": "右",
+
+            "S1内山壮真": {
+                "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4900, "abilities": ["超チャンス", "粘りうち", "広角"], "battingSide": "右",
                 "mainPosition": {
-                    "name": "中堅手",
-                    "適性": 73
-                },
-                "fielding": {
-                    "捕球": 51,
-                    "スローイング": 71,
-                    "肩力": 60
-                }
-            },
-            "S1塩見泰隆": {
-                "type": "野手", "stat1": 75, "stat2": 75, "stat3": 82, "spirits": 4900, "abilities": ["超広角", "チャンメ", "選球眼"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "中堅手",
-                    "適性": 73
-                },
-                "fielding": {
-                    "捕球": 45,
-                    "スローイング": 50,
-                    "肩力": 60,
-                    "subPositions": [] // 明示的に空配列を追加
-                }
-            },
-            "S1増田珠": {
-                "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4900, "abilities": ["超初球", "粘りうち", "固め打ち"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "右翼手",
-                    "適性": 54
+                    "name": "捕手",
+                    "適性": 63
                 },
                 "subPositions": [
-                    { "name": "一塁手", "適性": 55 },
-                    { "name": "左翼手", "適性": 54 },
-                    { "name": "中堅手", "適性": 49 }
-
+                    { "name": "左翼手", "適性": 58 },
+                    { "name": "中堅手", "適性": 55 },
+                    { "name": "右翼手", "適性": 58 }
                 ],
                 "fielding": {
                     "捕球": 46,
-                    "スローイング": 43,
-                    "肩力": 51
+                    "スローイング": 61,
+                    "肩力": 64
                 }
             },
-            "S1澤井廉": {
-                "type": "野手", "stat1": 56, "stat2": 63, "stat3": 62, "spirits": 4900, "abilities": ["超初球", "粘りうち", "流し打ち"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "右翼手",
-                    "適性": 48
-                },
-                "subPositions": [
-
-                    { "name": "左翼手", "適性": 48 }
-                ],
-                "fielding": {
-                    "捕球": 40,
-                    "スローイング": 52,
-                    "肩力": 53
-                }
-            },
-
             "S1太田賢吾": {
                 "type": "野手", "stat1": 64, "stat2": 63, "stat3": 75, "spirits": 4900, "abilities": ["超固め打ち", "走塁", "連打"], "battingSide": "左",
                 "mainPosition": {
@@ -1324,23 +1033,24 @@
                     "肩力": 66
                 }
             },
-            "S1濱田太貴": {
-                "type": "野手", "stat1": 59, "stat2": 70, "stat3": 70, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "逆境"], "battingSide": "右",
+            "S1オスナ": {
+                "type": "野手", "stat1": 73, "stat2": 76, "stat3": 54, "spirits": 4900, "abilities": ["超ライドラ", "フルスイング", "チャンス"], "battingSide": "右",
                 "mainPosition": {
-                    "name": "左翼手",
-                    "適性": 52
-                },
-                "subPositions": [
-                    { "name": "中堅手", "適性": 51 },
-                    { "name": "右翼手", "適性": 60 }
+                    "name": "一塁手",
+                    "適性": 61
+                }, "fielding": { "捕球": 54, "スローイング": 54, "肩力": 78 },
+                "subPositions": [] // 明示的に空配列を追加
 
-                ],
-                "fielding": {
-                    "捕球": 41,
-                    "スローイング": 46,
-                    "肩力": 59
-                }
             },
+            "S1川端慎吾": {
+                "type": "野手", "stat1": 72, "stat2": 65, "stat3": 69, "spirits": 4900, "abilities": ["超代打の神様", "アベレージヒッター", "いぶし銀"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "一塁手",
+                    "適性": 53
+                }, "fielding": { "捕球": 40, "スローイング": 53, "肩力": 56 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
             "S1北村拓己": {
                 "type": "野手", "stat1": 58, "stat2": 60, "stat3": 64, "spirits": 4900, "abilities": ["超粘りうち", "走塁", "ライドラ"], "battingSide": "右",
                 "mainPosition": {
@@ -1360,6 +1070,322 @@
                 }
             },
 
+            "S1澤井廉": {
+                "type": "野手", "stat1": 56, "stat2": 63, "stat3": 62, "spirits": 4900, "abilities": ["超初球", "粘りうち", "流し打ち"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "右翼手",
+                    "適性": 48
+                },
+                "subPositions": [
+
+                    { "name": "左翼手", "適性": 48 }
+                ],
+                "fielding": {
+                    "捕球": 40,
+                    "スローイング": 52,
+                    "肩力": 53
+                }
+            },
+
+            "S1サンタナ": {
+                "type": "野手", "stat1": 81, "stat2": 80, "stat3": 63, "spirits": 4900, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "左翼手",
+                    "適性": 48
+                },
+                "subPositions": [
+                    { "name": "右翼手", "適性": 54 }
+
+                ],
+                "fielding": {
+                    "捕球": 38,
+                    "スローイング": 45,
+                    "肩力": 75
+                }
+            },
+
+            "S1塩見泰隆": {
+                "type": "野手", "stat1": 75, "stat2": 75, "stat3": 82, "spirits": 4900, "abilities": ["超広角", "チャンメ", "選球眼"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "中堅手",
+                    "適性": 73
+                },
+                "fielding": {
+                    "捕球": 45,
+                    "スローイング": 50,
+                    "肩力": 60,
+                    "subPositions": [] // 明示的に空配列を追加
+                }
+            },
+
+            "S1武岡龍世": {
+                "type": "野手", "stat1": 56, "stat2": 62, "stat3": 74, "spirits": 4900, "abilities": ["超代打の神様", "粘りうち", "意外性"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 62
+                },
+                "subPositions": [
+                    { "name": "遊撃手", "適性": 62 },
+                    { "name": "三塁手", "適性": 51 }
+
+                ],
+                "fielding": {
+                    "捕球": 42,
+                    "スローイング": 45,
+                    "肩力": 64
+                }
+            },
+
+            "TS田中浩康": {
+                "type": "野手", "position": "二塁手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4900, "abilities": ["超流し打ち", "選球眼", "守備職人"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 80
+                },
+                "subPositions": [
+                    { "name": "遊撃手", "適性": 54 }
+
+                ],
+                "fielding": {
+                    "捕球": 81,
+                    "スローイング": 68,
+                    "肩力": 55
+                }
+            },
+
+            "TS土橋勝征": {
+                "type": "野手", "stat1": 79, "stat2": 69, "stat3": 61, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "代打"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 66
+                },
+                "subPositions": [
+                    { "name": "一塁手", "適性": 51 }
+
+                ],
+                "fielding": { "捕球": 45, "スローイング": 48, "肩力": 50 }
+
+            },
+
+            "S1中村悠平": {
+                "type": "野手", "stat1": 67, "stat2": 64, "stat3": 66, "spirits": 4900,
+                "abilities": ["超捕手", "流し打ち", "選球眼"], "battingSide": "右",
+                "mainPosition": { "name": "捕手", "適性": 69 },
+                "fielding": { "捕球": 60, "スローイング": 77, "肩力": 82 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+            "S1長岡秀樹": {
+                "type": "野手", "stat1": 76, "stat2": 69, "stat3": 73, "spirits": 4900, "abilities": ["超流し打ち", "固め打ち", "初球"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "遊撃手",
+                    "適性": 70
+                }, "fielding": { "捕球": 65, "スローイング": 71, "肩力": 67 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
+            "S1西川遥輝": {
+                "type": "野手", "stat1": 67, "stat2": 64, "stat3": 85, "spirits": 4900, "abilities": ["超選球眼", "盗塁", "固め打ち"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "中堅手",
+                    "適性": 62
+                },
+                "subPositions": [
+                    { "name": "左翼手", "適性": 64 },
+                    { "name": "右翼手", "適性": 64 }
+
+                ],
+                "fielding": {
+                    "捕球": 43,
+                    "スローイング": 62,
+                    "肩力": 40
+                }
+            },
+            "S1濱田太貴": {
+                "type": "野手", "stat1": 59, "stat2": 70, "stat3": 70, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "逆境"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "左翼手",
+                    "適性": 52
+                },
+                "subPositions": [
+                    { "name": "中堅手", "適性": 51 },
+                    { "name": "右翼手", "適性": 60 }
+
+                ],
+                "fielding": {
+                    "捕球": 41,
+                    "スローイング": 46,
+                    "肩力": 59
+                }
+            },
+            "S1増田珠": {
+                "type": "野手", "stat1": 57, "stat2": 65, "stat3": 70, "spirits": 4900, "abilities": ["超初球", "粘りうち", "固め打ち"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "右翼手",
+                    "適性": 54
+                },
+                "subPositions": [
+                    { "name": "一塁手", "適性": 55 },
+                    { "name": "左翼手", "適性": 54 },
+                    { "name": "中堅手", "適性": 49 }
+
+                ],
+                "fielding": {
+                    "捕球": 46,
+                    "スローイング": 43,
+                    "肩力": 51
+                }
+            },
+
+            "S1松本直樹": {
+                "type": "野手", "stat1": 67, "stat2": 63, "stat3": 63, "spirits": 4900, "abilities": ["超チャンス", "粘りうち", "代打"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "捕手",
+                    "適性": 60
+                }, "fielding": { "捕球": 48, "スローイング": 54, "肩力": 84 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
+            "S1丸山和郁": {
+                "type": "野手", "stat1": 66, "stat2": 64, "stat3": 83, "spirits": 4900, "abilities": ["超チャンメ", "選球眼", "内野安打"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "中堅手",
+                    "適性": 60
+                },
+                "subPositions": [
+                    { "name": "左翼手", "適性": 60 },
+                    { "name": "右翼手", "適性": 60 }
+
+                ],
+                "fielding": {
+                    "捕球": 53,
+                    "スローイング": 50,
+                    "肩力": 68
+                }
+            },
+
+            "S1宮本丈": {
+                "type": "野手", "stat1": 66, "stat2": 62, "stat3": 70, "spirits": 4900, "abilities": ["超チャンメ", "選球眼", "初球"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "右翼手",
+                    "適性": 60
+                },
+                "subPositions": [
+                    { "name": "左翼手", "適性": 57 },
+                    { "name": "一塁手", "適性": 56 },
+                    { "name": "二塁手", "適性": 60 },
+                    { "name": "三塁手", "適性": 57 }
+                ],
+                "fielding": {
+                    "捕球": 57,
+                    "スローイング": 54,
+                    "肩力": 45
+                }
+            },
+
+            "S1村上宗隆": {
+                "type": "野手", "stat1": 78, "stat2": 84, "stat3": 71, "spirits": 4900, "abilities": ["超アーチ", "広角", "チャンス"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "三塁手",
+                    "適性": 58
+                },
+                "subPositions": [
+                    { "name": "一塁手", "適性": 58 }
+
+                ],
+                "fielding": {
+                    "捕球": 36,
+                    "スローイング": 42,
+                    "肩力": 61
+                }
+            },
+
+            "S1茂木栄五郎": {
+                "type": "野手", "stat1": 68, "stat2": 67, "stat3": 75, "spirits": 4900, "abilities": ["超代打", "走塁", "ライドラ"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 57
+                },
+                "subPositions": [
+                    { "name": "三撃手", "適性": 63 },
+                    { "name": "右翼手", "適性": 57 }
+
+                ],
+                "fielding": {
+                    "捕球": 65,
+                    "スローイング": 71,
+                    "肩力": 59
+                }
+            },
+
+
+
+            "S1山田哲人": {
+                "type": "野手", "stat1": 65, "stat2": 76, "stat3": 79, "spirits": 4900, "abilities": ["超パワヒ", "プルヒ", "選球眼"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 73
+                }, "fielding": { "捕球": 78, "スローイング": 79, "肩力": 65 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            "TS相川亮二": {
+                "type": "野手", "stat1": 77, "stat2": 72, "stat3": 61, "spirits": 4900, "abilities": ["超捕手", "チャンス", "denaキラー"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "捕手",
+                    "適性": 73
+                }, "fielding": { "捕球": 66, "スローイング": 67, "肩力": 68 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
+            "TS稲葉篤紀": {
+                "type": "野手", "stat1": 79, "stat2": 77, "stat3": 70, "spirits": 4900, "abilities": ["超ライドラ", "走塁", "チャンス"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "右翼手",
+                    "適性": 76
+                },
+                "subPositions": [
+
+                    { "name": "中堅手", "適性": 66 }
+
+                ],
+                "fielding": {
+                    "捕球": 58,
+                    "スローイング": 83,
+                    "肩力": 69
+                }
+            },
+
+            "TS塩見泰隆": {
+                "type": "野手", "stat1": 80, "stat2": 75, "stat3": 83, "spirits": 4900, "abilities": ["超広角", "チャンメ", "盗塁"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "中堅手",
+                    "適性": 73
+                },
+                "fielding": {
+                    "捕球": 51,
+                    "スローイング": 71,
+                    "肩力": 60
+                }
+            },
             "TS福地寿樹": {
                 "type": "野手", "stat1": 83, "stat2": 70, "stat3": 83, "spirits": 4900, "abilities": ["超盗塁", "チャンスメーカー", "内野安打"], "battingSide": "両",
                 "mainPosition": {
@@ -1378,23 +1404,7 @@
                     "肩力": 49
                 }
             },
-            "TS稲葉篤紀": {
-                "type": "野手", "stat1": 79, "stat2": 77, "stat3": 70, "spirits": 4900, "abilities": ["超ライドラ", "走塁", "チャンス"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "右翼手",
-                    "適性": 76
-                },
-                "subPositions": [
 
-                    { "name": "中堅手", "適性": 66 }
-
-                ],
-                "fielding": {
-                    "捕球": 58,
-                    "スローイング": 83,
-                    "肩力": 69
-                }
-            },
             "TS山崎晃大朗": {
                 "type": "野手", "position": "中堅手", "stat1": 68, "stat2": 58, "stat3": 80, "spirits": 4900, "abilities": ["超チャンス", "粘りうち", "走塁"], "battingSide": "左",
                 "mainPosition": {
@@ -1411,6 +1421,40 @@
                     "捕球": 53,
                     "スローイング": 51,
                     "肩力": 60
+                }
+            },
+            "TS山田哲人": {
+                "type": "野手", "stat1": 85, "stat2": 85, "stat3": 81, "spirits": 4900, "abilities": ["超パワヒ", "アベレージヒッター", "盗塁"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 69
+                },
+                "subPositions": [
+
+                    { "name": "一塁手", "適性": 52 },
+
+                    { "name": "三塁手", "適性": 54 }
+                ], "fielding": { "捕球": 69, "スローイング": 50, "肩力": 65 }
+            },
+
+
+
+
+
+            "TS雄平": {
+                "type": "野手", "stat1": 79, "stat2": 76, "stat3": 75, "spirits": 4900, "abilities": ["超広角", "盗塁", "アーチ"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "右翼手",
+                    "適性": 66
+                },
+                "subPositions": [
+                    { "name": "中堅手", "適性": 66 }
+
+                ],
+                "fielding": {
+                    "捕球": 52,
+                    "スローイング": 40,
+                    "肩力": 74
                 }
             },
 
