@@ -15,7 +15,7 @@
 
     <center><b>
             <font size="10" color="red">プロスピAオーダーシュミレータ</font>
-            <font size="10" color="lime">（ヤクルト純正）</font>
+            <p>※スマホの方は横画面での利用をお勧めします</p>
     </center></b>
 
     <div class="container">
@@ -24,7 +24,7 @@
             <thead>
                 <tr>
                     <th>打順</th>
-                    <th>ポジション</th>
+                    <th>ポジ</th>
                     <th>名前</th>
                     <th>ミ</th>
                     <th>パ</th>
@@ -945,6 +945,13 @@
     </h3>
     <p>コンボの計算は以下のサイトを参考にしています。<a href="https://proace.info/COMBO/" target="_blank" rel="noopener noreferrer">
             プロスピA攻略|なにしてんねんデータベース様</a></p>
+
+    <p>TS候補は以下のサイトで参照できます。</p>
+
+    <iframe class="note-embed" src="https://note.com/embed/notes/n95d5247a8ac7"
+        style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;"
+        height="400"></iframe>
+    <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
     <br>
     <p id="hitterStats">ミート型: 0人, パワー型: 0人, 走力型: 0人</p>
     <p id="pitcherStats">球威型: 0人, 制球型: 0人, スタミナ型: 0人</p>
@@ -968,14 +975,7 @@
     <script>
         const playerData = {
 
-            "TS池山隆寛": {
-                "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4900, "abilities": ["超アーチ", "チャンス", "サヨナラ男"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "遊撃手",
-                    "適性": 74
-                }, "fielding": { "捕球": 73, "スローイング": 70, "肩力": 75 },
-                "subPositions": [] // 明示的に空配列を追加
-            },
+
 
             "S1岩田幸宏": {
                 "type": "野手", "stat1": 54, "stat2": 56, "stat3": 80, "spirits": 4900, "abilities": ["超チャンメ", "走塁", "盗塁"], "battingSide": "左",
@@ -1136,36 +1136,7 @@
                 }
             },
 
-            "TS田中浩康": {
-                "type": "野手", "position": "二塁手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4900, "abilities": ["超流し打ち", "選球眼", "守備職人"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 80
-                },
-                "subPositions": [
-                    { "name": "遊撃手", "適性": 54 }
 
-                ],
-                "fielding": {
-                    "捕球": 81,
-                    "スローイング": 68,
-                    "肩力": 55
-                }
-            },
-
-            "TS土橋勝征": {
-                "type": "野手", "stat1": 79, "stat2": 69, "stat3": 61, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "代打"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "二塁手",
-                    "適性": 66
-                },
-                "subPositions": [
-                    { "name": "一塁手", "適性": 51 }
-
-                ],
-                "fielding": { "捕球": 45, "スローイング": 48, "肩力": 50 }
-
-            },
 
             "S1中村悠平": {
                 "type": "野手", "stat1": 67, "stat2": 64, "stat3": 66, "spirits": 4900,
@@ -1356,6 +1327,15 @@
                 "subPositions": [] // 明示的に空配列を追加
             },
 
+            "TS池山隆寛": {
+                "type": "野手", "stat1": 75, "stat2": 80, "stat3": 73, "spirits": 4900, "abilities": ["超アーチ", "チャンス", "サヨナラ男"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "遊撃手",
+                    "適性": 74
+                }, "fielding": { "捕球": 73, "スローイング": 70, "肩力": 75 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
             "TS稲葉篤紀": {
                 "type": "野手", "stat1": 79, "stat2": 77, "stat3": 70, "spirits": 4900, "abilities": ["超ライドラ", "走塁", "チャンス"], "battingSide": "左",
                 "mainPosition": {
@@ -1386,6 +1366,56 @@
                     "肩力": 60
                 }
             },
+
+            "TS田中浩康": {
+                "type": "野手", "position": "二塁手", "stat1": 72, "stat2": 60, "stat3": 72, "spirits": 4900, "abilities": ["超流し打ち", "選球眼", "守備職人"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 80
+                },
+                "subPositions": [
+                    { "name": "遊撃手", "適性": 54 }
+
+                ],
+                "fielding": {
+                    "捕球": 81,
+                    "スローイング": 68,
+                    "肩力": 55
+                }
+            },
+
+            "TS土橋勝征": {
+                "type": "野手", "stat1": 79, "stat2": 69, "stat3": 61, "spirits": 4900, "abilities": ["超流し打ち", "粘りうち", "代打"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "二塁手",
+                    "適性": 66
+                },
+                "subPositions": [
+                    { "name": "一塁手", "適性": 51 }
+
+                ],
+                "fielding": { "捕球": 45, "スローイング": 48, "肩力": 50 }
+
+            },
+            "TS西浦直亨": {
+                "type": "野手", "position": "遊撃手", "stat1": 65, "stat2": 70, "stat3": 69, "spirits": 4900, "abilities": ["超チャンス", "満塁男", "対左投手"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "遊撃手",
+                    "適性": 72
+                },
+                "subPositions": [
+                    { "name": "二塁手", "適性": 56 },
+                    { "name": "三塁手", "適性": 46 }
+
+
+                ],
+                "fielding": {
+                    "捕球": 57,
+                    "スローイング": 64,
+                    "肩力": 51
+                }
+            },
+
             "TS福地寿樹": {
                 "type": "野手", "stat1": 83, "stat2": 70, "stat3": 83, "spirits": 4900, "abilities": ["超盗塁", "チャンスメーカー", "内野安打"], "battingSide": "両",
                 "mainPosition": {
@@ -1458,98 +1488,86 @@
                 }
             },
 
-            "S1高橋圭二": {
-                "type": "投手", "stat1": 76, "stat2": 68, "stat3": 74, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
-            },
-            "S1吉村貢司郎": {
-                "type": "投手", "stat1": 73, "stat2": 75, "stat3": 73, "spirits": 4900, "abilities": ["超ノビ", "キレ", "安定感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
-            },
-
-            "S1奥川恭伸": {
-                "type": "投手", "stat1": 73, "stat2": 75, "stat3": 75, "spirits": 4900, "abilities": ["超奪三振", "キレ", "援護"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
-            },
-            "S1小川泰弘": {
-                "type": "投手", "stat1": 72, "stat2": 82, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
-            },
-            "TS小川泰弘": {
-                "type": "投手", "stat1": 80, "stat2": 84, "stat3": 82, "spirits": 4900, "abilities": ["超対ピンチ", "ノビ", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" }, { "name": "抑え" }// 副ポジション: 中継ぎ
-                ]
-            },
-
             "S1アビラ": {
-                "type": "投手", "stat1": 70, "stat2": 61, "stat3": 71, "spirits": 4900, "abilities": ["超対左打者", "対強打者", "存在感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
+                "type": "投手", "stat1": 70, "stat2": 61, "stat3": 71, "spirits": 4900, "abilities": ["超対左打者", "対強打者", "存在感"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
             },
-            "S1ランバート": {
-                "type": "投手", "stat1": 66, "stat2": 63, "stat3": 66, "spirits": 4900, "abilities": ["超打たれ強さ", "重い球", "キレ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }
-            },
-            "TS石川雅規": {
-                "type": "投手", "stat1": 75, "stat2": 83, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "安定感", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
+
             "S1石川雅規": {
                 "type": "投手", "stat1": 68, "stat2": 80, "stat3": 70, "spirits": 4900, "abilities": ["超コントロール", "緩急", "打たれ強さ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
             },
-            "TS由規": {
-                "type": "投手", "stat1": 79, "stat2": 65, "stat3": 82, "spirits": 4900, "abilities": ["超豪速球", "奪三振", "荒れ球"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
-            },
-            "TS伊藤智仁": {
-                "type": "投手", "stat1": 81, "stat2": 73, "stat3": 81, "spirits": 4900, "abilities": ["超奪三振ショー", "キレ", "対強打者"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
-            "TS吉井理人": {
-                "type": "投手", "stat1": 76, "stat2": 76, "stat3": 76, "spirits": 4900, "abilities": ["超打たれ強さ", "援護", "安定感"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
-            "S1山野太一": {
-                "type": "投手", "stat1": 70, "stat2": 72, "stat3": 70, "spirits": 4900, "abilities": ["超キレ", "援護", "ノビ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
-            "覚醒中村優斗": {
-                "type": "投手", "stat1": 70, "stat2": 70, "stat3": 67, "spirits": 4800, "abilities": ["超キレ", "援護", "ノビ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
-            "覚醒矢崎拓也": {
-                "type": "投手", "stat1": 75, "stat2": 59, "stat3": 67, "spirits": 4800, "abilities": ["超ノビ", "キレ", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
+
             "S1石山泰稚": {
                 "type": "投手", "stat1": 73, "stat2": 76, "stat3": 64, "spirits": 4900, "abilities": ["超キレ", "ノビ", "奪三振"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
                 "subPositions": [
                     { "name": "抑え" } // 副ポジション: 中継ぎ
                 ]
             },
-            "S1田口麗人": {
-                "type": "投手", "stat1": 76, "stat2": 75, "stat3": 71, "spirits": 4900, "abilities": ["超キレ", "緩急", "内角"], "bPitchCount": 3, "mainPosition": { "name": "中継ぎ" }
+
+            "S1大西広樹": {
+                "type": "投手", "stat1": 73, "stat2": 79, "stat3": 67, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "コントロール"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
             },
+            "S1小川泰弘": {
+                "type": "投手", "stat1": 72, "stat2": 82, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
+            },
+
+            "S1奥川恭伸": {
+                "type": "投手", "stat1": 73, "stat2": 75, "stat3": 75, "spirits": 4900, "abilities": ["超奪三振", "キレ", "援護"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
+            },
+
+
+
+
             "S1木澤尚文": {
                 "type": "投手", "stat1": 74, "stat2": 73, "stat3": 65, "spirits": 4900, "abilities": ["超キレ", "対ピンチ", "対右打者"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
                 "subPositions": [
                     { "name": "抑え" } // 副ポジション: 中継ぎ
                 ]
             },
-            "S1山本大貴": {
-                "type": "投手", "stat1": 77, "stat2": 61, "stat3": 63, "spirits": 4900, "abilities": ["超キレ", "奪三振", "球持ち"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }
+
+            "S1小澤怜司": {
+                "type": "投手", "stat1": 75, "stat2": 71, "stat3": 72, "spirits": 4900, "abilities": ["超ノビ", "緩急", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" }, { "name": "先発" }// 副ポジション: 中継ぎ
+                ]
+
             },
-            "TS石井弘寿": {
-                "type": "投手", "stat1": 86, "stat2": 76, "stat3": 65, "spirits": 4600, "abilities": ["超豪速球", "奪三振", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+
+            "S1清水昇": {
+                "type": "投手", "stat1": 75, "stat2": 76, "stat3": 65, "spirits": 4900, "abilities": ["超対ピンチ", "キレ", "コントロール"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
             },
-            "S1大西広樹": {
-                "type": "投手", "stat1": 73, "stat2": 79, "stat3": 67, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "コントロール"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+
+
+            "S1高橋圭二": {
+                "type": "投手", "stat1": 76, "stat2": 68, "stat3": 74, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
             },
+            "S1高梨裕稔": {
+                "type": "投手", "stat1": 73, "stat2": 74, "stat3": 70, "spirits": 4900, "abilities": ["超対ピンチ", "奪三振", "ノビ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" }
+                ]
+            },
+
+
+            "S1田口麗人": {
+                "type": "投手", "stat1": 76, "stat2": 75, "stat3": 71, "spirits": 4900, "abilities": ["超キレ", "緩急", "内角"], "bPitchCount": 3, "mainPosition": { "name": "中継ぎ" }
+            },
+
+            "覚醒中村優斗": {
+                "type": "投手", "stat1": 70, "stat2": 65, "stat3": 63, "spirits": 4800, "abilities": ["超キレ", "援護", "ノビ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
+            },
+
+            "S1バウマン": {
+                "type": "投手", "stat1": 75, "stat2": 63, "stat3": 70, "spirits": 4900, "abilities": ["超豪速球", "ノビ", "荒れ球"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }
+            },
+
+
+            "S1長谷川宙輝": {
+                "type": "投手", "stat1": 73, "stat2": 66, "stat3": 68, "spirits": 4900, "abilities": ["超奪三振", "キレ", "荒れ球"], "bPitchCount": 0, "mainPosition": { "name": "中継ぎ" }
+            },
+
             "S1星知弥": {
                 "type": "投手", "stat1": 73, "stat2": 67, "stat3": 67, "spirits": 4900, "abilities": ["超豪速球", "ノビ", "内角"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
                 "subPositions": [
@@ -1559,40 +1577,101 @@
             "S1丸山翔太": {
                 "type": "投手", "stat1": 74, "stat2": 61, "stat3": 61, "spirits": 4900, "abilities": ["超キレ", "奪三振", "打たれ強さ"], "bPitchCount": 0, "mainPosition": { "name": "中継ぎ" }
             },
-            "S1長谷川宙輝": {
-                "type": "投手", "stat1": 73, "stat2": 66, "stat3": 68, "spirits": 4900, "abilities": ["超奪三振", "キレ", "荒れ球"], "bPitchCount": 0, "mainPosition": { "name": "中継ぎ" }
+
+
+
+            "覚醒矢崎拓也": {
+                "type": "投手", "stat1": 75, "stat2": 59, "stat3": 67, "spirits": 4800, "abilities": ["超ノビ", "キレ", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
             },
-            "S1清水昇": {
-                "type": "投手", "stat1": 75, "stat2": 76, "stat3": 65, "spirits": 4900, "abilities": ["超対ピンチ", "キレ", "コントロール"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+
+            "S1山野太一": {
+                "type": "投手", "stat1": 70, "stat2": 72, "stat3": 70, "spirits": 4900, "abilities": ["超キレ", "援護", "ノビ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
             },
+
+
+            "S1山本大貴": {
+                "type": "投手", "stat1": 77, "stat2": 61, "stat3": 63, "spirits": 4900, "abilities": ["超キレ", "奪三振", "球持ち"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }
+            },
+
+            "S1吉村貢司郎": {
+                "type": "投手", "stat1": 73, "stat2": 75, "stat3": 73, "spirits": 4900, "abilities": ["超ノビ", "キレ", "安定感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
+            },
+
+            "S1ランバート": {
+                "type": "投手", "stat1": 66, "stat2": 63, "stat3": 66, "spirits": 4900, "abilities": ["超打たれ強さ", "重い球", "キレ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }
+            },
+
+
+
+
+
+            "TS石井弘寿": {
+                "type": "投手", "stat1": 86, "stat2": 76, "stat3": 65, "spirits": 4600, "abilities": ["超豪速球", "奪三振", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+            },
+
+            "TS石川雅規": {
+                "type": "投手", "stat1": 75, "stat2": 83, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "安定感", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
+            },
+            "TS石山泰稚": {
+                "type": "投手", "stat1": 81, "stat2": 77, "stat3": 62, "spirits": 4900, "abilities": ["超ノビ", "対ピンチ", "コントロール"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "抑え" } // 副ポジション: 中継ぎ
+                ]
+            },
+
+
+            "TS伊藤智仁": {
+                "type": "投手", "stat1": 81, "stat2": 73, "stat3": 81, "spirits": 4900, "abilities": ["超奪三振ショー", "キレ", "対強打者"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
+            },
+
+
+
+
+
+            "TS小川泰弘": {
+                "type": "投手", "stat1": 80, "stat2": 84, "stat3": 82, "spirits": 4900, "abilities": ["超対ピンチ", "ノビ", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" }, { "name": "抑え" }// 副ポジション: 中継ぎ
+                ]
+            },
+
             "TS高津臣吾": {
                 "type": "投手", "stat1": 82, "stat2": 80, "stat3": 63, "spirits": 4900, "abilities": ["超対ピンチ", "キレ", "存在感"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
                 "subPositions": [
                     { "name": "中継ぎ" }, { "name": "抑え" }// 副ポジション: 中継ぎ
                 ]
             },
-            "S1小澤怜司": {
-                "type": "投手", "stat1": 75, "stat2": 71, "stat3": 72, "spirits": 4900, "abilities": ["超ノビ", "緩急", "対ピンチ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" }, { "name": "先発" }// 副ポジション: 中継ぎ
-                ]
 
-            },
-            "S1高梨裕稔": {
-                "type": "投手", "stat1": 73, "stat2": 74, "stat3": 70, "spirits": 4900, "abilities": ["超対ピンチ", "奪三振", "ノビ"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" }
-                ]
-            },
             "TS山本哲哉": {
                 "type": "投手", "stat1": 73, "stat2": 70, "stat3": 65, "spirits": 4900, "abilities": ["超対ピンチ", "キレ", "打たれ強さ"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
                 "subPositions": [
                     { "name": "抑え" } // 副ポジション: 中継ぎ
                 ]
             },
-            "S1バウマン": {
-                "type": "投手", "stat1": 75, "stat2": 63, "stat3": 70, "spirits": 4900, "abilities": ["超豪速球", "ノビ", "荒れ球"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }
+
+            "TS吉井理人": {
+                "type": "投手", "stat1": 76, "stat2": 76, "stat3": 76, "spirits": 4900, "abilities": ["超打たれ強さ", "援護", "安定感"], "bPitchCount": 1, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
             },
+
+            "TS由規": {
+                "type": "投手", "stat1": 82, "stat2": 65, "stat3": 80, "spirits": 4900, "abilities": ["超豪速球", "奪三振", "荒れ球"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
+            },
+
 
         }
             ;
