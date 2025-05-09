@@ -1254,13 +1254,14 @@
             },
 
             "S1村上宗隆": {
-                "type": "野手", "stat1": 78, "stat2": 84, "stat3": 71, "spirits": 4900, "abilities": ["超アーチ", "広角", "チャンス"], "battingSide": "左",
+                "type": "野手", "stat1": 78, "stat2": 84, "stat3": 71, "spirits": 4900, "abilities": ["超アーチ", "広角", "威圧感"], "battingSide": "左",
                 "mainPosition": {
                     "name": "三塁手",
                     "適性": 58
                 },
                 "subPositions": [
-                    { "name": "一塁手", "適性": 58 }
+                    { "name": "一塁手", "適性": 58 },
+                    { "name": "右翼手", "適性": 51 }
 
                 ],
                 "fielding": {
@@ -1299,8 +1300,40 @@
                 "subPositions": [] // 明示的に空配列を追加
             },
 
+"セレ茂木栄五郎": {
+                "type": "野手", "stat1": 74, "stat2": 73, "stat3": 75, "spirits": 5000, "abilities": ["超ライドラ", "走塁", "広角"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "三塁手",
+                    "適性": 67
+                },
+                "subPositions": [
+                    { "name": "二撃手", "適性": 57　},
+                    { "name": "一塁手", "適性": 57 }
 
+                ],
+                "fielding": {
+                    "捕球": 65,
+                    "スローイング": 71,
+                    "肩力": 65
+                }
+            },
 
+             "セレサンタナ": {
+                "type": "野手", "stat1": 82, "stat2": 81, "stat3": 63, "spirits": 5000, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "左翼手",
+                    "適性": 48
+                },
+                "subPositions": [
+                    { "name": "右翼手", "適性": 50 }
+
+                ],
+                "fielding": {
+                    "捕球": 38,
+                    "スローイング": 45,
+                    "肩力": 75
+                }
+            },
 
 
 
@@ -1603,6 +1636,23 @@
             "S1ランバート": {
                 "type": "投手", "stat1": 66, "stat2": 63, "stat3": 66, "spirits": 4900, "abilities": ["超打たれ強さ", "重い球", "キレ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }
             },
+
+
+             "セレ石山泰稚": {
+                "type": "投手", "stat1": 76, "stat2": 78, "stat3": 65, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "コントロール"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "抑え" } // 副ポジション: 中継ぎ
+                ]
+            },
+
+             "セレ荘司宏太": {
+                "type": "投手", "stat1": 75, "stat2": 63, "stat3": 62, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+            },
+
+             "セレ小川泰弘": {
+                "type": "投手", "stat1": 75, "stat2": 83, "stat3": 81, "spirits": 5000, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
+            },
+
 
 
 
@@ -2313,7 +2363,7 @@
             }
 
             // 選ばれしき者の輝き
-            if (selectedPlayers.includes("セレ石山泰稚") || selectedPlayers.includes("セレ村上宗隆") || selectedPlayers.includes("セレ古田敦也")) {
+            if (selectedPlayers.includes("セレ石山泰稚") || selectedPlayers.includes("セレ小川泰弘") || selectedPlayers.includes("セレ荘司宏太")|| selectedPlayers.includes("セレサンタナ")|| selectedPlayers.includes("セレ茂木栄五郎")) {
                 comboTotal += 600;
                 activatedCombos.push("選ばれしき者の輝き (+600)");
                 console.log("選ばれしき者の輝き (+600)");
