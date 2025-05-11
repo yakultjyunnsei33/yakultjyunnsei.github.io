@@ -1304,7 +1304,7 @@
                 "type": "野手", "stat1": 75, "stat2": 74, "stat3": 75, "spirits": 5000, "abilities": ["超ライドラ", "走塁", "広角"], "battingSide": "左",
                 "mainPosition": {
                     "name": "三塁手",
-                    "適性": 67
+                    "適性": 66
                 },
                 "subPositions": [
                     { "name": "二撃手", "適性": 57　},
@@ -1334,6 +1334,27 @@
                     "肩力": 75
                 }
             },
+
+                        "EXオスナ": {
+                "type": "野手", "stat1": 74, "stat2": 77, "stat3": 57, "spirits": 4900, "abilities": ["超ライドラ", "フルスイング", "熱気"], "battingSide": "右",
+                "mainPosition": {
+                    "name": "一塁手",
+                    "適性": 61
+                }, "fielding": { "捕球": 51, "スローイング": 53, "肩力": 78 },
+                "subPositions": [] // 明示的に空配列を追加
+
+            },
+
+            "EX長岡秀樹": {
+                "type": "野手", "stat1": 77, "stat2": 70, "stat3": 74, "spirits": 4900, "abilities": ["超流し打ち", "チャンス", "熱気"], "battingSide": "左",
+                "mainPosition": {
+                    "name": "遊撃手",
+                    "適性": 70
+                }, "fielding": { "捕球": 65, "スローイング": 71, "肩力": 67 },
+                "subPositions": [] // 明示的に空配列を追加
+            },
+
+            
 
 
 
@@ -1653,6 +1674,13 @@
                 "type": "投手", "stat1": 75, "stat2": 83, "stat3": 81, "spirits": 5000, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
             },
 
+             "EX大西広樹": {
+                "type": "投手", "stat1": 74, "stat2": 80, "stat3": 68, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
+            },
+
+             "EX高橋圭二": {
+                "type": "投手", "stat1": 77, "stat2": 69, "stat3": 75, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
+            },
 
 
 
@@ -2327,7 +2355,7 @@
                 comboTotal += 630;
                 activatedCombos.push("オートグラフ (+630)");
             }
-            if (selectedPlayers.includes("EXサンタナ") || selectedPlayers.includes("EXオスナ")) {
+            if (selectedPlayers.includes("EX長岡秀樹") || selectedPlayers.includes("EXオスナ") || selectedPlayers.includes("EX大西広樹") || selectedPlayers.includes("EX高橋圭二")) {
                 comboTotal += 630;
                 activatedCombos.push("熱狂の渦 (+630)");
             }
