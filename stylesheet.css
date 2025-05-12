@@ -1,13 +1,6 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
 table {
     color: black;
-    width: 80%;
+    width: auto;
     /* 幅を制限して中央揃えを明確に（任意で調整） */
 }
 
@@ -53,12 +46,7 @@ h1 {
     font-size: 2em;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+
 
 .player-card {
     background: linear-gradient(145deg, #333, #111);
@@ -142,13 +130,7 @@ div {
     /* 上下の余白を少し追加（任意） */
 }
 
-/* .containerが影響する場合 */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+
 
 #comboList {
     white-space: pre-wrap;
@@ -200,19 +182,20 @@ td {
 #fielders-table th:nth-child(1),
 #fielders-table td:nth-child(1) {
     /* 打順 */
-    width: 40px;
+    width: 30px;
+
 }
 
 #fielders-table th:nth-child(2),
 #fielders-table td:nth-child(2) {
     /* ポジション */
-    width: 120px;
+    width: 73px;
 }
 
 #fielders-table th:nth-child(3),
 #fielders-table td:nth-child(3) {
     /* 名前 */
-    width: 150px;
+    width: 147px;
 }
 
 #fielders-table th:nth-child(4),
@@ -222,13 +205,13 @@ td {
 #fielders-table th:nth-child(6),
 #fielders-table td:nth-child(6) {
     /* ミ、パ、走 */
-    width: 60px;
+    width: 40px;
 }
 
 #fielders-table th:nth-child(7),
 #fielders-table td:nth-child(7) {
     /* 称号 */
-    width: 100px;
+    width: 140px;
 }
 
 #fielders-table th:nth-child(8),
@@ -238,113 +221,71 @@ td {
 }
 
 #fielders-table th:nth-child(9),
-#fielders-table td:nth-child(9),
-#fielders-table th:nth-child(10),
-#fielders-table td:nth-child(10),
-#fielders-table th:nth-child(11),
-#fielders-table td:nth-child(11),
-#fielders-table th:nth-child(12),
-#fielders-table td:nth-child(12),
-#fielders-table th:nth-child(13),
-#fielders-table td:nth-child(13) {
-    /* メイン～サブポジ */
+#fielders-table td:nth-child(9) {
+    /* 特守 */
     width: 70px;
 }
 
-/* 特守欄のスタイル */
-.tokushu-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    width: 100%;
-    box-sizing: border-box;
+#fielders-table th:nth-child(8),
+#fielders-table td:nth-child(8) {
+    /* スピ */
+    width: 60px;
 }
 
-.minus-btn,
-.plus-btn {
-    background-color: #d4af37;
-    color: #1a1a1a;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    padding: 0;
-    line-height: 20px;
+
+
+#pitchers-table th:nth-child(1),
+#pitchers-table td:nth-child(1) {
+    /* 投手の能力表示について */
+    width: 30px;
 }
 
-.tokushu-input {
-    width: 25px;
-    text-align: center;
-    background-color: #222;
-    color: white;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    padding: 2px;
-    font-size: 12px;
-    height: 20px;
+#pitchers-table th:nth-child(2),
+#pitchers-table td:nth-child(2) {
+    /* ポジション */
+    width: 73px;
 }
 
-/* スマホ向け調整 */
-@media screen and (max-width: 768px) {
-    table {
-        width: 100%;
-        font-size: 12px;
-        table-layout: auto;
-        /* スマホでは自動調整 */
-    }
-
-    th,
-    td {
-        padding: 4px;
-        min-width: 40px;
-    }
-
-    #fielders-table th:nth-child(2),
-    #fielders-table td:nth-child(2) {
-        width: 80px;
-    }
-
-    #fielders-table th:nth-child(3),
-    #fielders-table td:nth-child(3) {
-        width: 100px;
-    }
-
-    #fielders-table th:nth-child(9),
-    #fielders-table td:nth-child(9),
-    #fielders-table th:nth-child(10),
-    #fielders-table td:nth-child(10),
-    #fielders-table th:nth-child(11),
-    #fielders-table td:nth-child(11),
-    #fielders-table th:nth-child(12),
-    #fielders-table td:nth-child(12),
-    #fielders-table th:nth-child(13),
-    #fielders-table td:nth-child(13) {
-        width: 60px;
-    }
-
-    .tokushu-control {
-        gap: 1px;
-    }
-
-    .minus-btn,
-    .plus-btn {
-        width: 18px;
-        height: 18px;
-        font-size: 10px;
-    }
-
-    .tokushu-input {
-        width: 20px;
-        height: 18px;
-        font-size: 10px;
-    }
+#pitchers-table th:nth-child(3),
+#pitchers-table td:nth-child(3) {
+    /* 名前 */
+    width: 147px;
 }
 
-th,
-td {
+#pitchers-table th:nth-child(4),
+#pitchers-table td:nth-child(4),
+#pitchers-table th:nth-child(5),
+#pitchers-table td:nth-child(5),
+#pitchers-table th:nth-child(6),
+#pitchers-table td:nth-child(6) {
+    width: 40px;
+}
+
+#pitchers-table th:nth-child(7),
+#pitchers-table td:nth-child(7) {
+    /* 称号 */
+    width: 140px;
+}
+
+#pitchers-table th:nth-child(8),
+#pitchers-table td:nth-child(8) {
+    /* スピ */
+    width: 60px;
+}
+
+#pitchers-table th:nth-child(9),
+#pitchers-table td:nth-child(9) {
+    /*球種 */
+    width: 97px;
+}
+
+
+
+
+
+
+#fielders-table th,
+#fielders-table td {
     padding: 8px;
     text-align: center;
     border: 1px solid #d4af37;
@@ -352,8 +293,8 @@ td {
     vertical-align: middle;
     overflow: hidden;
     display: table-cell !important;
-    /* セルを強制的に分離 */
 }
+
 
 /* 特守欄のセルを強制的に分離 */
 #fielders-table td.tokushu-control {
@@ -361,4 +302,58 @@ td {
     width: 70px !important;
     min-width: 70px !important;
     max-width: 70px !important;
+}
+
+#pitchers-table {
+    table-layout: auto;
+    /* デフォルト動作に戻す */
+    width: auto;
+}
+
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    /* 左寄せ */
+    gap: 10px;
+}
+
+.container {
+    margin-left: 100px;
+}
+
+.tokushu-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: #222;
+    /* 暗め背景 */
+    border: 1px solid #555;
+    color: white;
+    /* ←黒字を白に変える */
+}
+
+.tokushu-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+#usage-toggle {
+    background-color: #444;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+#usage-toggle:hover {
+    background-color: #666;
+}
+
+.toggle-tokushu {
+    min-width: 80px;
+    /* 幅を固定してボタンがズレないように */
 }
