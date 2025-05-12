@@ -14,16 +14,34 @@
 <body>
 
     <center><b>
-            <font size="10" color="red">プロスピAオーダーシュミレータ</font>
-            <p>※スマホの方は横画面での利用をお勧めします</p>
+            <font size="10" color="red">オーダーシュミレータ</font>
+            <br>
+
     </center></b>
+
+    <br><button id="usage-toggle">使い方を表示</button>
+    </br>
+    <!-- アコーディオン本体（最初は非表示） -->
+    <div id="usage-content"
+        style="display: none; margin-top: 10px; background-color: #222; color: white; padding: 10px; border: 1px solid #555;">
+        <h3>サイトの使い方</h3>
+        <ol>
+            <li>ポジションを選択してください。</li>
+            <li>ポジションに応じて選手が選択できます。ポジション外では選択できません。</li>
+            <li>選手を選択するとステータスが自動で表示されます。</li>
+            <li>称号を選ぶとステータスが変化します。</li>
+            <li>特守を押すと補正項目を設定できます。特守によってスピリッツが11上昇する場合はサブポジを1から0に戻してください</li>
+            <li>選手は名前順に並べています。レアリティはS1→覚醒→セレクション→TSの順に並べています。</li>
+
+        </ol>
+    </div>
 
     <div class="container">
 
         <table id="fielders-table" border="1">
             <thead>
                 <tr>
-                    <th>打順</th>
+                    <th> </th>
                     <th>ポジ</th>
                     <th>名前</th>
                     <th>ミ</th>
@@ -31,11 +49,9 @@
                     <th>走</th>
                     <th>称号</th>
                     <th>スピ</th>
-                    <th>メイン</th>
-                    <th>捕</th>
-                    <th>スロー</th>
-                    <th>肩</th>
-                    <th>サブ</th>
+                    <th>特守</th>
+                    <th>特守詳細</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -57,70 +73,55 @@
                             <option>指名打者</option>
                         </select>
                     </td>
-                    <!-- 選手選択 -->
-                    <td>
-                        <select class="player">
+                    <td><select class="player">
                             <option value="">野手を選択</option>
-                        </select>
-                    </td>
-                    <!-- 各ステータスの調整ボタン -->
-                    <td class="stat">
-                        <button class="minus-btn">-</button>
-                        <span class="stat-value" data-base="0">0</span>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="stat">
-                        <button class="minus-btn">-</button>
-                        <span class="stat-value" data-base="0">0</span>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="stat">
-                        <button class="minus-btn">-</button>
-                        <span class="stat-value" data-base="0">0</span>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- 称号選択 -->
-                    <td>
-                        <select class="title">
+                        </select></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td><select class="title">
                             <option value="0,0,0,0,0">なし</option>
-                        </select>
-                    </td>
-                    <!-- スピリッツ表示 -->
+                        </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <!-- 特守の調整ボタン -->
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スロー
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td>2</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -145,34 +146,45 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
+
                 <tr>
                     <td>3</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -197,37 +209,45 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
+                    </td>
 
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
                 <tr>
                     <td>4</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -252,38 +272,45 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td>5</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -308,40 +335,47 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
 
 
                 <tr>
                     <td>6</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -366,38 +400,45 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td>7</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -422,38 +463,46 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
+                    </td>
 
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td>8</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -478,38 +527,46 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
+                    </td>
 
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td>9</td>
+                    <!-- ポジション選択 -->
                     <td>
                         <select class="position">
                             <option value="">ポジ選択</option>
@@ -534,119 +591,41 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td bgcolor="blueviolet"> 代打 </td>
-                    <td><select class="player">
-                            <option value="">野手を選択</option>
-                        </select></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td><select class="title">
-                            <option value="0,0,0,0,0">なし</option>
-                        </select></td>
-                    <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td bgcolor="blueviolet">代打 </td>
-                    <td><select class="player">
-                            <option value="">野手を選択</option>
-                        </select></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td class="stat" data-base="0"></td>
-                    <td><select class="title">
-                            <option value="0,0,0,0,0">なし</option>
-                        </select></td>
-                    <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td> </td>
@@ -661,35 +640,41 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
 
-
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
                 <tr>
                     <td> </td>
@@ -704,55 +689,253 @@
                             <option value="0,0,0,0,0">なし</option>
                         </select></td>
                     <td class="spirits" data-base="0">0</td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
+                    </td>
+
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
 
 
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+                <tr>
+                    <td> </td>
+                    <td bgcolor="blueviolet"> 代打 </td>
+                    <td><select class="player">
+                            <option value="">野手を選択</option>
+                        </select></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td><select class="title">
+                            <option value="0,0,0,0,0">なし</option>
+                        </select></td>
+                    <td class="spirits" data-base="0">0</td>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
+
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
                     </td>
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="2" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                    <!-- サブポジの調整ボタン -->
-                    <td class="tokushu-control">
-                        <button class="minus-btn">-</button>
-                        <input type="number" class="tokushu-input" min="0" max="1" step="1" value="0" readonly>
-                        <button class="plus-btn">+</button>
-                    </td>
-                </tr>
 
 
-                <table id="pitchers-table" border="1">
-                    <thead>
-                        <tr>
-                            <th>ローテ</th>
-                            <th>ポジション</th>
-                            <th>名前</th>
-                            <th>球威</th>
-                            <th>制球</th>
-                            <th>スタミナ</th>
-                            <th>称号</th>
-                            <th>スピリッツ</th>
-                            <th>B球種</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
+                <tr>
+                    <td> </td>
+                    <td bgcolor="blueviolet"> 代打 </td>
+                    <td><select class="player">
+                            <option value="">野手を選択</option>
+                        </select></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td class="stat" data-base="0"></td>
+                    <td><select class="title">
+                            <option value="0,0,0,0,0">なし</option>
+                        </select></td>
+                    <td class="spirits" data-base="0">0</td>
+                    <!-- 折りたたみトグルボタン -->
+                    <td>
+                        <button class="toggle-tokushu">特守実行</button>
+                    </td>
+
+                    <!-- アコーディオン対象 -->
+                    <td colspan="5">
+                        <div class="tokushu-wrapper" style="display: none;">
+                            <div class="tokushu-control">メイン
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">捕球
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">スローイング
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">肩力
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="2" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="tokushu-control">サブポジ
+                                <button class="minus-btn">-</button>
+                                <input type="number" class="tokushu-input" min="0" max="1" value="0" readonly>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
+                    </td>
+
+
+
+
+
+                    <table id="pitchers-table" border="1">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>ポジ</th>
+                                <th>名前</th>
+                                <th>球</th>
+                                <th>制</th>
+                                <th>ス</th>
+                                <th>称号</th>
+                                <th>スピ</th>
+                                <th>B球種</B></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td bgcolor="red">先発</td>
+                                <td><select class="player">
+                                        <option value="">投手を選択</option>
+                                    </select></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td><select class="title">
+                                        <option value="0,0,0,0,0">なし</option>
+                                    </select></td>
+                                <td class="spirits" data-base="0">0</td>
+                                <td class="bPitchCount" data-base="0">0</td>
+                            </tr>
+
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td bgcolor="red">先発</td>
+                                <td><select class="player">
+                                        <option value="">投手を選択</option>
+                                    </select></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td><select class="title">
+                                        <option value="0,0,0,0,0">なし</option>
+                                    </select></td>
+                                <td class="spirits" data-base="0">0</td>
+                                <td class="bPitchCount" data-base="0">0</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td bgcolor="red">先発</td>
+                                <td><select class="player">
+                                        <option value="">投手を選択</option>
+                                    </select></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td><select class="title">
+                                        <option value="0,0,0,0,0">なし</option>
+                                    </select></td>
+                                <td class="spirits" data-base="0">0</td>
+                                <td class="bPitchCount" data-base="0">0</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td bgcolor="red">先発</td>
+                                <td><select class="player">
+                                        <option value="">投手を選択</option>
+                                    </select></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td><select class="title">
+                                        <option value="0,0,0,0,0">なし</option>
+                                    </select></td>
+                                <td class="spirits" data-base="0">0</td>
+                                <td class="bPitchCount" data-base="0">0</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td bgcolor="red">先発</td>
+                                <td><select class="player">
+                                        <option value="">投手を選択</option>
+                                    </select></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td class="stat" data-base="0"></td>
+                                <td><select class="title">
+                                        <option value="0,0,0,0,0">なし</option>
+                                    </select></td>
+                                <td class="spirits" data-base="0">0</td>
+                                <td class="bPitchCount" data-base="0">0</td>
+                            </tr>
+
                             <td>1</td>
-                            <td bgcolor="red">先発</td>
+
+                            <td bgcolor="red">中継ぎ</td>
                             <td><select class="player">
                                     <option value="">投手を選択</option>
                                 </select></td>
@@ -764,175 +947,87 @@
                                 </select></td>
                             <td class="spirits" data-base="0">0</td>
                             <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
+                </tr>
 
-                        <tr>
+                <td>2</td>
 
-                            <td>2</td>
+                <td bgcolor="red">中継ぎ</td>
+                <td><select class="player">
+                        <option value="">投手を選択</option>
+                    </select></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td><select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select></td>
+                <td class="spirits" data-base="0">0</td>
+                <td class="bPitchCount" data-base="0">0</td>
+                </tr>
 
-                            <td bgcolor="red">先発</td>
-                            <td><select class="player">
-                                    <option value="">投手を選択</option>
-                                </select></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td><select class="title">
-                                    <option value="0,0,0,0,0">なし</option>
-                                </select></td>
-                            <td class="spirits" data-base="0">0</td>
-                            <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
+                <td>3</td>
 
-                        <tr>
+                <td bgcolor="red">中継ぎ</td>
+                <td><select class="player">
+                        <option value="">投手を選択</option>
+                    </select></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td><select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select></td>
+                <td class="spirits" data-base="0">0</td>
+                <td class="bPitchCount" data-base="0">0</td>
+                </tr>
 
-                            <td>3</td>
+                <td>4</td>
 
-                            <td bgcolor="red">先発</td>
-                            <td><select class="player">
-                                    <option value="">投手を選択</option>
-                                </select></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td><select class="title">
-                                    <option value="0,0,0,0,0">なし</option>
-                                </select></td>
-                            <td class="spirits" data-base="0">0</td>
-                            <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
+                <td bgcolor="red">中継ぎ</td>
+                <td><select class="player">
+                        <option value="">投手を選択</option>
+                    </select></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td><select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select></td>
+                <td class="spirits" data-base="0">0</td>
+                <td class="bPitchCount" data-base="0">0</td>
+                </tr>
 
-                        <tr>
+                <td> </td>
 
-                            <td>4</td>
+                <td bgcolor="red">抑え</td>
+                <td><select class="player">
+                        <option value="">投手を選択</option>
+                    </select></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td><select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select></td>
+                <td class="spirits" data-base="0">0</td>
+                <td class="bPitchCount" data-base="0">0</td>
+                </tr>
 
-                            <td bgcolor="red">先発</td>
-                            <td><select class="player">
-                                    <option value="">投手を選択</option>
-                                </select></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td><select class="title">
-                                    <option value="0,0,0,0,0">なし</option>
-                                </select></td>
-                            <td class="spirits" data-base="0">0</td>
-                            <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
+                <td> </td>
 
-                        <tr>
-
-                            <td>5</td>
-
-                            <td bgcolor="red">先発</td>
-                            <td><select class="player">
-                                    <option value="">投手を選択</option>
-                                </select></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td class="stat" data-base="0"></td>
-                            <td><select class="title">
-                                    <option value="0,0,0,0,0">なし</option>
-                                </select></td>
-                            <td class="spirits" data-base="0">0</td>
-                            <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td>1</td>
-
-                        <td bgcolor="red">中継ぎ</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td>2</td>
-
-                        <td bgcolor="red">中継ぎ</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td>3</td>
-
-                        <td bgcolor="red">中継ぎ</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td>4</td>
-
-                        <td bgcolor="red">中継ぎ</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td> </td>
-
-                        <td bgcolor="red">抑え</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
-
-                        <td> </td>
-
-                        <td bgcolor="red">ベンチ</td>
-                        <td><select class="player">
-                                <option value="">投手を選択</option>
-                            </select></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td class="stat" data-base="0"></td>
-                        <td><select class="title">
-                                <option value="0,0,0,0,0">なし</option>
-                            </select></td>
-                        <td class="spirits" data-base="0">0</td>
-                        <td class="bPitchCount" data-base="0">0</td>
-                        </tr>
+                <td bgcolor="red">ベンチ</td>
+                <td><select class="player">
+                        <option value="">投手を選択</option>
+                    </select></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td class="stat" data-base="0"></td>
+                <td><select class="title">
+                        <option value="0,0,0,0,0">なし</option>
+                    </select></td>
+                <td class="spirits" data-base="0">0</td>
+                <td class="bPitchCount" data-base="0">0</td>
+                </tr>
     </div>
     </tbody>
     </table>
@@ -1300,14 +1395,14 @@
                 "subPositions": [] // 明示的に空配列を追加
             },
 
-"セレ茂木栄五郎": {
+            "セレ茂木栄五郎": {
                 "type": "野手", "stat1": 75, "stat2": 74, "stat3": 75, "spirits": 5000, "abilities": ["超ライドラ", "走塁", "広角"], "battingSide": "左",
                 "mainPosition": {
                     "name": "三塁手",
                     "適性": 66
                 },
                 "subPositions": [
-                    { "name": "二撃手", "適性": 57　},
+                    { "name": "二撃手", "適性": 57 },
                     { "name": "一塁手", "適性": 57 }
 
                 ],
@@ -1318,7 +1413,7 @@
                 }
             },
 
-             "セレサンタナ": {
+            "セレサンタナ": {
                 "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 5000, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右",
                 "mainPosition": {
                     "name": "左翼手",
@@ -1335,7 +1430,7 @@
                 }
             },
 
-                        "EXオスナ": {
+            "EXオスナ": {
                 "type": "野手", "stat1": 74, "stat2": 77, "stat3": 57, "spirits": 4900, "abilities": ["超ライドラ", "フルスイング", "熱気"], "battingSide": "右",
                 "mainPosition": {
                     "name": "一塁手",
@@ -1354,7 +1449,7 @@
                 "subPositions": [] // 明示的に空配列を追加
             },
 
-            
+
 
 
 
@@ -1606,9 +1701,7 @@
                 "type": "投手", "stat1": 76, "stat2": 75, "stat3": 71, "spirits": 4900, "abilities": ["超キレ", "緩急", "内角"], "bPitchCount": 3, "mainPosition": { "name": "中継ぎ" }
             },
 
-            "覚醒中村優斗": {
-                "type": "投手", "stat1": 70, "stat2": 61, "stat3": 71, "spirits": 4800, "abilities": ["超豪速球", "奪三振", "キレ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }
-            },
+
 
             "S1バウマン": {
                 "type": "投手", "stat1": 75, "stat2": 63, "stat3": 70, "spirits": 4900, "abilities": ["超豪速球", "ノビ", "荒れ球"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }
@@ -1631,12 +1724,7 @@
 
 
 
-            "覚醒矢崎拓也": {
-                "type": "投手", "stat1": 73, "stat2": 60, "stat3": 69, "spirits": 4800, "abilities": ["超キレ", "ノビ", "打たれ強さ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
-                "subPositions": [
-                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
-                ]
-            },
+
 
             "S1山野太一": {
                 "type": "投手", "stat1": 70, "stat2": 72, "stat3": 70, "spirits": 4900, "abilities": ["超キレ", "援護", "ノビ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }, // 主ポジション: 先発
@@ -1651,7 +1739,7 @@
             },
 
             "S1吉村貢司郎": {
-                "type": "投手", "stat1": 73, "stat2": 75, "stat3": 73, "spirits": 4900, "abilities": ["超ノビ", "キレ", "安定感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
+                "type": "投手", "stat1": 73, "stat2": 73, "stat3": 75, "spirits": 4900, "abilities": ["超キレ", "ノビ", "安定感"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
             },
 
             "S1ランバート": {
@@ -1659,26 +1747,38 @@
             },
 
 
-             "セレ石山泰稚": {
+            "覚醒中村優斗": {
+                "type": "投手", "stat1": 70, "stat2": 61, "stat3": 71, "spirits": 4800, "abilities": ["超豪速球", "奪三振", "キレ"], "bPitchCount": 0, "mainPosition": { "name": "先発" }
+            },
+
+
+            "覚醒矢崎拓也": {
+                "type": "投手", "stat1": 73, "stat2": 60, "stat3": 69, "spirits": 4800, "abilities": ["超キレ", "ノビ", "打たれ強さ"], "bPitchCount": 1, "mainPosition": { "name": "抑え" }, // 主ポジション: 先発
+                "subPositions": [
+                    { "name": "中継ぎ" } // 副ポジション: 中継ぎ
+                ]
+            },
+
+            "セレ石山泰稚": {
                 "type": "投手", "stat1": 74, "stat2": 77, "stat3": 65, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "コントロール"], "bPitchCount": 2, "mainPosition": { "name": "中継ぎ" }, // 主ポジション: 先発
                 "subPositions": [
                     { "name": "抑え" } // 副ポジション: 中継ぎ
                 ]
             },
 
-             "セレ荘司宏太": {
+            "セレ荘司宏太": {
                 "type": "投手", "stat1": 75, "stat2": 63, "stat3": 62, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
             },
 
-             "セレ小川泰弘": {
+            "セレ小川泰弘": {
                 "type": "投手", "stat1": 75, "stat2": 83, "stat3": 81, "spirits": 5000, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先発" }
             },
 
-             "EX大西広樹": {
+            "EX大西広樹": {
                 "type": "投手", "stat1": 74, "stat2": 80, "stat3": 68, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "中継ぎ" }
             },
 
-             "EX高橋圭二": {
+            "EX高橋圭二": {
                 "type": "投手", "stat1": 77, "stat2": 69, "stat3": 75, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "先発" }
             },
 
@@ -1810,6 +1910,29 @@
             ]
         };
 
+        document.getElementById("usage-toggle").addEventListener("click", function () {
+            const content = document.getElementById("usage-content");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                this.textContent = "使い方を閉じる";
+            } else {
+                content.style.display = "none";
+                this.textContent = "使い方を表示";
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-tokushu").forEach(button => {
+                button.addEventListener("click", () => {
+                    const wrapper = button.closest("tr").querySelector(".tokushu-wrapper");
+                    if (wrapper) {
+                        const isOpen = wrapper.style.display === "block";
+                        wrapper.style.display = isOpen ? "none" : "block";
+                        button.textContent = isOpen ? "特守実行" : "終了";
+                    }
+                });
+            });
+        });
         function updatePlayerOptions(playerSelect, position, typeFilter) {
             playerSelect.innerHTML = `<option value="">${typeFilter === "野手" ? "野手" : "投手"}を選択</option>`;
             Object.keys(playerData).forEach(playerName => {
@@ -2383,10 +2506,10 @@
                 console.log("オートグラフ発動 (+630)");
             }
 
-        
+
 
             // 選ばれしき者の輝き
-            if (selectedPlayers.includes("セレ石山泰稚") || selectedPlayers.includes("セレ小川泰弘") || selectedPlayers.includes("セレ荘司宏太")|| selectedPlayers.includes("セレサンタナ")|| selectedPlayers.includes("セレ茂木栄五郎")) {
+            if (selectedPlayers.includes("セレ石山泰稚") || selectedPlayers.includes("セレ小川泰弘") || selectedPlayers.includes("セレ荘司宏太") || selectedPlayers.includes("セレサンタナ") || selectedPlayers.includes("セレ茂木栄五郎")) {
                 comboTotal += 600;
                 activatedCombos.push("選ばれしき者の輝き (+600)");
                 console.log("選ばれしき者の輝き (+600)");
