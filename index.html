@@ -1447,23 +1447,22 @@
                 }
             },
 
-            "EXオスナ": {
-                "type": "野手", "stat1": 74, "stat2": 77, "stat3": 57, "spirits": 4900, "abilities": ["超ライドラ", "フルスイング", "熱気"], "battingSide": "右",
+            "EX村上宗隆": {
+                "type": "野手", "stat1": 79, "stat2": 85, "stat3": 72, "spirits": 4900, "abilities": ["超アーチ", "広角", "熱気"], "battingSide": "左",
                 "mainPosition": {
-                    "name": "一塁手",
-                    "適性": 61
-                }, "fielding": { "捕球": 51, "スローイング": 53, "肩力": 78 },
-                "subPositions": [] // 明示的に空配列を追加
+                    "name": "三塁手",
+                    "適性": 58
+                },
+                "subPositions": [
+                    { "name": "一塁手", "適性": 58 },
+                    { "name": "右翼手", "適性": 51 }
 
-            },
-
-            "EX長岡秀樹": {
-                "type": "野手", "stat1": 77, "stat2": 70, "stat3": 74, "spirits": 4900, "abilities": ["超流し打ち", "チャンス", "熱気"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "遊撃手",
-                    "適性": 70
-                }, "fielding": { "捕球": 65, "スローイング": 71, "肩力": 67 },
-                "subPositions": [] // 明示的に空配列を追加
+                ],
+                "fielding": {
+                    "捕球": 36,
+                    "スローイング": 42,
+                    "肩力": 61
+                }
             },
 
 
@@ -1673,7 +1672,11 @@
                 "type": "投手", "stat1": 73, "stat2": 79, "stat3": 67, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "コントロール"], "bPitchCount": 1, "mainPosition": { "name": "継" }
             },
             "S1小川泰弘": {
-                "type": "投手", "stat1": 72, "stat2": 82, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先" }
+                "type": "投手", "stat1": 72, "stat2": 82, "stat3": 80, "spirits": 4900, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先" },
+                "subPositions": [
+                    { "name": "継" }
+                ]
+
             },
 
             "S1奥川恭伸": {
@@ -1681,8 +1684,6 @@
                 "subPositions": [
                     { "name": "継" }
                 ]
-        
-
             },
 
 
@@ -1709,7 +1710,12 @@
 
 
             "S1高橋圭二": {
-                "type": "投手", "stat1": 76, "stat2": 68, "stat3": 74, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先" }
+                "type": "投手", "stat1": 76, "stat2": 68, "stat3": 74, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "先" },
+                "subPositions": [
+                    { "name": "継" }
+                ]
+        
+
             },
             "S1高梨裕稔": {
                 "type": "投手", "stat1": 73, "stat2": 74, "stat3": 70, "spirits": 4900, "abilities": ["超対ピンチ", "奪三振", "ノビ"], "bPitchCount": 1, "mainPosition": { "name": "先" }, // 主ポジション: 先
@@ -1800,9 +1806,7 @@
                 "type": "投手", "stat1": 74, "stat2": 80, "stat3": 68, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "継" }
             },
 
-            "EX高橋圭二": {
-                "type": "投手", "stat1": 77, "stat2": 69, "stat3": 75, "spirits": 4900, "abilities": ["超ノビ", "奪三振", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "先" }
-            },
+            
 
 
 
