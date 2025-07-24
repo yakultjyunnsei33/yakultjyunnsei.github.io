@@ -1424,23 +1424,7 @@
                 "fielding": { "捕球": 78, "スローイング": 85, "肩力": 94 },
                 "subPositions": [] // 明示的に空配列を追加
             },
-            "セレ茂木栄五郎": {
-                "type": "野手", "stat1": 74, "stat2": 74, "stat3": 76, "spirits": 5000, "abilities": ["超ライドラ", "走塁", "初球"], "battingSide": "左",
-                "mainPosition": {
-                    "name": "三塁手",
-                    "適性": 66
-                },
-                "subPositions": [
-                    { "name": "二撃手", "適性": 57 },
-                    { "name": "一塁手", "適性": 57 }
-
-                ],
-                "fielding": {
-                    "捕球": 65,
-                    "スローイング": 71,
-                    "肩力": 65
-                }
-            },
+            
 
             "セレサンタナ": {
                 "type": "野手", "stat1": 82, "stat2": 81, "stat3": 64, "spirits": 5000, "abilities": ["超広角", "ライドラ", "対左投手"], "battingSide": "右",
@@ -1459,24 +1443,7 @@
                 }
             },
 
-             "セレ北村拓己": {
-                "type": "野手", "stat1": 73, "stat2": 70, "stat3": 65, "spirits": 5000, "abilities": ["超粘りうち", "逆境", "ライドラ"], "battingSide": "右",
-                "mainPosition": {
-                    "name": "遊撃手",
-                    "適性": 63
-                },
-                "subPositions": [
-                    { "name": "一塁手", "適性": 57 },
-                    { "name": "二塁手", "適性": 67 },
-                    { "name": "三塁手", "適性": 67 }
-
-                ],
-                "fielding": {
-                    "捕球": 51,
-                    "スローイング": 50,
-                    "肩力": 48
-                }
-            },
+            
 
             "EX村上宗隆": {
                 "type": "野手", "stat1": 79, "stat2": 85, "stat3": 72, "spirits": 4900, "abilities": ["超アーチ", "広角", "熱気"], "battingSide": "左",
@@ -1822,21 +1789,14 @@
                 ]
             },
 
-            "セレ石山泰稚": {
-                "type": "投手", "stat1": 74, "stat2": 77, "stat3": 65, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "コントロール"], "bPitchCount": 2, "mainPosition": { "name": "継" }, // 主ポジション: 先
+             "セレ木澤尚文": {
+                "type": "投手", "stat1": 75, "stat2": 74, "stat3": 66, "spirits": 5000, "abilities": ["超キレ", "対ピンチ", "対右打者"], "bPitchCount": 2, "mainPosition": { "name": "継" }, // 主ポジション: 先
                 "subPositions": [
                     { "name": "抑" } // 副ポジション: 継
                 ]
             },
 
-            "セレ荘司宏太": {
-                "type": "投手", "stat1": 75, "stat2": 63, "stat3": 62, "spirits": 5000, "abilities": ["超ノビ", "奪三振", "キレ"], "bPitchCount": 1, "mainPosition": { "name": "継" }
-            },
-
-            "セレ小川泰弘": {
-                "type": "投手", "stat1": 75, "stat2": 83, "stat3": 81, "spirits": 5000, "abilities": ["超コントロール", "球持ち", "キレ"], "bPitchCount": 2, "mainPosition": { "name": "先" }
-            },
-
+            
             "EX大西広樹": {
                 "type": "投手", "stat1": 74, "stat2": 80, "stat3": 68, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "継" }
             },
@@ -2563,24 +2523,12 @@
                 activatedCombos.push("オートグラフ (+630)");
             }
 
-            // コンボの発動
-            if (selectedPlayers.includes("すぽると！山野太一")) {
-                comboTotal += 630;
-                activatedCombos.push("すぽると！ (+630)");
-                console.log("すぽると！ (+630)");
-            }
-
-            // オートグラフ発動
-            if (selectedPlayers.includes("アニバサンタナ") || selectedPlayers.includes("アニバ山田哲人")) {
-                comboTotal += 630;
-                activatedCombos.push("オートグラフ (+630)");
-                console.log("オートグラフ発動 (+630)");
-            }
+           
 
 
 
             // 選ばれしき者の輝き
-            if (selectedPlayers.includes("セレ石山泰稚") || selectedPlayers.includes("セレ小川泰弘") || selectedPlayers.includes("セレ荘司宏太") || selectedPlayers.includes("セレサンタナ") || selectedPlayers.includes("セレ茂木栄五郎")|| selectedPlayers.includes("セレ北村拓己")) {
+            if (selectedPlayers.includes("セレサンタナ") || selectedPlayers.includes("セレ木澤尚文")) {
                 comboTotal += 600;
                 activatedCombos.push("選ばれしき者の輝き (+600)");
                 console.log("選ばれしき者の輝き (+600)");
