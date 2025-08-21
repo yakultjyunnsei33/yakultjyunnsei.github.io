@@ -1053,7 +1053,7 @@
             プロスピA攻略|なにしてんねんデータベース様</a></p>
 
 
-    
+
 
     <p>TS候補は以下のサイトで参照できます。</p>
 
@@ -1209,7 +1209,7 @@
                 "mainPosition": {
                     "name": "左翼手",
                     "適性": 48
-                        }, "fielding": { "捕球": 38, "スローイング": 45, "肩力": 75 },
+                }, "fielding": { "捕球": 38, "スローイング": 45, "肩力": 75 },
                 "subPositions": [] // 明示的に空配列を追加
             },
 
@@ -1416,17 +1416,17 @@
                 "fielding": { "捕球": 78, "スローイング": 85, "肩力": 94 },
                 "subPositions": [] // 明示的に空配列を追加
             },
-            
+
 
             "セレサンタナ": {
                 "type": "野手", "stat1": 81, "stat2": 80, "stat3": 64, "spirits": 5000, "abilities": ["超広角", "ライドラ", "アベヒ"], "battingSide": "右",
                 "mainPosition": {
                     "name": "左翼手",
                     "適性": 48
-                        }, "fielding": { "捕球": 38, "スローイング": 45, "肩力": 75 },
+                }, "fielding": { "捕球": 38, "スローイング": 45, "肩力": 75 },
                 "subPositions": [] // 明示的に空配列を追加
             },
-            
+
 
             "EX村上宗隆": {
                 "type": "野手", "stat1": 79, "stat2": 85, "stat3": 72, "spirits": 4900, "abilities": ["超アーチ", "広角", "熱気"], "battingSide": "左",
@@ -1500,7 +1500,7 @@
                 }
             },
 
-             "TS川端慎吾": {
+            "TS川端慎吾": {
                 "type": "野手", "stat1": 83, "stat2": 68, "stat3": 74, "spirits": 4900, "abilities": ["超アベヒ", "流し打ち", "固め打ち"], "battingSide": "左",
                 "mainPosition": {
                     "name": "三塁手",
@@ -1718,7 +1718,7 @@
                 "subPositions": [
                     { "name": "継" }
                 ]
-        
+
 
             },
             "S1高梨裕稔": {
@@ -1735,7 +1735,7 @@
 
 
 
-            
+
 
 
             "S1長谷川宙輝": {
@@ -1795,14 +1795,14 @@
                 ]
             },
 
-             "セレ木澤尚文": {
+            "セレ木澤尚文": {
                 "type": "投手", "stat1": 75, "stat2": 73, "stat3": 66, "spirits": 5000, "abilities": ["超キレ", "対ピンチ", "対右打者"], "bPitchCount": 2, "mainPosition": { "name": "継" }, // 主ポジション: 先
                 "subPositions": [
                     { "name": "抑" } // 副ポジション: 継
                 ]
             },
 
-                 "セレ小川泰弘": {
+            "セレ小川泰弘": {
                 "type": "投手", "stat1": 76, "stat2": 74, "stat3": 76, "spirits": 5000, "abilities": ["超援護", "球持ち", "対ランナー"], "bPitchCount": 0, "mainPosition": { "name": "先" },
                 "subPositions": [
                     { "name": "継" }, { "name": "抑" }
@@ -1810,12 +1810,12 @@
 
             },
 
-            
+
             "EX大西広樹": {
                 "type": "投手", "stat1": 74, "stat2": 80, "stat3": 68, "spirits": 4900, "abilities": ["超対ピンチ", "グラウンドボーラー", "熱気"], "bPitchCount": 1, "mainPosition": { "name": "継" }
             },
 
-            
+
 
 
 
@@ -1864,7 +1864,7 @@
                 ]
             },
 
-             "TS原樹理": {
+            "TS原樹理": {
                 "type": "投手", "stat1": 75, "stat2": 74, "stat3": 75, "spirits": 4900, "abilities": ["超キレ", "援護", "対ランナー"], "bPitchCount": 1, "mainPosition": { "name": "先" }, // 主ポジション: 先
                 "subPositions": [
                     { "name": "継" } // 副ポジション: 継
@@ -1920,7 +1920,7 @@
                 { text: "反骨精神(ミート-1,パワー+2,スピ+10)", value: "-1,2,0,10,1" },
                 { text: "ミート自慢(ミート+1)", value: "1,0,0,0,0" },
                 { text: "パワー自慢(パワー+1)", value: "0,1,0,0,0" },
-                { text: "大砲(パワー+1)", value: "0,1,0,0,0" },
+                { text: "大砲(ミート-1,パワー+2)", value: "-1,2,0,0,0" },
                 { text: "打撃職人(ミート+2,パワー-1)", value: "2,-1,0,0,0" }
             ],
             "投手": [
@@ -2518,12 +2518,12 @@
             }
 
             // 特定選手コンボ
-            
+
             if (selectedPlayers.includes("アニバサンタナ") || selectedPlayers.includes("アニバ山田哲人")) {
                 comboTotal += 630;
                 activatedCombos.push("オートグラフ (+630)");
             }
-            if (selectedPlayers.includes("EX村上宗隆")  || selectedPlayers.includes("EX大西広樹")) {
+            if (selectedPlayers.includes("EX村上宗隆") || selectedPlayers.includes("EX大西広樹")) {
                 comboTotal += 630;
                 activatedCombos.push("熱狂の渦 (+630)");
             }
@@ -2537,12 +2537,12 @@
                 activatedCombos.push("オートグラフ (+630)");
             }
 
-           
+
 
 
 
             // 選ばれしき者の輝き
-            if (selectedPlayers.includes("セレサンタナ") || selectedPlayers.includes("セレ木澤尚文")|| selectedPlayers.includes("セレ小川泰弘")) {
+            if (selectedPlayers.includes("セレサンタナ") || selectedPlayers.includes("セレ木澤尚文") || selectedPlayers.includes("セレ小川泰弘")) {
                 comboTotal += 600;
                 activatedCombos.push("選ばれしき者の輝き (+600)");
                 console.log("選ばれしき者の輝き (+600)");
@@ -2556,7 +2556,7 @@
             }
 
             // 伝説の名選手
-            if (selectedPlayers.includes("OB金田正一") || selectedPlayers.includes("OB杉浦亨") || selectedPlayers.includes("OB石井一久") || selectedPlayers.includes("OBロマン") || selectedPlayers.includes("OB坂口智隆") || selectedPlayers.includes("WC岩村明憲") || selectedPlayers.includes("OBペタジーニ")) {
+            if (selectedPlayers.includes("セレ古田敦也") || selectedPlayers.includes("OB杉浦亨") || selectedPlayers.includes("OB石井一久") || selectedPlayers.includes("OBロマン") || selectedPlayers.includes("OB坂口智隆") || selectedPlayers.includes("WC岩村明憲") || selectedPlayers.includes("OBペタジーニ")) {
                 comboTotal += 100;
                 activatedCombos.push("伝説の名選手 (+100)");
                 console.log("伝説の名選手 (+100)");
@@ -2577,7 +2577,7 @@
             }
 
             // 時を超えた活躍
-            if (selectedPlayers.includes("TS田中浩康") || selectedPlayers.includes("TS山本哲也") || selectedPlayers.includes("TS石川雅規") || selectedPlayers.includes("TS相川亮二") || selectedPlayers.includes("TS塩見泰隆") || selectedPlayers.includes("TS稲葉篤紀") || selectedPlayers.includes("TS福地寿樹") || selectedPlayers.includes("TS土橋勝征") || selectedPlayers.includes("TS吉井理人") || selectedPlayers.includes("TS由規") || selectedPlayers.includes("TS山田哲人") || selectedPlayers.includes("TS山崎晃大朗") || selectedPlayers.includes("TS池山隆寛") || selectedPlayers.includes("TS伊藤智仁") || selectedPlayers.includes("TS高津臣吾") || selectedPlayers.includes("TS川端慎吾")|| selectedPlayers.includes("TS小川泰弘") || selectedPlayers.includes("TS石井久寿") || selectedPlayers.includes("TS雄平")) {
+            if (selectedPlayers.includes("TS田中浩康") || selectedPlayers.includes("TS山本哲也") || selectedPlayers.includes("TS石川雅規") || selectedPlayers.includes("TS相川亮二") || selectedPlayers.includes("TS塩見泰隆") || selectedPlayers.includes("TS稲葉篤紀") || selectedPlayers.includes("TS福地寿樹") || selectedPlayers.includes("TS土橋勝征") || selectedPlayers.includes("TS吉井理人") || selectedPlayers.includes("TS由規") || selectedPlayers.includes("TS山田哲人") || selectedPlayers.includes("TS山崎晃大朗") || selectedPlayers.includes("TS池山隆寛") || selectedPlayers.includes("TS伊藤智仁") || selectedPlayers.includes("TS高津臣吾") || selectedPlayers.includes("TS川端慎吾") || selectedPlayers.includes("TS小川泰弘") || selectedPlayers.includes("TS石井久寿") || selectedPlayers.includes("TS雄平")) {
                 comboTotal += 70;
                 activatedCombos.push("時を超えた活躍 (+70)");
                 console.log("時を超えた活躍 (+70)");
@@ -2809,14 +2809,26 @@
                 console.log("超代打攻勢 (+270)");
             }
 
-            // **捕手、超捕手、守備職人を持つ選手をフィルタリング**
+            // **超捕手のみを持つ選手をフィルタリング**
             const defenses = selectedPlayers.filter(player =>
-                playerData[player]?.abilities.includes("捕手") ||
-                playerData[player]?.abilities.includes("超捕手") ||
-                playerData[player]?.abilities.includes("守備職人")
+                playerData[player]?.abilities.includes("超捕手")
             );
 
+            let isdefenses = false; // 超ライドラの発動フラグ
+
             if (defenses.length >= 3) {  // 3人以上で発動
+                comboTotal += 480;
+                activatedCombos.push("極職人の妙技 (+480)");
+                console.log("極職人の妙技 (+480)");
+            }
+            isdefenses = true; // フラグを立てる
+
+
+            // **超捕手、捕手、守備職人を持つ選手をフィルタリング**
+            const defense = selectedPlayers.filter(player =>
+                playerData[player]?.abilities.includes("超捕手") || playerData[player]?.abilities.includes("捕手")
+            );
+            if (!isdefenses && defense.length >= 3) {  // 3人以上で発動
                 comboTotal += 270;
                 activatedCombos.push("超職人の妙技 (+270)");
                 console.log("超職人の妙技 (+270)");
@@ -3121,6 +3133,24 @@
                 activatedCombos.push("超右キラーズ (+270)");
                 console.log("超右キラーズ (+270)");
             }
+
+            // **奥行き、緩急を持つ選手をフィルタリング**
+            const slowandfast = selectedPlayers.filter(player =>
+                playerData[player]?.abilities.includes("奥行き") ||
+                playerData[player]?.abilities.includes("超奥行き") ||
+                playerData[player]?.abilities.includes("緩急")
+            );
+
+            if (slowandfast.length >= 3) {  // 3人以上で発動
+                comboTotal += 270;
+                activatedCombos.push("超緩急自在 (+270)");
+                console.log("超緩急自在(+270)");
+            }
+
+
+
+
+
 
             // **選択された投手の B以上の球種の数を合計**
             let bPitchCount = selectedPlayers.reduce((count, player) => {
